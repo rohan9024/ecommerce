@@ -29,7 +29,7 @@ function Header() {
             <div className='flex justify-center items-center border border-gray-800 py-2 px-4'>
                 <input type="text" placeholder='What are you looking for?' className='w-64 placeholder-black font-medium outline-none' />
                 <img
-                    className='object-contain	 w-5 h-5'
+                    className='object-contain w-5 h-5'
                     src={search} alt="search" />
             </div>
             <div className='flex justify-around items-center space-x-8'>
