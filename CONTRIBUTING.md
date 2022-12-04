@@ -32,10 +32,8 @@ This is super easy. 👍
 ---
 # FAQ
 
-| Question | Answer |
-| :--- | :--- |
 | 1. If you are new to react, I would prefer this tutorial--> https://youtu.be/tbvguOj8C-o
----
+
 
 # Project setup in local
 ## Fork and clone the repository
