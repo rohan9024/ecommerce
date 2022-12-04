@@ -32,7 +32,7 @@ This is super easy. 👍
 ---
 # FAQ
 
-| 1. If you are new to react, I would prefer this tutorial--> https://youtu.be/tbvguOj8C-o
+1. If you are new to react, I would prefer this tutorial--> https://youtu.be/tbvguOj8C-o
 
 
 # Project setup in local
