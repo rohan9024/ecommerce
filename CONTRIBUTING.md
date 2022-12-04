@@ -1,10 +1,7 @@
 <h1 align=center> For the contributors 🫂 </h1>
 
 ---
-# How to contribute? ( You must use tailwind CSS )
-## Using Tailwind playground.
-
-One can easily make a contribution in this repository without setting this up locally. If you are building a new UI component then follow the steps written below.
+# How to contribute?
 
 ### PR guide:
 
