@@ -13,6 +13,7 @@ import {
 import Fourth from './Fourth';
 import Fifth from './Fifth';
 import Footer from './Footer';
+import { ScrollUp } from './ScrollUp';
 
   
 
@@ -27,6 +28,7 @@ function Home() {
             <Fourth />
             <Fifth />
             <Footer/>
+            <ScrollUp />
         </>
 
     )
