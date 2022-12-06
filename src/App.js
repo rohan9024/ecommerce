@@ -2,6 +2,7 @@ import React from "react"
 
 import Home from "./components/Home";
 import Login from "./Login"
+import ProductDescription from "./pages/ProductDescription";
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/product/:id" component={ProductDescription} />
         </Switch>
 
       </Router>
