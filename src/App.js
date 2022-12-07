@@ -7,14 +7,10 @@ import AppRouter from "./Router/AppRouter";
 
 function App() {
   return (
-    <>
       <Router>
       <AppRouter/>
       </Router>
-      
-      {/* <Home /> */}
 
-    </>
 
   );
 }

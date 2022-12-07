@@ -15,9 +15,11 @@ function Header() {
     return (
         <div className='flex justify-between items-center h-[155px] w-full px-12 font-dmsans border-b border-gray-800  '>
             <div>
+                <Link to='/'>
                 <img
                     className='object-contain w-36 h-36 cursor-pointer'
                     src={logo} alt="logo" />
+                </Link>
             </div>
             <div className='flex justify-center items-center font-bold space-x-12'>
                 <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Men</h1>
@@ -25,6 +27,9 @@ function Header() {
                 <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Kids</h1>
                 <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Customise</h1>
                 <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Sale</h1>
+                <Link to='/shoes'>
+                <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Shoes</h1>
+                </Link>
             </div>
             <div className='flex justify-center items-center border border-gray-800 py-2 px-4'>
                 <input type="text" placeholder='What are you looking for?' className='w-64 placeholder-black font-medium outline-none' />
