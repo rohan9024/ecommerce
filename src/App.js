@@ -1,6 +1,5 @@
 import React from "react"
 
-import ProductDescription from "./pages/ProductDescription";
 import {
   BrowserRouter as Router,
 } from "react-router-dom";

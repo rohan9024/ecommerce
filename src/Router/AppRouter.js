@@ -1,14 +1,15 @@
 import React from "react";
 import Home from "../components/Home";
+import ProductDescription from '../pages/ProductDescription'
 import { Switch, Route } from "react-router-dom";
 import Login from "../Login";
 
 const AppRouter = () => {
   return (
     <Switch>
-      <Route path="/" component={Home} exact={true} />
-      <Route path="/login" component={Login} exact={true} />
-      
+      <Route exact path="/" component={Home}  />
+      <Route exact path="/login" component={Login}  />
+      <Route exact path="/product/:id" component={ProductDescription}/>
     </Switch>
   );
 };
