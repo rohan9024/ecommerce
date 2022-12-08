@@ -19,7 +19,6 @@ import img20 from "../assets/img20.webp"
 import img21 from "../assets/img21.webp"
 import img22 from "../assets/img22.webp"
 import img23 from "../assets/img23.webp"
-import cart from "../assets/cart.png"
 import { motion } from "framer-motion"
 import ShoeItem from './ShoeItem';
 
