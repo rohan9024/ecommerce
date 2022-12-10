@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from "../components/Header";
-import Footer from './Footer';
 import img1 from "../assets/women/img1.png"
 import img2 from "../assets/women/img2.png"
 import img3 from "../assets/women/img3.png"
@@ -42,7 +40,6 @@ const Women = () => {
                     <ShoeItem title={"SASSAFRAS"} desc={"Rose Self Design Dobby Weave Wrap Dress & Belt"} price={"₹469"} img={img9} />
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }
