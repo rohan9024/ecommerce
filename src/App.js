@@ -7,24 +7,25 @@ import Women from "./components/Women.js";
 import Kids from "./components/Kids.js";
 import ProductDescription from "./pages/ProductDescription";
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route,
 } from "react-router-dom";
-
+import Navbar from "./components/Navbar";
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/shoes" component={Shoes} />
-        <Route exact path="/men" component={Men} />
-        <Route exact path="/women" component={Women} />
-        <Route exact path="/kids" component={Kids} />
-        <Route exact path="/product/:id" component={ProductDescription} />
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/shoes" element={<Shoes />} />
+        <Route path="/men" element={<Men />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/kids" element={<Kids />} />
+        <Route path="/product/:id" element={<ProductDescription />} />
+      </Routes>
+    </BrowserRouter>
 
 
   );

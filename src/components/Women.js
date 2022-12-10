@@ -18,7 +18,8 @@ const Women = () => {
     return (
         <div>
             <Header />
-            <div className='w-screen font-dmsans flex flex-col justify-center items-center space-y-12 my-6'>
+            <div className='w-screen font-dmsans flex flex-col justify-center items-center space-y-12 my-10'>
+
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}

@@ -13,19 +13,19 @@ function Second() {
 
 
     return (
-        <div className='w-screen  h-screen  font-dmsans  flex flex-col justify-center items-center space-y-12'>
+        <div className='w-full font-dmsans flex flex-col justify-center items-center my-5'>
             <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 className='flex flex-row space-x-2 justify-center items-center'>
-                <h1 className='text-black text-4xl font-bold'>Trending Products</h1>
+                <h1 className='text-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold'>Trending Products</h1>
             </motion.div>
-            <div className='flex justify-center items-center space-x-5'>
+            <div className='w-4/5 mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-5'>
                 <motion.div
-                    className='shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
-                    <img src={img1} alt="" className='h-[450px] w-[358px] object-cover' />
-                    <div className='flex justify-between items-center w-[358px] h-[130px] px-4 pb-5'>
+                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
+                    <img src={img1} alt="" className='object-cover' />
+                    <div className='flex justify-between items-center p-5'>
                         <div className='flex flex-col space-y-3'>
                             <h1 className='font-bold text-lg mt-5'>Ethnix by Raymond</h1>
                             <h3 className='text-sm font-medium'>Medium Green Kurtas</h3>
@@ -40,9 +40,9 @@ function Second() {
                 </motion.div>
 
                 <motion.div
-                    className='shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
-                    <img src={img2} alt="img2" className='h-[450px] w-[358px] object-cover' />
-                    <div className='flex justify-between items-center w-[358px] h-[130px] px-4 pb-5'>
+                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
+                    <img src={img2} alt="img2" className='object-cover' />
+                    <div className='flex justify-between items-center p-5'>
                         <div className='flex flex-col space-y-3'>
                             <h1 className='font-bold text-lg mt-5'>Ethnix by Raymond</h1>
                             <h3 className='text-sm font-medium'>BEIGE Kurtas</h3>
@@ -56,9 +56,9 @@ function Second() {
                     </div>
                 </motion.div>
                 <motion.div
-                    className='shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
-                    <img src={img3} alt="img4" className='h-[450px] w-[358px] object-cover' />
-                    <div className='flex justify-between items-center w-[358px] h-[130px] px-4 pb-5'>
+                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
+                    <img src={img3} alt="img4" className='object-cover' />
+                    <div className='flex justify-between items-center p-5'>
                         <div className='flex flex-col space-y-3'>
                             <h1 className='font-bold text-lg mt-5'>Ethnix by Raymond</h1>
                             <h3 className='text-sm font-medium'>Medium Blue Kurtas</h3>
@@ -72,9 +72,9 @@ function Second() {
                     </div>
                 </motion.div>
                 <motion.div
-                    className='shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
-                    <img src={img5} alt="img5" className='h-[450px] w-[358px] object-cover' />
-                    <div className='flex justify-between items-center w-[358px] h-[130px] px-4 pb-5'>
+                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
+                    <img src={img5} alt="img5" className='object-cover' />
+                    <div className='flex justify-between items-center p-5'>
                         <div className='flex flex-col space-y-3'>
                             <h1 className='font-bold text-lg mt-5'>Ethnix by Raymond</h1>
                             <h3 className='text-sm font-medium'>Light Yellow Bundi</h3>
@@ -87,8 +87,6 @@ function Second() {
                         </div>
                     </div>
                 </motion.div>
-
-
             </div>
         </div>
 

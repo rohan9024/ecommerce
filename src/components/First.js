@@ -10,14 +10,15 @@ function First() {
         hidden: { opacity: 0 },
     }
     return (
-        <div className='w-screen  h-[600px] flex justify-center items-center space-x-24 font-dmsans mt-10 mb-20'>
+        <div className='w-3/5 sm:w-4/5 flex flex-col sm:flex-row justify-center items-center sm:space-x-4 lg:space-x-12 font-dmsans mx-auto mt-10'>
             <motion.div
-             animate={{
-                scale: [0.5, 1],
-                duration: 0.1
-            }}
-                className=' pt-8 pr-8 pl-8 rounded-2xl shadow-sm border border-gray-300 hover:scale-150 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
-                <h1 className='text-black font-bold text-3xl absolute mt-7 ml-4'>Which mac is right for you?</h1>
+                animate={{
+                    scale: [0.5, 1],
+                    duration: 0.1
+                }}
+                className=' mb-5 p-6 rounded-2xl shadow-sm border border-gray-300 hover:scale-150 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
+                <h1 className='text-black font-bold text-sm md:text-xl lg:text-2xl text-center'>Which mac is right</h1>
+                <h1 className='text-black font-bold text-sm md:text-xl lg:text-2xl text-center'>for you?</h1>
                 <img src={mac1} alt="" className='rounded-2xl' />
             </motion.div>
             <motion.div
@@ -25,9 +26,9 @@ function First() {
                     scale: [0.5, 1],
                     duration: 0.1
                 }}
-                className='pt-8 pr-8 pl-8 rounded-2xl shadow-sm border border-gray-300  hover:scale-125 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
-                <h1 className='text-black font-bold text-3xl absolute mt-7 ml-4'>Shop one on one with a </h1>
-                <h1 className='text-black font-bold text-3xl absolute mt-16 ml-4 '> Mac Specialist</h1>
+                className=' mb-5 p-6 rounded-2xl shadow-sm border border-gray-300 hover:scale-125 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
+                <h1 className='text-black font-bold text-sm md:text-xl lg:text-2xl text-center'>Shop one on one with a </h1>
+                <h1 className='text-black font-bold text-sm md:text-xl lg:text-2xl text-center'> Mac Specialist</h1>
                 <img src={mac2} alt="" className='' />
             </motion.div>
         </div >
