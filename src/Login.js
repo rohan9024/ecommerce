@@ -1,11 +1,10 @@
 import React from 'react'
-import Header from "./components/Header"
+import { Link } from 'react-router-dom'
 import logo from "./assets/logo.png"
 
 function Login() {
   return (
     <div className='font-dmsans'>
-      <Header />
       <div className='flex flex-col justify-center items-center w-screen h-[640px] space-y-5'>
         <img
           className='object-contain w-28 h-28 cursor-pointer'
@@ -21,7 +20,7 @@ function Login() {
         </div>
         <div className='flex justify-center items-center space-x-1'>
           <h1 className='text-gray-500'>Not a member?</h1>
-          <h1 className='underline'>Join us</h1>
+          <h1 className='underline'> <Link to="/signup">Join us</Link></h1>
         </div>
 
       </div>
