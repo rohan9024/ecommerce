@@ -93,6 +93,10 @@
     #mobile {
         display: block;
     }
+
+    .menu-container ul {
+        gap: 2rem;
+    }
 }
 
 @media screen and (max-width:768px) {
