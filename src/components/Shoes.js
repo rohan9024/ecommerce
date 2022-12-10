@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from "../components/Header";
-import Footer from './Footer';
 import img6 from "../assets/img6.webp"
 import img7 from "../assets/img7.webp"
 import img8 from "../assets/img8.webp"
@@ -64,7 +62,6 @@ function Shoes() {
                 <ShoeItem title={"Extent Nitro ADV Sneakers"} desc={"Men's Sneakers"} price={"₹12,999"} img={img23} />
             </div>
         </div>
-        <Footer />
     </div>);
 }
 

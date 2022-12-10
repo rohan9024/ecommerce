@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from "../components/Header";
-import Footer from './Footer';
 import img1 from "../assets/kids/img1.png"
 import img2 from "../assets/kids/img2.png"
 import img3 from "../assets/kids/img3.png"
@@ -41,7 +39,6 @@ const Kids = () => {
                     <ShoeItem title={"Pepe Jeans"} desc={"Boys Red & Navy Blue Tartan Checks Opaque Cotton Casual Shirt"} price={"₹799"} img={img9} />
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }
