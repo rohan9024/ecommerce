@@ -21,7 +21,6 @@ const Signup = () => {
                     <h1 className='text-gray-500'>Already registered?</h1>
                     <h1 className='underline'> <Link to="/login">Login</Link></h1>
                 </div>
-
             </div>
         </div>
     )

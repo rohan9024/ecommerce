@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Signup from "./Signup";
+import Footer from "./components/Footer";
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +29,7 @@ function App() {
         <Route path="/kids" element={<Kids />} />
         <Route path="/product/:id" element={<ProductDescription />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
 
 
