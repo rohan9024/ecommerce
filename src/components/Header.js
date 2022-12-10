@@ -4,13 +4,12 @@ import search from "../assets/search.png"
 import user from "../assets/user.png"
 import cart from "../assets/cart.png"
 import favorite from "../assets/favorite.png"
-import { Link, useHistory } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import { NavLink } from 'react-router-dom'
 import Login from '../Login'
 
 function Header() {
 
-    const history = useHistory();
 
     return (
         <div className='flex justify-between items-center h-[155px] w-full px-12 font-dmsans border-b border-gray-800  '>
