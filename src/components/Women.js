@@ -17,7 +17,6 @@ import ShoeItem from './ShoeItem';
 const Women = () => {
     return (
         <div>
-            <Header />
             <div className='w-screen font-dmsans flex flex-col justify-center items-center space-y-12 my-10'>
 
                 <motion.div
