@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 const ProductDescription = () => {
@@ -176,9 +175,6 @@ const ProductDescription = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
-
-
             {
                 modal && <div className="h-[100vh] w-[100%] overflow-hidden top-0 bg-zinc-800/90 flex flex-col justify-center items-center z-[99999999] fixed">
                     <div className="w-[100%] m-auto flex justify-center items-center">
