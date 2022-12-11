@@ -2,19 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
 
-const Kids = ({ data }) => {
-  const kids = data.filter((data) => {
-    return data.category.includes("kids");
-  });
-
-  const itemlist = kids.map((item, i) => {
+const Search = ({ data }) => {
+  const itemlist = data.map((item, i) => {
     return (
       <ShoeItem
         key={i}
-        title={kids[i].title}
-        desc={kids[i].desc}
-        price={kids[i].price}
-        img={kids[i].img}
+        title={data[i].title}
+        desc={data[i].desc}
+        price={data[i].price}
+        img={data[i].img}
       />
     );
   });
@@ -49,4 +45,4 @@ const Kids = ({ data }) => {
   );
 };
 
-export default Kids;
+export default Search;
