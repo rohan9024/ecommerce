@@ -5,7 +5,6 @@ import Second from "../components/Second";
 import Third from "../components/Third";
 import Fourth from './Fourth';
 import Fifth from './Fifth';
-import Footer from './Footer';
 import { ScrollUp } from './ScrollUp';
 
 
@@ -19,7 +18,6 @@ function Home() {
             <Third />
             <Fourth />
             <Fifth />
-            <Footer />
             <ScrollUp />
         </>
 

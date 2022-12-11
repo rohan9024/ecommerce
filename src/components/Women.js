@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from "../components/Header";
-import Footer from './Footer';
 import img1 from "../assets/women/img1.png"
 import img2 from "../assets/women/img2.png"
 import img3 from "../assets/women/img3.png"
@@ -36,8 +34,7 @@ const itemlist =  women.map((item,i) => {
 const Women = () => {
     return (
         <div>
-            <div className='w-screen font-dmsans flex flex-col justify-center items-center space-y-12 my-10'>
-
+            <div className='w-full font-dmsans flex flex-col justify-center items-center my-10'>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
