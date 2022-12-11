@@ -22,21 +22,21 @@ function Fourth() {
             <div className='w-5/6 mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5'>
 
                 <motion.div
-                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-200 cursor-pointer'>
+                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
                     <img src={men} alt="men" className='object-cover' />
                     <div className='flex justify-center items-center p-5'>
                         <h1 className='text-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold'>Men</h1>
                     </div>
                 </motion.div>
                 <motion.div
-                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-200 cursor-pointer'>
+                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
                     <img src={women} alt="women" className='object-cover ' />
                     <div className='flex justify-center items-center p-5'>
                         <h1 className='text-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold mb-5'>Women</h1>
                     </div>
                 </motion.div>
                 <motion.div
-                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-200 cursor-pointer'>
+                    className='w-4/5 sm:w-full mx-auto shadow-sm border border-gray-300 transition hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-lg cursor-pointer'>
                     <img src={kids} alt="kids" className='object-cover' />
                     <div className='flex justify-center items-center p-5'>
                         <h1 className='ftext-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold mb-5'>Kids</h1>
