@@ -8,9 +8,28 @@ import img6 from "../assets/men/img6.png"
 import img7 from "../assets/men/img7.png"
 import img8 from "../assets/men/img8.png"
 import img9 from "../assets/men/img9.png"
-
 import { motion } from "framer-motion"
 import ShoeItem from './ShoeItem';
+import { data } from '../JsonData/data';
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9]
+
+const men = data.filter((data) => {
+    return data.category.startsWith("men")
+})
+
+const itemlist =  men.map((item,i) => {
+    return(
+        <ShoeItem 
+            key={i}
+            title={men[i].title}
+            desc={men[i].desc}
+            price={men[i].price}
+            img={images[i]}
+        />
+    )
+})
+
 const Men = () => {
     return (
         <div>
@@ -22,16 +41,8 @@ const Men = () => {
                     className='flex flex-row space-x-2 justify-center items-center'>
                     <h1 className='text-black text-4xl font-bold'>Find your style.</h1>
                 </motion.div>
-                <div className='w-4/5 mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-5'>
-                    <ShoeItem title={"Manyavar"} desc={"Men White & Blue Floral Print Nehru Jacket"} price={"₹2,999"} img={img1} />
-                    <ShoeItem title={"Anouk"} desc={"Men White & Navy Blue Self Striped Straight Kurta"} price={"₹479"} img={img2} />
-                    <ShoeItem title={"Manyavar"} desc={"Men Blue Ethnic Motifs Woven Design Kurta with Churidar"} price={"₹3,999"} img={img3} />
-                    <ShoeItem title={"Anouk"} desc={"Men Grey & White Solid Pure Cotton Kurta with Salwar & Printed Jacked"} price={"₹1,319"} img={img4} />
-                    <ShoeItem title={"Roadster"} desc={"Men Maroon & Black Checked Pure Cotton Sustainable Casual Shirt"} price={"₹649"} img={img5} />
-                    <ShoeItem title={"HIGHLANDER"} desc={"Men Green & White Slim Fit Printed Casual Shirt"} price={"₹367"} img={img6} />
-                    <ShoeItem title={"Dennis Lingo"} desc={"Men Blue Slim Fit Windowpane Checked Casual Shirt"} price={"₹749"} img={img7} />
-                    <ShoeItem title={"Roadster"} desc={"Men Blue Denim Washed Casual Sustainable Shirt"} price={"₹899"} img={img8} />
-                    <ShoeItem title={"HERE&NOW"} desc={"Men Black Slim Fit Printed Casual Shirt"} price={"₹664"} img={img9} />
+                <div className='flex flex-wrap justify-center items-center space-x-5 space-y-3'>
+                    {itemlist}
                 </div>
             </div>
         </div>
