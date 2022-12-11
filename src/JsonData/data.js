@@ -157,7 +157,14 @@ export const data = [
         "title": "H&M",
         "desc": "Boys White Easy-Iron Shirt",
         "price": "₹799",
-      },{
+      },
+      {
+        "category": "kids",
+        "title": "Pepe Jeans",
+        "desc": "Boys Red & Navy Blue Tartan Checks Opaque Cotton Casual Shirt",
+        "price": "₹799",
+      },
+      {
         "category": "Women",
         "title": "Libas",
         "desc": "Women Pink Floral Printed Panelled Pure Cotton Kurta with Palazzos & With Dupatta",
