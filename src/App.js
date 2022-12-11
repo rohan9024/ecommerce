@@ -1,4 +1,4 @@
-import React,{ useState } from "react"
+import React, { useState } from "react"
 import Home from "./components/Home";
 import Login from "./Login"
 import Shoes from "./components/Shoes.js";
@@ -16,12 +16,13 @@ import Signup from "./Signup";
 import Footer from "./components/Footer";
 import { data } from "./JsonData/data";
 import Search from "./components/Search";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
 
   const [searchfield, setsearchfield] = useState("");
 
-  const onSearchChange = (e) => { 
+  const onSearchChange = (e) => {
     setsearchfield(e.target.value)
   };
   const filtereditems = data.filter((data) => {
@@ -34,16 +35,17 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar searchChange={onSearchChange}/>
+      <ScrollToTop />
+      <Navbar searchChange={onSearchChange} />
       <Routes>
         {!searchfield ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Search data={filtereditems} />} />}
         <Route path="/login" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/shoes" element={<Shoes data={filtereditems}/>} />
-        <Route path="/men" element={<Men data={filtereditems}/>} />
-        <Route path="/women" element={<Women data={filtereditems}/>} />
-        <Route path="/kids" element={<Kids data={filtereditems}/>} />
+        <Route path="/shoes" element={<Shoes data={filtereditems} />} />
+        <Route path="/men" element={<Men data={filtereditems} />} />
+        <Route path="/women" element={<Women data={filtereditems} />} />
+        <Route path="/kids" element={<Kids data={filtereditems} />} />
         <Route path="/product/:id" element={<ProductDescription />} />
       </Routes>
       <Footer />
