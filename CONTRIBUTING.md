@@ -25,6 +25,12 @@ Take a screenshot of the feature you are implementing. Make sure the feature is 
 
 Then create an issue using the `New Feature` issue template. Get assigned and build it.
 
+When you open a new issue, you will be awarded points if the issue is legitimate. The system we are sticking to, while awarding issues is:
+Good first issue - 1 point
+Easy issue - 1 point
+Medium issue - 3 points
+Hard - issue - 3 points
+
 This is super easy. 👍 
 ---
 # FAQ
@@ -67,3 +73,8 @@ git commit -m "Enter your message here"
 ```
 git push origin <branch_name>
 ```
+
+If you solve an 
+EASY issue --> 5 points
+DIFFICULT issue --> 20 points
+MEDIUM issue --> 10 points
