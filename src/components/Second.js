@@ -8,11 +8,19 @@ import img4 from "../assets/img4.webp"
 import img5 from "../assets/img5.webp"
 import cart from "../assets/cart.png"
 import { motion } from "framer-motion"
-
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../slices/basketSlice'
 function Second() {
 
-
+    const dispatch=useDispatch();
+    const addItemsToBasket=()=>{
+        const product={
+       
+        }
+        dispatch(addToBasket(product));
+    }
     return (
+        
         <div className='w-full font-dmsans flex flex-col justify-center items-center my-5'>
             <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -33,6 +41,7 @@ function Second() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                                onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>
@@ -50,6 +59,7 @@ function Second() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                              onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>
@@ -66,6 +76,7 @@ function Second() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                              onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>
@@ -82,6 +93,7 @@ function Second() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                                onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>

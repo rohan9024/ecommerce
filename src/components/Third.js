@@ -7,9 +7,17 @@ import m3 from "../assets/m3.jpg"
 import m4 from "../assets/m4.jpg"
 import cart from "../assets/cart.png"
 import { motion } from "framer-motion"
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../slices/basketSlice'
 
 function Third() {
-
+    const dispatch=useDispatch();
+    const addItemsToBasket=()=>{
+        const product={
+       
+        }
+        dispatch(addToBasket(product));
+    }
 
     return (
         <div className='w-full mx-auto font-dmsans flex flex-col justify-center items-center my-10'>
@@ -32,6 +40,7 @@ function Third() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                              onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>
@@ -47,6 +56,7 @@ function Third() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                            onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>
@@ -62,6 +72,7 @@ function Third() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                            onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>

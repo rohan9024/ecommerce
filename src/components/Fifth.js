@@ -6,10 +6,18 @@ import img7 from "../assets/img7.webp"
 import img8 from "../assets/img8.webp"
 import cart from "../assets/cart.png"
 import { motion } from "framer-motion"
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../slices/basketSlice'
 
 function Fifth() {
 
-
+    const dispatch=useDispatch();
+    const addItemsToBasket=()=>{
+        const product={
+       
+        }
+        dispatch(addToBasket(product));
+    }
     return (
         <div className='w-full mx-auto font-dmsans flex flex-col justify-center items-center my-10'>
             <motion.div
@@ -31,6 +39,7 @@ function Fifth() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                            onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>
@@ -47,6 +56,7 @@ function Fifth() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                            onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>
@@ -63,6 +73,7 @@ function Fifth() {
                         </div>
                         <div className='flex justify-center items-center '>
                             <img
+                            onClick={addItemsToBasket}
                                 className='object-contain w-5 h-5'
                                 src={cart} alt="cart" />
                         </div>

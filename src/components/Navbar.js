@@ -5,11 +5,13 @@ import search from "../assets/search.png"
 import user from "../assets/user.png"
 import cart from "../assets/cart.png"
 import favorite from "../assets/favorite.png"
+import { useSelector } from 'react-redux';
+import { selectItems } from '../slices/basketSlice';
 import "./Navbar.css"
 
 const Navbar = () => {
     const [clicked, setClicked] = useState(false);
-
+    const items=useSelector(selectItems);
     const handleClick = () => {
         setClicked(!clicked);
     }
@@ -28,6 +30,7 @@ const Navbar = () => {
                     <div id="mobile" className='w-full'>
                         <div className="close-bar">
                             <div className='transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden'>
+       
                                 <img
                                     className='object-contain w-5 h-5 mobile-icons'
                                     src={cart} alt="cart" />
@@ -77,7 +80,9 @@ const Navbar = () => {
                         src={search} alt="search" />
                 </div>
                 <div className='flex justify-around items-center space-x-8 hide-mobile'>
-                    <div className='transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer'>
+                
+                    <div className='transition hover:duration-150 relative hover:ease-in-out hover:scale-125 cursor-pointer'>
+                    <span className='bg-gray-100 rounded-full font-bold  p-1 px-1.5 absolute -right-5 bottom-2'>{items.length}</span>
                         <img
                             className='object-contain w-5 h-5'
                             src={cart} alt="cart" />
