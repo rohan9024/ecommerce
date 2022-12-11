@@ -10,9 +10,28 @@ import img6 from "../assets/women/img6.png"
 import img7 from "../assets/women/img7.png"
 import img8 from "../assets/women/img8.png"
 import img9 from "../assets/women/img9.png"
-
+import { data } from '../JsonData/data';
 import { motion } from "framer-motion"
 import ShoeItem from './ShoeItem';
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9]
+
+const women = data.filter((data) => {
+    return data.category.includes("Women")
+})
+
+const itemlist =  women.map((item,i) => {
+    return(
+        <ShoeItem 
+            key={i}
+            title={women[i].title}
+            desc={women[i].desc}
+            price={women[i].price}
+            img={images[i]}
+        />
+    )
+})
+
 
 const Women = () => {
     return (
@@ -26,23 +45,10 @@ const Women = () => {
                     className='flex flex-row space-x-2 justify-center items-center'>
                     <h1 className='text-black text-4xl font-bold'>Find your style.</h1>
                 </motion.div>
-                <div className='flex justify-center items-center space-x-5'>
-                    <ShoeItem title={"Libas"} desc={"Women Pink Floral Printed Panelled Pure Cotton Kurta with Palazzos & With Dupatta"} price={"₹1,399"} img={img1} />
-                    <ShoeItem title={"KALINI"} desc={"Women Pink Floral Printed Kurta with Trousers & With Dupatta"} price={"₹874"} img={img2} />
-                    <ShoeItem title={"Shae by SASSAFRAS"} desc={"Women Blue & Off-White Printed Anarkali Kurta"} price={"₹594"} img={img3} />
-                </div>
-                <div className='flex justify-center items-center space-x-5'>
-                    <ShoeItem title={"Mitera"} desc={"Cream-Coloured & Red Floral Silk Blend Saree"} price={"₹2,942"} img={img4} />
-                    <ShoeItem title={"KALINI"} desc={"White & Gold-Toned Zari Saree"} price={"₹599"} img={img5} />
-                    <ShoeItem title={"Tokyo Talkies"} desc={"Navy Blue Polka Dots Printed Shirt Dress"} price={"₹462"} img={img6} />
-                </div>
-                <div className='flex justify-center items-center space-x-5'>
-                    <ShoeItem title={"KALINI"} desc={"Maroon & Gold Ethnic Motifs Zari Silk Blend Banarasi Saree"} price={"₹587"} img={img7} />
-                    <ShoeItem title={"Antheaa"} desc={"Black & Rust Orange Floral Print Tiered Midi Fit & Flare Dress with Ruffles"} price={"₹983"} img={img8} />
-                    <ShoeItem title={"SASSAFRAS"} desc={"Rose Self Design Dobby Weave Wrap Dress & Belt"} price={"₹469"} img={img9} />
+                <div className='flex flex-wrap justify-center items-center space-x-5 space-y-3'>
+                    {itemlist}
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }
