@@ -7,18 +7,33 @@ import img3 from "../assets/img3.webp"
 import img4 from "../assets/img4.webp"
 import img5 from "../assets/img5.webp"
 import cart from "../assets/cart.png"
-import { motion } from "framer-motion"
+import { useEffect } from "react"
+import { motion , useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import animateText from "./AnimateHomeText"
 
 function Second() {
 
-
+    //code to animate heading 
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+  
+    useEffect(() => {
+        if (inView) {
+          control.start("visible");
+        } else {
+          control.start("hidden");
+        }
+      }, [control, inView]);
+    
     return (
         <div className='w-full font-dmsans flex flex-col justify-center items-center my-5'>
             <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className='flex flex-row space-x-2 justify-center items-center'>
+                className='flex flex-row space-x-2 justify-center items-center'
+                ref={ref}
+                variants={animateText}
+                initial="hidden"
+                animate={control}>
                 <h1 className='text-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold'>Trending Products</h1>
             </motion.div>
             <div className='w-4/5 mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-5'>
