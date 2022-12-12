@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Home from "./components/Home";
 import Login from "./Login"
 import Shoes from "./components/Shoes.js";
@@ -17,6 +17,12 @@ import Footer from "./components/Footer";
 import { data } from "./JsonData/data";
 import Search from "./components/Search";
 import ScrollToTop from "./ScrollToTop";
+import { auth, onAuthStateChanged } from "./firebase";
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
+import { login, logout } from './features/userSlice';
+import Profile from "./components/Profile";
 
 function App() {
 
@@ -26,12 +32,31 @@ function App() {
     setsearchfield(e.target.value)
   };
   const filtereditems = data.filter((data) => {
-    console.log(searchfield)
     return (searchfield ? data.title
       .toLowerCase()
       .includes(searchfield.toLowerCase()) :
       {})
-  })
+  });
+
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("User logged in");
+        dispatch(login({
+          uid: user.uid,
+          email: user.email
+        }))
+      } else {
+        // User is signed out
+        // ...
+        dispatch(logout());
+        console.log("User logged out");
+      }
+    });
+    return unsubscribe;
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
@@ -39,8 +64,7 @@ function App() {
       <Navbar searchChange={onSearchChange} />
       <Routes>
         {!searchfield ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Search data={filtereditems} />} />}
-        <Route path="/login" element={<Login />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/shoes" element={<Shoes data={filtereditems} />} />
         <Route path="/men" element={<Men data={filtereditems} />} />
