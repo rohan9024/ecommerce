@@ -46,7 +46,8 @@ function App() {
         console.log("User logged in");
         dispatch(login({
           uid: user.uid,
-          email: user.email
+          email: user.email,
+          name: user.displayName
         }))
       } else {
         // User is signed out

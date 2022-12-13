@@ -1,19 +1,25 @@
 import React, { useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from "./assets/logo.png"
-import { auth, createUserWithEmailAndPassword } from "./firebase";
+import { auth, createUserWithEmailAndPassword, updateProfile } from "./firebase";
 
 const Signup = () => {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
+    const nameRef = useRef(null);
+    const phoneNoRef = useRef(null);
     let navigate = useNavigate();
-    const register = (e) => {
+    const register = async (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
-            .then((userCredential) => {
+            .then(async (userCredential) => {
                 // Signed in 
                 console.log(userCredential);
                 const user = userCredential.user;
+                await updateProfile(user, {
+                    displayName: nameRef.current.value,
+                    phoneNumber: phoneNoRef.current.value
+                });
                 console.log(user);
                 navigate("/profile");
             })
@@ -22,7 +28,7 @@ const Signup = () => {
                     alert("Email already in use. Sign In to your account");
                 }
                 else {
-                    alert("Please enter a valid email address");
+                    alert("Please enter valid email address");
                 }
             });
     }
@@ -36,10 +42,10 @@ const Signup = () => {
                 <h1 className='font-bold'>YOUR ACCOUNT FOR EVERYTHING BLACKBERRY </h1>
                 <h1 className='font-bold'>Create your account</h1>
                 <form className='flex flex-col justify-center items-center space-y-5'>
-                    <input type="text" placeholder="Full Name" className='placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-72' />
+                    <input ref={nameRef} type="text" placeholder="Full Name" className='placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-72' />
                     <input ref={emailRef} type="email" placeholder="Email address" className='placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-72' />
                     <input ref={passwordRef} type="password" placeholder="Password (Min 5 characters)" className='placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-72' />
-                    <input type="text" placeholder="Phone number" className='placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-72' />
+                    <input ref={phoneNoRef} type="text" placeholder="Phone number" className='placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-72' />
                     <div className='flex justify-center items-center w-72 bg-black text-white py-2'>
                         <button type='submit' onClick={register}>Register</button>
                     </div>
