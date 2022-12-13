@@ -4,11 +4,6 @@ import mac2 from "../assets/mac-2.jpg"
 import { motion } from "framer-motion"
 
 function First() {
-
-    const variants = {
-        visible: { opacity: 1 },
-        hidden: { opacity: 0 },
-    }
     return (
         <div className='w-3/5 sm:w-4/5 flex flex-col sm:flex-row justify-center items-center sm:space-x-4 lg:space-x-12 font-dmsans mx-auto mt-10'>
             <motion.div
