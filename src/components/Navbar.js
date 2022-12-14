@@ -53,22 +53,22 @@ const Navbar = ({ searchChange }) => {
                         </div>
                     </div>
                     <li>
-                        <NavLink to="/men" className={"navbar-link"}>Men</NavLink>
+                        <NavLink to="/men" className={"navbar-link"} onClick={() => setClicked(false)}>Men</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/women" className={"navbar-link"}>Women</NavLink>
+                        <NavLink to="/women" className={"navbar-link"} onClick={() => setClicked(false)}>Women</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/kids" className={"navbar-link"}>Kids</NavLink>
+                        <NavLink to="/kids" className={"navbar-link"} onClick={() => setClicked(false)}>Kids</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" className={"navbar-link"}>Customise</NavLink>
+                        <NavLink to="/" className={"navbar-link"} onClick={() => setClicked(false)}>Customise</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" className={"navbar-link"}>Sale</NavLink>
+                        <NavLink to="/" className={"navbar-link"} onClick={() => setClicked(false)}>Sale</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/shoes" className={"navbar-link"}>Shoes</NavLink>
+                        <NavLink to="/shoes" className={"navbar-link"} onClick={() => setClicked(false)}>Shoes</NavLink>
                     </li>
                 </ul>
             </div>

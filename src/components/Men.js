@@ -15,6 +15,7 @@ const Men = ({ data }) => {
         desc={men[i].desc}
         price={men[i].price}
         img={men[i].imgurl}
+
       />
     );
   });
@@ -31,6 +32,7 @@ const Men = ({ data }) => {
           <h1 className="text-black text-4xl font-bold">Find your style.</h1>
         </motion.div>
         <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
+
           {itemlist}
         </div>
       </div>

@@ -17,6 +17,7 @@ const Kids = ({ data }) => {
         desc={kids[i].desc}
         price={kids[i].price}
         img={kids[i].imgurl}
+
       />
     );
   });
@@ -33,6 +34,7 @@ const Kids = ({ data }) => {
           <h1 className="text-black text-4xl font-bold">Find your style.</h1>
         </motion.div>
         <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
+
           {itemlist}
         </div>
       </div>

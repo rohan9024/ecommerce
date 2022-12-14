@@ -26,6 +26,7 @@ import Profile from "./components/Profile";
 import { collection, getDocs } from "firebase/firestore";
 import db from './firebase'
 
+
 function App() {
 
   const [searchfield, setsearchfield] = useState("");
@@ -54,6 +55,7 @@ function App() {
 
 
   const filtereditems = products.filter((data) => {
+
     return (searchfield ? data.title
       .toLowerCase()
       .includes(searchfield.toLowerCase()) :

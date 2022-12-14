@@ -8,7 +8,6 @@ const Women = ({ data }) => {
     return data.category.includes("women");
   });
 
-
   const itemlist = women.map((item, i) => {
     return (
       <ShoeItem
@@ -17,6 +16,7 @@ const Women = ({ data }) => {
         desc={women[i].desc}
         price={women[i].price}
         img={women[i].imgurl}
+
       />
     );
   });
@@ -32,6 +32,7 @@ const Women = ({ data }) => {
           <h1 className="text-black text-4xl font-bold">Find your style.</h1>
         </motion.div>
         <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
+
           {itemlist}
         </div>
       </div>

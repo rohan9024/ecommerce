@@ -7,4 +7,5 @@ const animateText = {
   };
 
 
+
 export default animateText
