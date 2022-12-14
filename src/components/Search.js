@@ -2,19 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
 
-const Men = ({ data }) => {
-  const men = data.filter((data) => {
-    return data.category.startsWith("men");
-  });
-
-  const itemlist = men.map((item, i) => {
+const Search = ({ data }) => {
+  const itemlist = data.map((item, i) => {
     return (
       <ShoeItem
         key={i}
-        title={men[i].title}
-        desc={men[i].desc}
-        price={men[i].price}
-        img={men[i].imgurl}
+        title={data[i].title}
+        desc={data[i].desc}
+        price={data[i].price}
+        img={data[i].img}
       />
     );
   });
@@ -49,4 +45,4 @@ const Men = ({ data }) => {
   );
 };
 
-export default Men;
+export default Search;

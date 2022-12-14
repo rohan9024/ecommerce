@@ -11,7 +11,7 @@ const ShoeItem = (props) => {
                 <div className='flex flex-col space-y-3'>
                     <h1 className='font-bold text-lg mt-5'>{title}</h1>
                     <h3 className='text-sm font-normal text-gray-700'>{desc}</h3>
-                    <h1>{price}</h1>
+                    <h1>₹{price}</h1>
                 </div>
                 <div className='flex justify-center items-center '>
                     <img

@@ -7,7 +7,10 @@ import cart from "../assets/cart.png"
 import favorite from "../assets/favorite.png"
 import "./Navbar.css"
 
-const Navbar = () => {
+
+const Navbar = ({ searchChange }) => {
+
+
     const [clicked, setClicked] = useState(false);
 
     const handleClick = () => {
@@ -71,7 +74,10 @@ const Navbar = () => {
             </div>
             <div className='extra-icons'>
                 <div className='flex justify-center items-center border border-gray-800 py-2 px-4 input-field'>
-                    <input type="text" placeholder='What are you looking for?' className='w-64 placeholder-black font-medium outline-none' />
+                    <input type="search"
+                        placeholder='What are you looking for?'
+                        className='w-64 placeholder-black font-medium outline-none'
+                        onChange={searchChange} />
                     <img
                         className='object-contain w-5 h-5'
                         src={search} alt="search" />
@@ -87,7 +93,7 @@ const Navbar = () => {
                             className='object-contain w-5 h-5'
                             src={favorite} alt="favorite" />
                     </div>
-                    <Link to="/login">
+                    <Link to="/profile">
                         <div className='transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer'>
                             <img
                                 className='object-contain w-5 h-5'
