@@ -7,26 +7,16 @@ import img3 from "../assets/img3.webp"
 import img4 from "../assets/img4.webp"
 import img5 from "../assets/img5.webp"
 import cart from "../assets/cart.png"
-import { motion } from "framer-motion"
-import { useDispatch } from 'react-redux';
-import { addToBasket } from '../slices/basketSlice'
-function Second() {
 
-    const dispatch=useDispatch();
-    const addItemsToBasket=()=>{
-        const product={
-       
-        }
-        dispatch(addToBasket(product));
-    }
     return (
         
         <div className='w-full font-dmsans flex flex-col justify-center items-center my-5'>
             <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className='flex flex-row space-x-2 justify-center items-center'>
+                className='flex flex-row space-x-2 justify-center items-center'
+                ref={ref}
+                variants={animateText}
+                initial="hidden"
+                animate={control}>
                 <h1 className='text-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold'>Trending Products</h1>
             </motion.div>
             <div className='w-4/5 mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-5'>

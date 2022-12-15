@@ -9,7 +9,10 @@ import { useSelector } from 'react-redux';
 import { selectItems } from '../slices/basketSlice';
 import "./Navbar.css"
 
-const Navbar = () => {
+
+const Navbar = ({ searchChange }) => {
+
+
     const [clicked, setClicked] = useState(false);
     const items=useSelector(selectItems);
     const handleClick = () => {
@@ -53,28 +56,31 @@ const Navbar = () => {
                         </div>
                     </div>
                     <li>
-                        <NavLink to="/men" className={"navbar-link"}>Men</NavLink>
+                        <NavLink to="/men" className={"navbar-link"} onClick={() => setClicked(false)}>Men</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/women" className={"navbar-link"}>Women</NavLink>
+                        <NavLink to="/women" className={"navbar-link"} onClick={() => setClicked(false)}>Women</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/kids" className={"navbar-link"}>Kids</NavLink>
+                        <NavLink to="/kids" className={"navbar-link"} onClick={() => setClicked(false)}>Kids</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" className={"navbar-link"}>Customise</NavLink>
+                        <NavLink to="/" className={"navbar-link"} onClick={() => setClicked(false)}>Customise</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" className={"navbar-link"}>Sale</NavLink>
+                        <NavLink to="/" className={"navbar-link"} onClick={() => setClicked(false)}>Sale</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/shoes" className={"navbar-link"}>Shoes</NavLink>
+                        <NavLink to="/shoes" className={"navbar-link"} onClick={() => setClicked(false)}>Shoes</NavLink>
                     </li>
                 </ul>
             </div>
             <div className='extra-icons'>
                 <div className='flex justify-center items-center border border-gray-800 py-2 px-4 input-field'>
-                    <input type="text" placeholder='What are you looking for?' className='w-64 placeholder-black font-medium outline-none' />
+                    <input type="search"
+                        placeholder='What are you looking for?'
+                        className='w-64 placeholder-black font-medium outline-none'
+                        onChange={searchChange} />
                     <img
                         className='object-contain w-5 h-5'
                         src={search} alt="search" />
@@ -92,7 +98,7 @@ const Navbar = () => {
                             className='object-contain w-5 h-5'
                             src={favorite} alt="favorite" />
                     </div>
-                    <Link to="/login">
+                    <Link to="/profile">
                         <div className='transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer'>
                             <img
                                 className='object-contain w-5 h-5'

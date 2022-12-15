@@ -6,26 +6,17 @@ import m2 from "../assets/m2.jpg"
 import m3 from "../assets/m3.jpg"
 import m4 from "../assets/m4.jpg"
 import cart from "../assets/cart.png"
-import { motion } from "framer-motion"
-import { useDispatch } from 'react-redux';
-import { addToBasket } from '../slices/basketSlice'
 
-function Third() {
-    const dispatch=useDispatch();
-    const addItemsToBasket=()=>{
-        const product={
-       
-        }
-        dispatch(addToBasket(product));
-    }
 
     return (
         <div className='w-full mx-auto font-dmsans flex flex-col justify-center items-center my-10'>
             <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className='flex flex-row space-x-2 justify-center items-center'>
+                className='flex flex-row space-x-2 justify-center items-center'
+                ref={ref}
+                variants={animateText}
+                initial="hidden"
+                animate={control}
+                >
                 <h1 className='text-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold'>All models.</h1>
                 <h1 className='text-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold'>Take your pick.</h1>
             </motion.div>

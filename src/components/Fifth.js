@@ -5,26 +5,15 @@ import img6 from "../assets/img6.webp"
 import img7 from "../assets/img7.webp"
 import img8 from "../assets/img8.webp"
 import cart from "../assets/cart.png"
-import { motion } from "framer-motion"
-import { useDispatch } from 'react-redux';
-import { addToBasket } from '../slices/basketSlice'
 
-function Fifth() {
-
-    const dispatch=useDispatch();
-    const addItemsToBasket=()=>{
-        const product={
-       
-        }
-        dispatch(addToBasket(product));
-    }
     return (
         <div className='w-full mx-auto font-dmsans flex flex-col justify-center items-center my-10'>
             <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className='flex flex-row space-x-2 justify-center items-center'>
+                className='flex flex-row space-x-2 justify-center items-center'
+                ref={ref}
+                variants={animateText}
+                initial="hidden"
+                animate={control}>
                 <h1 className='text-black text-sm sm:text-xl md:text-2xl lg:text-4xl font-bold'>Find your fast.</h1>
             </motion.div>
             <div className='w-4/5 mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5'>
