@@ -5,6 +5,7 @@ import Shoes from "./components/Shoes.js";
 import Men from "./components/Men.js";
 import Women from "./components/Women.js";
 import Kids from "./components/Kids.js";
+import { Admin } from "./components/Admin";
 import ProductDescription from "./pages/ProductDescription";
 import {
   BrowserRouter,
@@ -43,15 +44,13 @@ function App() {
 
     const getProducts = async() => {
       const data = await getDocs(usersCollectionRef);
-      console.log(data)
       setproducts(data.docs.map((doc) => ({
         ...doc.data() , id: doc.id
       })))
-      console.log(products)
     }
     getProducts()
   
-  })
+  },[])
 
 
   const filtereditems = products.filter((data) => {
@@ -96,6 +95,7 @@ function App() {
         <Route path="/women" element={<Women data={filtereditems} />} />
         <Route path="/kids" element={<Kids data={filtereditems} />} />
         <Route path="/product/:id" element={<ProductDescription />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
     </BrowserRouter>
