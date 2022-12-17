@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
@@ -14,7 +16,8 @@ function Shoes({ data }) {
         title={shoes[i].title}
         desc={shoes[i].desc}
         price={shoes[i].price}
-        img={shoes[i].img}
+        img={shoes[i].imgurl}
+
       />
     );
   });
