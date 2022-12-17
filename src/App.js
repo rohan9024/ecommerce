@@ -53,7 +53,6 @@ function App() {
   },[])
 
   const finaldata = data.concat(products)
-  console.log(finaldata)
 
   const filtereditems = finaldata.filter((data) => {
     return (searchfield ? data.title
