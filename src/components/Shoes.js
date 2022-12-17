@@ -1,11 +1,45 @@
-
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
 
-function Shoes({ data }) {
-  const shoes = data.filter((data) => {
+function Shoes(props) {
+  const { data, sortValue } = props;
+  const [datalist, setDatalist] = useState([]);
+  useEffect(() => {
+    setDatalist(data);
+  }, [data])
+  const sorting = () => {
+    if (sortValue === 'a-z') {
+      const newSortData = data.sort((a, b) => {
+        return a.title.localeCompare(b.title);
+      });
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'z-a') {
+      const newSortData = data.sort((a, b) => {
+        return b.title.localeCompare(a.title);
+      });
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'lowest') {
+      const sortFun = (a, b) => {
+        return a.price - b.price;
+      }
+      const newSortData = data.sort(sortFun);
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'highest') {
+      const sortFun = (a, b) => {
+        return b.price - a.price;
+      }
+      const newSortData = data.sort(sortFun);
+      setDatalist(newSortData);
+    }
+  };
+  useEffect(() => {
+    sorting();
+  }, [sortValue])
+  const shoes = datalist.filter((data) => {
     return data.category.includes("shoes");
   });
 
