@@ -5,7 +5,6 @@ import Shoes from "./components/Shoes.js";
 import Men from "./components/Men.js";
 import Women from "./components/Women.js";
 import Kids from "./components/Kids.js";
-import { Admin } from "./components/Admin";
 import ProductDescription from "./pages/ProductDescription";
 import {
   BrowserRouter,
@@ -24,9 +23,6 @@ import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import { login, logout } from './features/userSlice';
 import Profile from "./components/Profile";
-import { collection, getDocs } from "firebase/firestore";
-import db from './firebase'
-
 
 function App() {
 
@@ -35,26 +31,7 @@ function App() {
   const onSearchChange = (e) => {
     setsearchfield(e.target.value)
   };
-
-
-  const[products, setproducts] = useState([]);
-  const usersCollectionRef = collection(db, "Products")
-
-  useEffect(() => {
-
-    const getProducts = async() => {
-      const data = await getDocs(usersCollectionRef);
-      setproducts(data.docs.map((doc) => ({
-        ...doc.data() , id: doc.id
-      })))
-    }
-    getProducts()
-  
-  },[])
-
-
-  const filtereditems = products.filter((data) => {
-
+  const filtereditems = data.filter((data) => {
     return (searchfield ? data.title
       .toLowerCase()
       .includes(searchfield.toLowerCase()) :
@@ -95,7 +72,6 @@ function App() {
         <Route path="/women" element={<Women data={filtereditems} />} />
         <Route path="/kids" element={<Kids data={filtereditems} />} />
         <Route path="/product/:id" element={<ProductDescription />} />
-        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
     </BrowserRouter>
