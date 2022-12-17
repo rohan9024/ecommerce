@@ -24,9 +24,9 @@ import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import { login, logout } from './features/userSlice';
 import Profile from "./components/Profile";
+import Contributor_data from "./components/Contributor_data";
 import { collection, getDocs } from "firebase/firestore";
 import db from './firebase'
-
 
 function App() {
 
@@ -37,20 +37,20 @@ function App() {
   };
 
 
-  const[products, setproducts] = useState([]);
+  const [products, setproducts] = useState([]);
   const usersCollectionRef = collection(db, "Products")
 
   useEffect(() => {
 
-    const getProducts = async() => {
+    const getProducts = async () => {
       const data = await getDocs(usersCollectionRef);
       setproducts(data.docs.map((doc) => ({
-        ...doc.data() , id: doc.id
+        ...doc.data(), id: doc.id
       })))
     }
     getProducts()
-  
-  },[])
+
+  }, [])
 
   const finaldata = data.concat(products)
 
@@ -94,6 +94,7 @@ function App() {
         <Route path="/men" element={<Men data={filtereditems} />} />
         <Route path="/women" element={<Women data={filtereditems} />} />
         <Route path="/kids" element={<Kids data={filtereditems} />} />
+        <Route path="/contributors" element={<Contributor_data />} />
         <Route path="/product/:id" element={<ProductDescription />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
