@@ -52,9 +52,9 @@ function App() {
 
   }, [])
 
+  const finaldata = data.concat(products)
 
-  const filtereditems = products.filter((data) => {
-
+  const filtereditems = finaldata.filter((data) => {
     return (searchfield ? data.title
       .toLowerCase()
       .includes(searchfield.toLowerCase()) :
