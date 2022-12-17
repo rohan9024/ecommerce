@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
@@ -9,12 +10,14 @@ const Kids = ({ data }) => {
 
   const itemlist = kids.map((item, i) => {
     return (
+
       <ShoeItem
         key={i}
         title={kids[i].title}
         desc={kids[i].desc}
         price={kids[i].price}
-        img={kids[i].img}
+        img={kids[i].imgurl}
+
       />
     );
   });
@@ -30,7 +33,8 @@ const Kids = ({ data }) => {
         >
           <h1 className="text-black text-4xl font-bold">Find your style.</h1>
         </motion.div>
-        <div className="w-4/5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-10">
+        <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
+
           {itemlist}
         </div>
       </div>

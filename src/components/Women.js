@@ -1,10 +1,11 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
 
 const Women = ({ data }) => {
   const women = data.filter((data) => {
-    return data.category.includes("Women");
+    return data.category.includes("women");
   });
 
   const itemlist = women.map((item, i) => {
@@ -14,7 +15,8 @@ const Women = ({ data }) => {
         title={women[i].title}
         desc={women[i].desc}
         price={women[i].price}
-        img={women[i].img}
+        img={women[i].imgurl}
+
       />
     );
   });
@@ -29,7 +31,8 @@ const Women = ({ data }) => {
         >
           <h1 className="text-black text-4xl font-bold">Find your style.</h1>
         </motion.div>
-        <div className="w-4/5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-10">
+        <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
+
           {itemlist}
         </div>
       </div>
