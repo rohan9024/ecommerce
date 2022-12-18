@@ -32,7 +32,7 @@ import Sort from "./components/Sort";
 function App() {
 
   const [searchfield, setsearchfield] = useState("");
-  const [sortValue, setSortValue] = useState("lowest");
+  const [sortValue, setSortValue] = useState("");
 
   const onSearchChange = (e) => {
     setsearchfield(e.target.value)
@@ -95,15 +95,15 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Navbar searchChange={onSearchChange} />
-      <Sort data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />
+      {/* <Sort setSortValue={setSortValue} /> */}
       <Routes>
         {!searchfield ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Search data={filtereditems} />} />}
         <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/shoes" element={<Shoes data={filtereditems} sortValue={sortValue} />} />
-        <Route path="/men" element={<Men data={filtereditems} sortValue={sortValue} />} />
-        <Route path="/women" element={<Women data={filtereditems} sortValue={sortValue} />} />
-        <Route path="/kids" element={<Kids data={filtereditems} sortValue={sortValue} />} />
+        <Route path="/shoes" element={<Shoes data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />} />
+        <Route path="/men" element={<Men data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />} />
+        <Route path="/women" element={<Women data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />} />
+        <Route path="/kids" element={<Kids data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />} />
         <Route path="/contributors" element={<Contributor_data />} />
         <Route path="/product/:id" element={<ProductDescription />} />
         <Route path="/admin" element={<Admin />} />

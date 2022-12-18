@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 const Contributor_card = (props) => {
-
+    // console.log(props)
     const [data, setData] = useState({ 'name': "loading", 'html_url': "loading", 'location': "loading", 'avatar_url': "loading", 'bio': "loading" });
     useEffect(() => {
         const getData = async (username) => {
