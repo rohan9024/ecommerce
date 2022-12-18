@@ -8,6 +8,15 @@ import img6 from "../assets/men/img6.png"
 import img7 from "../assets/men/img7.png"
 import img8 from "../assets/men/img8.png"
 import img9 from "../assets/men/img9.png"
+import img37 from "../assets/men/img10.png"
+import img38 from "../assets/men/img11.png"
+import img39 from "../assets/men/img12.png"
+import img40 from "../assets/men/img13.png"
+import img41 from "../assets/men/img14.png"
+import img42 from "../assets/men/img15.png"
+import img43 from "../assets/men/img16.png"
+import img44 from "../assets/men/img17.png"
+import img45 from "../assets/men/img18.png"
 
 // image data for shoes
 import img10 from "../assets/img10.webp"
@@ -30,6 +39,15 @@ import img24 from "../assets/kids/img6.png"
 import img25 from "../assets/kids/img7.png"
 import img26 from "../assets/kids/img8.png"
 import img27 from "../assets/kids/img9.png"
+import img46 from "../assets/kids/img10.png"
+import img47 from "../assets/kids/img11.png"
+import img48 from "../assets/kids/img12.png"
+import img49 from "../assets/kids/img13.png"
+import img50 from "../assets/kids/img14.png"
+import img51 from "../assets/kids/img15.png"
+import img52 from "../assets/kids/img16.png"
+import img53 from "../assets/kids/img17.png"
+import img54 from "../assets/kids/img18.png"
 
 // image data for women
 import img28 from "../assets/women/img1.png"
@@ -41,6 +59,16 @@ import img33 from "../assets/women/img6.png"
 import img34 from "../assets/women/img7.png"
 import img35 from "../assets/women/img8.png"
 import img36 from "../assets/women/img9.png"
+import img65 from "../assets/women/img10.png"
+import img66 from "../assets/women/img11.png"
+import img67 from "../assets/women/img12.png"
+import img68 from "../assets/women/img13.png"
+import img69 from "../assets/women/img14.png"
+import img70 from "../assets/women/img15.png"
+import img71 from "../assets/women/img16.png"
+import img72 from "../assets/women/img17.png"
+import img73 from "../assets/women/img18.png"
+
 
 export const data = [
     {
@@ -305,3 +333,4 @@ export const data = [
         "imgurl": img9
       },
 ]
+
