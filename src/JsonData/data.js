@@ -171,6 +171,7 @@ export const data = [
       },
       {
         "category": "women",
+        "subCategory": "shirt",
         "title": "Libas",
         "desc": "women Pink Floral Printed Panelled Pure Cotton Kurta with Palazzos & With Dupatta",
         "price": "₹1,399",
@@ -178,6 +179,7 @@ export const data = [
       },
       {
         "category": "women",
+        "subCategory": "shirt",
         "title": "KALINI",
         "desc": "women Pink Floral Printed Kurta with Trousers & With Dupatta",
         "price": "₹874",
@@ -185,6 +187,7 @@ export const data = [
       },
       {
         "category": "women",
+        "subCategory": "shirt",
         "title": "Shae by SASSAFRAS",
         "desc": "women Blue & Off-White Printed Anarkali Kurta",
         "price": "₹594",
@@ -192,16 +195,21 @@ export const data = [
       },
       {
         "category": "women",
+        "subCategory": "pant",
         "title": "Mitera",
         "desc": "Cream-Coloured & Red Floral Silk Blend Saree",
         "price": "₹2,942",
         "imgurl":img31
       },
       { "category": "women",
-        "title": "KALINI", "desc": "White & Gold-Toned Zari Saree", "price": "₹599",
+        "subCategory": "pant",
+        "title": "KALINI",
+        "desc": "White & Gold-Toned Zari Saree", 
+        "price": "₹599",
         "imgurl":img32 },
       {
         "category": "women",
+        "subCategory": "pant",
         "title": "Tokyo Talkies",
         "desc": "Navy Blue Polka Dots Printed Shirt Dress",
         "price": "₹462",
@@ -209,6 +217,7 @@ export const data = [
       },
       {
         "category": "women",
+        "subCategory": "tshirt",
         "title": "KALINI",
         "desc": "Maroon & Gold Ethnic Motifs Zari Silk Blend Banarasi Saree",
         "price": "₹587",
@@ -216,6 +225,7 @@ export const data = [
       },
       {
         "category": "women",
+        "subCategory": "tshirt",
         "title": "Antheaa",
         "desc": "Black & Rust Orange Floral Print Tiered Midi Fit & Flare Dress with Ruffles",
         "price": "₹983",
@@ -223,6 +233,7 @@ export const data = [
       },
       {
         "category": "women",
+        "subCategory": "tshirt",
         "title": "SASSAFRAS",
         "desc": "Rose Self Design Dobby Weave Wrap Dress & Belt",
         "price": "₹469",
@@ -230,6 +241,7 @@ export const data = [
       },
       {
         "category": "men",
+        "subCategory": "shirt",
         "title": "Manyavar",
         "desc": "Men White & Blue Floral Print Nehru Jacket",
         "price": "₹2,999",
@@ -237,6 +249,7 @@ export const data = [
       },
       {
         "category": "men",
+        "subCategory": "shirt",
         "title": "Anouk",
         "desc": "Men White & Navy Blue Self Striped Straight Kurta",
         "price": "₹479",
@@ -244,6 +257,7 @@ export const data = [
       },
       {
         "category": "men",
+        "subCategory": "shirt",
         "title": "Manyavar",
         "desc": "Men Blue Ethnic Motifs Woven Design Kurta with Churidar",
         "price": "₹3,999",
@@ -251,12 +265,14 @@ export const data = [
       },
       {
         "category": "men",
+        "subCategory": "shirt",
         "title": "Mitera",
         "desc": "Cream-Coloured & Red Floral Silk Blend Saree",
         "price": "₹2,942",
         "imgurl": img4
       },
       { "category": "men",
+        "subCategory": "shirt",
         "title": "KALINI",
         "desc": "White & Gold-Toned Zari Saree", 
         "price": "₹599",
