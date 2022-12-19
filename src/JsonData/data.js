@@ -76,439 +76,457 @@ export const data = [
     "title": "Nike Air Zoom Pegasus 39",
     "desc": "Men's Road Running Shoes",
     "price": "₹10,439",
-    "img": img10
+    "imgurl": img10
   },
   {
     "category": "shoes",
     "title": "Nike Zoom Fly 5",
     "desc": "JavMen's Road Running Shoesa",
     "price": "₹14,995",
-    "img": img11
+    "imgurl": img11
   },
   {
     "category": "shoes",
     "title": "Nike Zoom Superfly Elite 2",
     "desc": "Athletics Sprinting Spikes",
     "price": "₹13,995",
-    "img": img12
+    "imgurl": img12
   },
   {
     "category": "shoes",
     "title": "Nike Pegasus 39",
     "desc": "Men's Road Running Shoes",
     "price": "₹10,495",
-    "img": img13
+    "imgurl": img13
   },
   {
     "category": "shoes",
     "title": "Air Jordan 7 Retro SE",
     "desc": "Men's Shoes",
     "price": "₹19,295",
-    "img": img14
+    "imgurl": img14
   },
   {
     "category": "shoes",
     "title": "Nike Air Force 1 Low Retro",
     "desc": "Men's Shoes",
     "price": "₹12,795",
-    "img": img15
+    "imgurl": img15
   },
   {
     "category": "shoes",
     "title": "BAD BUNNY - LAST FORUM SHOES",
     "desc": "Originals",
     "price": "₹15,999",
-    "img": img16
+    "imgurl": img16
   },
   {
     "category": "shoes",
     "title": "ULTRABOOST 5 DNA RUNNING SPORTSWEAR LIFESTYLE SHOES",
-    "desc": "Women's Sportwear",
+    "desc": "women's Sportwear",
     "price": "₹17,999",
-    "img": img17
+    "imgurl": img17
   },
   {
     "category": "shoes",
     "title": "ADIDAS ADIZERO SL RUNNING SHOES",
     "desc": "Men's Running Shoes",
     "price": "₹11,999",
-    "img": img18
+    "imgurl": img18
   },
   {
     "category": "kids",
     "title": "Gini and Jony",
     "desc": "Boys Red & Navy Blue Cotton Tartan Checks Hooded Casual Shirt",
     "price": "₹909",
-    "img": img19
+    "imgurl": img19
   },
   {
     "category": "kids",
     "title": "KIDZ Clothing",
     "desc": "Boys Blue & Green Emroidered Pure Cotton Kurta with Dhoti Pants",
     "price": "₹1,019",
-    "img": img20
+    "imgurl": img20
   },
   {
     "category": "kids",
     "title": "Cutiekins",
     "desc": "Boys Blue & Red Solid Sweatshirt with Joggers",
     "price": "₹839",
-    "img": img21
+    "imgurl": img21
   },
   {
     "category": "kids",
     "title": "DKGF FASHION",
     "desc": "Boys Purple & Black Printed T-shirt with Jeans & Blazer",
     "price": "₹1,419",
-    "img": img22
+    "imgurl": img22
   },
   {
     "category": "kids",
     "title": "De Moza",
     "desc": "Girls Blue & Pink Printed Top",
     "price": "₹269",
-    "img": img23
+    "imgurl": img23
   },
   {
     "category": "kids",
     "title": "H&M",
     "desc": "Girls Pink Printed Jersey Top",
     "price": "₹1,399",
-    "img": img24
+    "imgurl": img24
   },
   {
     "category": "kids",
     "title": "H&M",
     "desc": "Kids Boys Cotton jersey top",
     "price": "₹399",
-    "img": img25
+    "imgurl": img25
   },
   {
     "category": "kids",
     "title": "H&M",
     "desc": "Boys White Easy-Iron Shirt",
     "price": "₹799",
-    "img": img26
+    "imgurl": img26
   },
   {
     "category": "kids",
     "title": "Pepe Jeans",
     "desc": "Boys Red & Navy Blue Tartan Checks Opaque Cotton Casual Shirt",
     "price": "₹799",
-    "img": img27
+    "imgurl": img27
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "shirt",
     "title": "Libas",
-    "desc": "Women Pink Floral Printed Panelled Pure Cotton Kurta with Palazzos & With Dupatta",
+    "desc": "women Pink Floral Printed Panelled Pure Cotton Kurta with Palazzos & With Dupatta",
     "price": "₹1,399",
-    "img": img28
+    "imgurl":img28
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "shirt",
     "title": "KALINI",
-    "desc": "Women Pink Floral Printed Kurta with Trousers & With Dupatta",
+    "desc": "women Pink Floral Printed Kurta with Trousers & With Dupatta",
     "price": "₹874",
-    "img": img29
+    "imgurl":img29
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "shirt",
     "title": "Shae by SASSAFRAS",
-    "desc": "Women Blue & Off-White Printed Anarkali Kurta",
+    "desc": "women Blue & Off-White Printed Anarkali Kurta",
     "price": "₹594",
-    "img": img30
+    "imgurl":img30
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "pant",
     "title": "Mitera",
     "desc": "Cream-Coloured & Red Floral Silk Blend Saree",
     "price": "₹2,942",
-    "img": img31
+    "imgurl":img31
   },
+  { "category": "women",
+    "subCategory": "pant",
+    "title": "KALINI",
+    "desc": "White & Gold-Toned Zari Saree", 
+    "price": "₹599",
+    "imgurl":img32 },
   {
-    "category": "Women",
-    "title": "KALINI", "desc": "White & Gold-Toned Zari Saree", "price": "₹599",
-    "img": img32
-  },
-  {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "pant",
     "title": "Tokyo Talkies",
     "desc": "Navy Blue Polka Dots Printed Shirt Dress",
     "price": "₹462",
-    "img": img33
+    "imgurl":img33
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "tshirt",
     "title": "KALINI",
     "desc": "Maroon & Gold Ethnic Motifs Zari Silk Blend Banarasi Saree",
     "price": "₹587",
-    "img": img34
+    "imgurl":img34
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "tshirt",
     "title": "Antheaa",
     "desc": "Black & Rust Orange Floral Print Tiered Midi Fit & Flare Dress with Ruffles",
     "price": "₹983",
-    "img": img35
+    "imgurl":img35
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "tshirt",
     "title": "SASSAFRAS",
     "desc": "Rose Self Design Dobby Weave Wrap Dress & Belt",
     "price": "₹469",
-    "img": img36
+    "imgurl":img36
   },
   {
     "category": "men",
     "title": "Manyavar",
     "desc": "Men White & Blue Floral Print Nehru Jacket",
     "price": "₹2,999",
-    "img": img1
+    "imgurl": img1
   },
   {
     "category": "men",
     "title": "Anouk",
     "desc": "Men White & Navy Blue Self Striped Straight Kurta",
     "price": "₹479",
-    "img": img2
+    "imgurl": img2
   },
   {
     "category": "men",
     "title": "Manyavar",
     "desc": "Men Blue Ethnic Motifs Woven Design Kurta with Churidar",
     "price": "₹3,999",
-    "img": img3
+    "imgurl": img3
   },
   {
     "category": "men",
     "title": "Anouk",
     "desc": "Men Grey & White Solid Pure Cotton Kurta with Salwar & Printed Jacked",
     "price": "₹1,319",
-    "img": img4
+    "imgurl": img4
   },
   {
     "category": "men",
     "title": "Roadster",
     "desc": "Men Maroon & Black Checked Pure Cotton Sustainable Casual Shirt",
     "price": "₹649",
-    "img": img5
+    "imgurl": img5
   },
   {
     "category": "men",
     "title": "HIGHLANDER",
     "desc": "Men Green & White Slim Fit Printed Casual Shirt",
     "price": "₹367",
-    "img": img6
+    "imgurl": img6
   },
   {
     "category": "men",
     "title": "Dennis Lingo",
     "desc": "Men Blue Slim Fit Windowpane Checked Casual Shirt",
     "price": "₹749",
-    "img": img7
+    "imgurl": img7
   },
   {
     "category": "men",
     "title": "Roadster",
     "desc": "Men Blue Denim Washed Casual Sustainable Shirt",
     "price": "₹899",
-    "img": img8
+    "imgurl": img8
   },
   {
     "category": "men",
     "title": "HERE&NOW",
     "desc": "Men Black Slim Fit Printed Casual Shirt",
     "price": "₹664",
-    "img": img9
+    "imgurl": img9
   },
   {
     "category": "men",
     "title": "HRX by Hrithik Roshan",
     "desc": "Men Maroon Solid Hooded Sweatshirt",
     "price": "₹1199",
-    "img": img37
+    "imgurl": img37
   },
   {
     "category": "men",
     "title": "English Navy",
     "desc": "Men Black Slim Fit Formal Shirt",
     "price": "₹499",
-    "img": img38
+    "imgurl": img38
   },
   {
     "category": "men",
     "title": "Blackberrys",
     "desc": "Men Maroon Pure Cotton Slim Fit Formal Shirt",
     "price": "₹1,317",
-    "img": img39
+    "imgurl": img39
   },
   {
     "category": "men",
     "title": "Louis Philippe",
     "desc": "Men White Self Design Classic Pure Cotton Formal Shirt",
     "price": "₹1679",
-    "img": img40
+    "imgurl": img40
   },
   {
     "category": "men",
     "title": "HRX by Hrithik Roshan",
     "desc": "Men Teal Blue Printed Pure Cotton T-shirt",
     "price": "₹419",
-    "img": img41
+    "imgurl": img41
   },
   {
     "category": "men",
     "title": "Roadster",
     "desc": "Men Charcoal Melange Graphic Printed T-shirt",
     "price": "₹349",
-    "img": img42
+    "imgurl": img42
   },
   {
     "category": "men",
     "title": "Roadster",
     "desc": "Men Grey All-Over-Printed Round Neck T-shirt",
     "price": "₹449",
-    "img": img43
+    "imgurl": img43
   },
   {
     "category": "men",
     "title": "Kook N Keech",
     "desc": "Men Black Solid Hooded Sweatshirt",
     "price": "₹699",
-    "img": img44
+    "imgurl": img44
   },
   {
     "category": "men",
     "title": "Roadster",
     "desc": "Men Grey & Navy Blue Striped Sweatshirt",
     "price": "₹559",
-    "img": img45
+    "imgurl": img45
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "tshirt",
     "title": "Rustorange",
     "desc": "Black & Orange Ethnic Motifs Printed Maxi Dress",
     "price": "₹2,649",
-    "img": img65
+    "imgurl": img65
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "tshirt",
     "title": "Antheaa",
-    "desc": "Women White Self-Design Tiered A-Line Dress",
+    "desc": "women White Self-Design Tiered A-Line Dress",
     "price": "₹2,399",
-    "img": img66
+    "imgurl": img66
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "tshirt",
     "title": "Berrylush",
-    "desc": "Women Gorgeous Red Floral Ruched Dress",
+    "desc": "women Gorgeous Red Floral Ruched Dress",
     "price": "₹1,299",
-    "img": img67
+    "imgurl": img67
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "pant",
     "title": "Anouk",
-    "desc": "Women Mustard Yellow Yoke Design Foil Printed Kurta with Trousers & Dupatta",
+    "desc": "women Mustard Yellow Yoke Design Foil Printed Kurta with Trousers & Dupatta",
     "price": "₹1,879",
-    "img": img68
+    "imgurl": img68
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "pant",
     "title": "FASHOR",
     "desc": "Floral Printed Kurta with Trousers & With Dupatta",
     "price": "₹4,199",
-    "img": img69
+    "imgurl": img69
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "pant",
     "title": "KALINI",
-    "desc": "Women Green Ethnic Motifs Embroidered Thread Work Kurta with Palazzo & Dupatta",
+    "desc": "women Green Ethnic Motifs Embroidered Thread Work Kurta with Palazzo & Dupatta",
     "price": "₹3,699",
-    "img": img70
+    "imgurl": img70
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "shirt",
     "title": "The Souled Store",
-    "desc": "Women Cotton Printed Loose T-shirt",
+    "desc": "women Cotton Printed Loose T-shirt",
     "price": "₹899",
-    "img": img71
+    "imgurl": img71
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "tshirt",
     "title": "DILLINGER",
     "desc": "Sage Green Graphic Printed Pure Cotton Oversized Pure Cotton T-shirt",
     "price": "₹1,399",
-    "img": img72
+    "imgurl": img72
   },
   {
-    "category": "Women",
+    "category": "women",
+    "subCategory": "tshirt",
     "title": "DILLINGER",
-    "desc": "Women Purple Typography Printed Drop-Shoulder Sleeves Oversized Pure Cotton T-shirt",
+    "desc": "women Purple Typography Printed Drop-Shoulder Sleeves Oversized Pure Cotton T-shirt",
     "price": "₹515",
-    "img": img73
+    "imgurl": img73
   },
   {
     "category": "kids",
     "title": "Nautica",
     "desc": "Boys Maroon Brand Logo Print Round Neck Pure Cotton T-shirt",
     "price": "₹599",
-    "img": img46
+    "imgurl": img46
   },
   {
     "category": "kids",
     "title": "Nautica",
     "desc": "Boys Red Brand Logo Print Round Neck Pure Cotton T-shirt",
     "price": "₹649",
-    "img": img47
+    "imgurl": img47
   },
   {
     "category": "kids",
     "title": "Sangria",
     "desc": "Girls Red & Green Ethnic Motifs Print Pure Cotton A-Line Top",
     "price": "₹749",
-    "img": img48
+    "imgurl": img48
   },
   {
     "category": "kids",
     "title": "H&M",
     "desc": "Girls Green & Purple Puff Sleeved Jersey Top",
     "price": "₹419",
-    "img": img49
+    "imgurl": img49
   },
   {
     "category": "kids",
     "title": "VASTRAMAY",
     "desc": "Boys Beige & Rose Gold-Coloured Woven Design Sherwani Set",
     "price": "₹3,299",
-    "img": img50
+    "imgurl": img50
   },
   {
     "category": "kids",
     "title": "Cutiekins",
     "desc": "Girls Red & Gold-Toned Sequinned Ready to Wear Lehenga & Blouse With Dupatta",
     "price": "₹1,769",
-    "img": img51
+    "imgurl": img51
   },
   {
     "category": "kids",
     "title": "Nautica",
     "desc": "Boys Navy Blue & White Brand Logo Print Embroidered Pure Cotton T-shirt",
     "price": "₹599",
-    "img": img52
+    "imgurl": img52
   },
   {
     "category": "kids",
     "title": "pspeaches",
     "desc": "Girls Blue & Pink Ready to Wear Lehenga & Blouse With Dupatta",
     "price": "₹1,370",
-    "img": img53
+    "imgurl": img53
   },
   {
     "category": "kids",
     "title": "Cutiekins",
     "desc": "Girls Multicoloured Printed Top",
     "price": "₹484",
-    "img": img54
+    "imgurl": img54
   },
 ]
 
