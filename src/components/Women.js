@@ -3,11 +3,52 @@ import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import Sort from "./Sort";
 
-const Women = ({ data }) => {
+const Women = (props) => {
+
+
+
   const [selected, setselected] = useState("");
+  const { data, sortValue, setSortValue } = props;
+  const [datalist, setDatalist] = useState([]);
+  useEffect(() => {
+    setDatalist(data);
+  }, [data])
+  const sorting = () => {
+    if (sortValue === 'Name: A-Z') {
+      const newSortData = data.sort((a, b) => {
+        return a.title.localeCompare(b.title);
+      });
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'Name: Z-A') {
+      const newSortData = data.sort((a, b) => {
+        return b.title.localeCompare(a.title);
+      });
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'Price: Low to High') {
+      const sortFun = (a, b) => {
+        return a.price - b.price;
+      }
+      const newSortData = data.sort(sortFun);
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'Price: High to Low') {
+      const sortFun = (a, b) => {
+        return b.price - a.price;
+      }
+      const newSortData = data.sort(sortFun);
+      setDatalist(newSortData);
+    }
+  };
+  useEffect(() => {
+    sorting();
+  }, [sortValue])
 
-  const women = data
+
+  const women = datalist
     .filter((data) => {
       return data.category.includes("women");
     })
@@ -47,6 +88,7 @@ const Women = ({ data }) => {
         </div>
       </div>
       <div>
+        <Sort setSortValue={setSortValue} sortValue={sortValue} />
         <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}

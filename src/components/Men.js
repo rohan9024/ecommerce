@@ -1,9 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
+import Sort from "./Sort";
 
-const Men = ({ data }) => {
-  const men = data.filter((data) => {
+const Men = (props) => {
+  const { data, sortValue, setSortValue } = props;
+  const [datalist, setDatalist] = useState([]);
+  useEffect(() => {
+    setDatalist(data);
+  }, [data])
+  const sorting = () => {
+    if (sortValue === 'Name: A-Z') {
+      const newSortData = data.sort((a, b) => {
+        return a.title.localeCompare(b.title);
+      });
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'Name: Z-A') {
+      const newSortData = data.sort((a, b) => {
+        return b.title.localeCompare(a.title);
+      });
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'Price: Low to High') {
+      const sortFun = (a, b) => {
+        return a.price - b.price;
+      }
+      const newSortData = data.sort(sortFun);
+      setDatalist(newSortData);
+    }
+    else if (sortValue === 'Price: High to Low') {
+      const sortFun = (a, b) => {
+        return b.price - a.price;
+      }
+      const newSortData = data.sort(sortFun);
+      setDatalist(newSortData);
+    }
+  };
+  useEffect(() => {
+    sorting();
+  }, [sortValue])
+  const men = datalist.filter((data) => {
     return data.category.startsWith("men");
   });
 
@@ -20,8 +57,10 @@ const Men = ({ data }) => {
     );
   });
 
+
   return itemlist.length ? (
     <div>
+      <Sort setSortValue={setSortValue} sortValue={sortValue} />
       <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
