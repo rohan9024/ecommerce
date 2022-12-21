@@ -51,16 +51,22 @@ const Contributor_data = () => {
 
     // console.log(listOfNames);
     
-    const fetchContributorInfo = async(username, repo)=>{
+    const fetchContributorInfo = async(owner, repo)=>{
         try {
             const base_url = 'https://api.github.com/repos'
             const result = await axios.get(
-                `${base_url}/${username}/${repo}/stats/contributors`)
+                `${base_url}/${owner}/${repo}/stats/contributors`)
                 
             let contributors_data = [];
 
-            result.data.forEach((_author)=>{
+            for(let i=result.data.length-1; i>=0; i--){
                 //CONTRUBUTION DATA OF A AUTHOR
+                let _author = result.data[i]
+
+                // DONT ADD OWNER IN CONTRIBUTOR LIST
+                if(_author.author.login===owner){
+                    continue;
+                }
 
                 //CALCULATE TOTAL ADDITION
                 const calculate_TA = ()=>{
@@ -90,9 +96,8 @@ const Contributor_data = () => {
                         
                     }
                 )
-            })
-            
-            contributors_data.reverse()
+            }
+
             return contributors_data
 
         } catch (error) {
