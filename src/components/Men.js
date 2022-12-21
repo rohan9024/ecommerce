@@ -40,7 +40,6 @@ const Men = (props) => {
       setDatalist(newSortData);
     }
   };
-
   useEffect(() => {
     sorting();
   }, [sortValue])
