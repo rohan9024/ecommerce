@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-const Contributor_card = (props) => {
+const Contributor_card = ({_author}) => {
     // console.log(props)
     const [data, setData] = useState({ 'name': "loading", 'html_url': "loading", 'location': "loading", 'avatar_url': "loading", 'bio': "loading" });
     useEffect(() => {
@@ -15,7 +15,7 @@ const Contributor_card = (props) => {
                 console.log(err);
             }
         }
-        getData(props.name);
+        getData(_author.username);
 
     }, [])
     return (
@@ -28,6 +28,9 @@ const Contributor_card = (props) => {
             <div className="text-center">
                 <p className="mt-2 text-2xl font-semibold">{data.name ? data.name : data.login}</p>
                 <p className="mt-1 mb-2 text-gray-400">{data.location ? data.location : "India"}</p>
+                <p className="mt-1 mb-2 text-gray-900">{_author.commits ?`${_author.commits} commits`:null}</p>
+                <p className="mt-1 mb-2 text-green-600">{_author.TA ?`${_author.TA} ++`:null}</p>
+                <p className="mt-1 mb-2 text-red-600">{_author.TD ?`${_author.TD} --`:null}</p>
                 <p className="mb-5 text-center text-gray-600">{data.bio ? data.bio : "Github user"}</p>
                 <div className="grid place-items-center">
                     <a href={data.html_url ? data.html_url : "https://github.com/"}>
