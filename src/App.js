@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import Home from "./components/Home";
-import Login from "./Login"
 import Shoes from "./components/Shoes.js";
 import Men from "./components/Men.js";
 import Women from "./components/Women.js";
@@ -31,6 +30,7 @@ import db from './firebase'
 function App() {
 
   const [searchfield, setsearchfield] = useState("");
+  const [sortValue, setSortValue] = useState("");
 
   const onSearchChange = (e) => {
     setsearchfield(e.target.value)
@@ -38,7 +38,7 @@ function App() {
 
 
   const [products, setproducts] = useState([]);
-  const usersCollectionRef = collection(db, "Products")
+  const usersCollectionRef = collection(db, "Products");
 
   useEffect(() => {
 
@@ -48,13 +48,19 @@ function App() {
         ...doc.data(), id: doc.id
       })))
     }
-    getProducts()
+    getProducts();
 
   }, [])
 
-  const finaldata = data.concat(products)
+  const finaldata = data.concat(products);
+  const newData = finaldata.map((el, index) => {
+    const oldPrice = el.price.substring(1);
+    const newPrice = parseInt(oldPrice.replace(/,/g, ''));
+    const newObject = { ...el, price: newPrice, id: index };
+    return newObject;
+  });
 
-  const filtereditems = finaldata.filter((data) => {
+  const filtereditems = newData.filter((data) => {
     return (searchfield ? data.title
       .toLowerCase()
       .includes(searchfield.toLowerCase()) :
@@ -86,14 +92,15 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Navbar searchChange={onSearchChange} />
+      {/* <Sort setSortValue={setSortValue} /> */}
       <Routes>
         {!searchfield ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Search data={filtereditems} />} />}
         <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/shoes" element={<Shoes data={filtereditems} />} />
-        <Route path="/men" element={<Men data={filtereditems} />} />
-        <Route path="/women" element={<Women data={filtereditems} />} />
-        <Route path="/kids" element={<Kids data={filtereditems} />} />
+        <Route path="/shoes" element={<Shoes data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />} />
+        <Route path="/men" element={<Men data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />} />
+        <Route path="/women" element={<Women data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />} />
+        <Route path="/kids" element={<Kids data={filtereditems} sortValue={sortValue} setSortValue={setSortValue} />} />
         <Route path="/contributors" element={<Contributor_data />} />
         <Route path="/product/:id" element={<ProductDescription />} />
         <Route path="/admin" element={<Admin />} />

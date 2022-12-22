@@ -136,6 +136,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "Gini and Jony",
     "desc": "Boys Red & Navy Blue Cotton Tartan Checks Hooded Casual Shirt",
     "price": "₹909",
@@ -143,6 +144,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "KIDZ Clothing",
     "desc": "Boys Blue & Green Emroidered Pure Cotton Kurta with Dhoti Pants",
     "price": "₹1,019",
@@ -150,6 +152,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Cutiekins",
     "desc": "Boys Blue & Red Solid Sweatshirt with Joggers",
     "price": "₹839",
@@ -157,6 +160,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "pant",
     "title": "DKGF FASHION",
     "desc": "Boys Purple & Black Printed T-shirt with Jeans & Blazer",
     "price": "₹1,419",
@@ -164,6 +168,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "De Moza",
     "desc": "Girls Blue & Pink Printed Top",
     "price": "₹269",
@@ -171,6 +176,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "H&M",
     "desc": "Girls Pink Printed Jersey Top",
     "price": "₹1,399",
@@ -178,6 +184,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "H&M",
     "desc": "Kids Boys Cotton jersey top",
     "price": "₹399",
@@ -185,6 +192,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "H&M",
     "desc": "Boys White Easy-Iron Shirt",
     "price": "₹799",
@@ -192,6 +200,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "pant",
     "title": "Pepe Jeans",
     "desc": "Boys Red & Navy Blue Tartan Checks Opaque Cotton Casual Shirt",
     "price": "₹799",
@@ -199,64 +208,73 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "shirt",
     "title": "Libas",
     "desc": "women Pink Floral Printed Panelled Pure Cotton Kurta with Palazzos & With Dupatta",
     "price": "₹1,399",
-    "imgurl": img28
+    "imgurl":img28
   },
   {
     "category": "women",
+    "subCategory": "shirt",
     "title": "KALINI",
     "desc": "women Pink Floral Printed Kurta with Trousers & With Dupatta",
     "price": "₹874",
-    "imgurl": img29
+    "imgurl":img29
   },
   {
     "category": "women",
+    "subCategory": "shirt",
     "title": "Shae by SASSAFRAS",
     "desc": "women Blue & Off-White Printed Anarkali Kurta",
     "price": "₹594",
-    "imgurl": img30
+    "imgurl":img30
   },
   {
     "category": "women",
+    "subCategory": "pant",
     "title": "Mitera",
     "desc": "Cream-Coloured & Red Floral Silk Blend Saree",
     "price": "₹2,942",
-    "imgurl": img31
+    "imgurl":img31
   },
+  { "category": "women",
+    "subCategory": "pant",
+    "title": "KALINI",
+    "desc": "White & Gold-Toned Zari Saree", 
+    "price": "₹599",
+    "imgurl":img32 },
   {
     "category": "women",
-    "title": "KALINI", "desc": "White & Gold-Toned Zari Saree", "price": "₹599",
-    "imgurl": img32
-  },
-  {
-    "category": "women",
+    "subCategory": "pant",
     "title": "Tokyo Talkies",
     "desc": "Navy Blue Polka Dots Printed Shirt Dress",
     "price": "₹462",
-    "imgurl": img33
+    "imgurl":img33
   },
   {
     "category": "women",
+    "subCategory": "tshirt",
     "title": "KALINI",
     "desc": "Maroon & Gold Ethnic Motifs Zari Silk Blend Banarasi Saree",
     "price": "₹587",
-    "imgurl": img34
+    "imgurl":img34
   },
   {
     "category": "women",
+    "subCategory": "tshirt",
     "title": "Antheaa",
     "desc": "Black & Rust Orange Floral Print Tiered Midi Fit & Flare Dress with Ruffles",
     "price": "₹983",
-    "imgurl": img35
+    "imgurl":img35
   },
   {
     "category": "women",
+    "subCategory": "tshirt",
     "title": "SASSAFRAS",
     "desc": "Rose Self Design Dobby Weave Wrap Dress & Belt",
     "price": "₹469",
-    "imgurl": img36
+    "imgurl":img36
   },
   {
     "category": "men",
@@ -386,6 +404,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "tshirt",
     "title": "Rustorange",
     "desc": "Black & Orange Ethnic Motifs Printed Maxi Dress",
     "price": "₹2,649",
@@ -393,6 +412,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "tshirt",
     "title": "Antheaa",
     "desc": "women White Self-Design Tiered A-Line Dress",
     "price": "₹2,399",
@@ -400,6 +420,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "tshirt",
     "title": "Berrylush",
     "desc": "women Gorgeous Red Floral Ruched Dress",
     "price": "₹1,299",
@@ -407,6 +428,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "pant",
     "title": "Anouk",
     "desc": "women Mustard Yellow Yoke Design Foil Printed Kurta with Trousers & Dupatta",
     "price": "₹1,879",
@@ -414,6 +436,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "pant",
     "title": "FASHOR",
     "desc": "Floral Printed Kurta with Trousers & With Dupatta",
     "price": "₹4,199",
@@ -421,6 +444,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "pant",
     "title": "KALINI",
     "desc": "women Green Ethnic Motifs Embroidered Thread Work Kurta with Palazzo & Dupatta",
     "price": "₹3,699",
@@ -428,6 +452,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "shirt",
     "title": "The Souled Store",
     "desc": "women Cotton Printed Loose T-shirt",
     "price": "₹899",
@@ -435,6 +460,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "tshirt",
     "title": "DILLINGER",
     "desc": "Sage Green Graphic Printed Pure Cotton Oversized Pure Cotton T-shirt",
     "price": "₹1,399",
@@ -442,6 +468,7 @@ export const data = [
   },
   {
     "category": "women",
+    "subCategory": "tshirt",
     "title": "DILLINGER",
     "desc": "women Purple Typography Printed Drop-Shoulder Sleeves Oversized Pure Cotton T-shirt",
     "price": "₹515",
@@ -449,6 +476,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Maroon Brand Logo Print Round Neck Pure Cotton T-shirt",
     "price": "₹599",
@@ -456,6 +484,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Red Brand Logo Print Round Neck Pure Cotton T-shirt",
     "price": "₹649",
@@ -463,6 +492,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Sangria",
     "desc": "Girls Red & Green Ethnic Motifs Print Pure Cotton A-Line Top",
     "price": "₹749",
@@ -470,6 +500,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "H&M",
     "desc": "Girls Green & Purple Puff Sleeved Jersey Top",
     "price": "₹419",
@@ -477,6 +508,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "VASTRAMAY",
     "desc": "Boys Beige & Rose Gold-Coloured Woven Design Sherwani Set",
     "price": "₹3,299",
@@ -484,6 +516,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "skirt",
     "title": "Cutiekins",
     "desc": "Girls Red & Gold-Toned Sequinned Ready to Wear Lehenga & Blouse With Dupatta",
     "price": "₹1,769",
@@ -491,6 +524,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Navy Blue & White Brand Logo Print Embroidered Pure Cotton T-shirt",
     "price": "₹599",
@@ -498,6 +532,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "skirt",
     "title": "pspeaches",
     "desc": "Girls Blue & Pink Ready to Wear Lehenga & Blouse With Dupatta",
     "price": "₹1,370",
@@ -505,6 +540,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Cutiekins",
     "desc": "Girls Multicoloured Printed Top",
     "price": "₹484",
