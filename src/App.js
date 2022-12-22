@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import Home from "./components/Home";
-import Login from "./Login"
 import Shoes from "./components/Shoes.js";
 import Men from "./components/Men.js";
 import Women from "./components/Women.js";
@@ -27,7 +26,6 @@ import Profile from "./components/Profile";
 import Contributor_data from "./components/Contributor_data";
 import { collection, getDocs } from "firebase/firestore";
 import db from './firebase'
-import Sort from "./components/Sort";
 
 function App() {
 
@@ -55,10 +53,10 @@ function App() {
   }, [])
 
   const finaldata = data.concat(products);
-  const newData = finaldata.map((el) => {
+  const newData = finaldata.map((el, index) => {
     const oldPrice = el.price.substring(1);
     const newPrice = parseInt(oldPrice.replace(/,/g, ''));
-    const newObject = { ...el, price: newPrice };
+    const newObject = { ...el, price: newPrice, id: index };
     return newObject;
   });
 

@@ -68,7 +68,7 @@ const Men = (props) => {
           transition={{ duration: 0.5 }}
           className="flex flex-row space-x-2 justify-center items-center"
         >
-          <h1 className="text-black text-4xl font-bold">Find your style.</h1>
+          <h1 className="text-black text-4xl font-bold mb-3">Find your style.</h1>
         </motion.div>
         <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
 
