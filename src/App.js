@@ -66,6 +66,7 @@ function App() {
       .includes(searchfield.toLowerCase()) :
       {})
   });
+  console.log(filtereditems);
 
   const dispatch = useDispatch();
   const user = useSelector(selectUser);

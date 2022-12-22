@@ -5,8 +5,7 @@ import Sort from "./Sort";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
-const Kids = (props) => {
-  const [selected, setselected] = useState("");
+
   const { data, sortValue, setSortValue } = props;
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
@@ -14,15 +13,19 @@ const Kids = (props) => {
   }, [data]);
   const sorting = () => {
     if (sortValue === "Name: A-Z") {
+
       const newSortData = data.sort((a, b) => {
         return a.title.localeCompare(b.title);
       });
       setDatalist(newSortData);
+
     } else if (sortValue === "Name: Z-A") {
+
       const newSortData = data.sort((a, b) => {
         return b.title.localeCompare(a.title);
       });
       setDatalist(newSortData);
+
     } else if (sortValue === "Price: Low to High") {
       const sortFun = (a, b) => {
         return a.price - b.price;
@@ -33,6 +36,7 @@ const Kids = (props) => {
       const sortFun = (a, b) => {
         return b.price - a.price;
       };
+
       const newSortData = data.sort(sortFun);
       setDatalist(newSortData);
     }
@@ -48,6 +52,7 @@ const Kids = (props) => {
     .filter((data) => {
       return data.subCategory.startsWith(selected);
     });
+
 
   const itemlist = kids.map((item, i) => {
     return (
@@ -98,6 +103,7 @@ const Kids = (props) => {
           <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
             {itemlist}
           </div>
+
         </div>
       </div>
     </>
