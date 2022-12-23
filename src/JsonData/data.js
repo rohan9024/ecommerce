@@ -136,6 +136,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "Gini and Jony",
     "desc": "Boys Red & Navy Blue Cotton Tartan Checks Hooded Casual Shirt",
     "price": "₹909",
@@ -143,6 +144,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "KIDZ Clothing",
     "desc": "Boys Blue & Green Emroidered Pure Cotton Kurta with Dhoti Pants",
     "price": "₹1,019",
@@ -150,6 +152,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Cutiekins",
     "desc": "Boys Blue & Red Solid Sweatshirt with Joggers",
     "price": "₹839",
@@ -157,6 +160,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "pant",
     "title": "DKGF FASHION",
     "desc": "Boys Purple & Black Printed T-shirt with Jeans & Blazer",
     "price": "₹1,419",
@@ -164,6 +168,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "De Moza",
     "desc": "Girls Blue & Pink Printed Top",
     "price": "₹269",
@@ -171,6 +176,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "H&M",
     "desc": "Girls Pink Printed Jersey Top",
     "price": "₹1,399",
@@ -178,6 +184,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "H&M",
     "desc": "Kids Boys Cotton jersey top",
     "price": "₹399",
@@ -185,6 +192,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "H&M",
     "desc": "Boys White Easy-Iron Shirt",
     "price": "₹799",
@@ -192,6 +200,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "pant",
     "title": "Pepe Jeans",
     "desc": "Boys Red & Navy Blue Tartan Checks Opaque Cotton Casual Shirt",
     "price": "₹799",
@@ -485,6 +494,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Maroon Brand Logo Print Round Neck Pure Cotton T-shirt",
     "price": "₹599",
@@ -492,6 +502,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Red Brand Logo Print Round Neck Pure Cotton T-shirt",
     "price": "₹649",
@@ -499,6 +510,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Sangria",
     "desc": "Girls Red & Green Ethnic Motifs Print Pure Cotton A-Line Top",
     "price": "₹749",
@@ -506,6 +518,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "H&M",
     "desc": "Girls Green & Purple Puff Sleeved Jersey Top",
     "price": "₹419",
@@ -513,6 +526,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "VASTRAMAY",
     "desc": "Boys Beige & Rose Gold-Coloured Woven Design Sherwani Set",
     "price": "₹3,299",
@@ -520,6 +534,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "skirt",
     "title": "Cutiekins",
     "desc": "Girls Red & Gold-Toned Sequinned Ready to Wear Lehenga & Blouse With Dupatta",
     "price": "₹1,769",
@@ -527,6 +542,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Navy Blue & White Brand Logo Print Embroidered Pure Cotton T-shirt",
     "price": "₹599",
@@ -534,6 +550,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "skirt",
     "title": "pspeaches",
     "desc": "Girls Blue & Pink Ready to Wear Lehenga & Blouse With Dupatta",
     "price": "₹1,370",
@@ -541,6 +558,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Cutiekins",
     "desc": "Girls Multicoloured Printed Top",
     "price": "₹484",
