@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
+import { NavLink } from "react-router-dom";
 import Sort from "./Sort";
 
 function Shoes(props) {
+  const [selected, setselected] = useState("");
   const { data, sortValue, setSortValue } = props;
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
@@ -40,8 +42,11 @@ function Shoes(props) {
   useEffect(() => {
     sorting();
   }, [sortValue])
+
   const shoes = datalist.filter((data) => {
     return data.category.includes("shoes");
+  }).filter((data) => {
+    return data.subCategory.startsWith(selected);
   });
 
   const itemlist = shoes.map((item, i) => {
@@ -58,22 +63,42 @@ function Shoes(props) {
   });
 
   return itemlist.length ? (
-    <div>
-      <Sort setSortValue={setSortValue} sortValue={sortValue} />
-      <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-row space-x-2 justify-center items-center"
-        >
-          <h1 className="text-black text-4xl font-bold">Find your style.</h1>
-        </motion.div>
-        <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
-          {itemlist}
+    <>
+      <div className="navbar-container">
+        <div className={"menu-container"}>
+          <ul>
+            <li>
+              <NavLink onClick={() => setselected("")}>All</NavLink>
+            </li>
+            <li>
+              <NavLink onClick={() => setselected("casual")}>Casual</NavLink>
+            </li>
+            <li>
+              <NavLink onClick={() => setselected("sports")}>Sports</NavLink>
+            </li>
+            <li>
+              <NavLink onClick={() => setselected("formal")}>Formal</NavLink>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+      <div>
+        <Sort setSortValue={setSortValue} sortValue={sortValue} />
+        <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-row space-x-2 justify-center items-center"
+          >
+            <h1 className="text-black text-4xl font-bold">Find your style.</h1>
+          </motion.div>
+          <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
+            {itemlist}
+          </div>
+        </div>
+      </div>
+    </>
   ) : (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
