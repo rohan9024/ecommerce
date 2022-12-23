@@ -5,6 +5,8 @@ import Sort from "./Sort";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
+const Kids = (props) => {
+  const [selected, setselected] = useState("");
 
   const { data, sortValue, setSortValue } = props;
   const [datalist, setDatalist] = useState([]);
@@ -119,6 +121,6 @@ import "./Navbar.css";
       </h1>
     </motion.div>
   );
-};
+}
 
 export default Kids;
