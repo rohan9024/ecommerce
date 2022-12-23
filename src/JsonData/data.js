@@ -136,6 +136,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "Gini and Jony",
     "desc": "Boys Red & Navy Blue Cotton Tartan Checks Hooded Casual Shirt",
     "price": "₹909",
@@ -143,6 +144,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "KIDZ Clothing",
     "desc": "Boys Blue & Green Emroidered Pure Cotton Kurta with Dhoti Pants",
     "price": "₹1,019",
@@ -150,6 +152,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Cutiekins",
     "desc": "Boys Blue & Red Solid Sweatshirt with Joggers",
     "price": "₹839",
@@ -157,6 +160,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "pant",
     "title": "DKGF FASHION",
     "desc": "Boys Purple & Black Printed T-shirt with Jeans & Blazer",
     "price": "₹1,419",
@@ -164,6 +168,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "De Moza",
     "desc": "Girls Blue & Pink Printed Top",
     "price": "₹269",
@@ -171,6 +176,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "H&M",
     "desc": "Girls Pink Printed Jersey Top",
     "price": "₹1,399",
@@ -178,6 +184,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "H&M",
     "desc": "Kids Boys Cotton jersey top",
     "price": "₹399",
@@ -185,6 +192,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "H&M",
     "desc": "Boys White Easy-Iron Shirt",
     "price": "₹799",
@@ -192,6 +200,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "pant",
     "title": "Pepe Jeans",
     "desc": "Boys Red & Navy Blue Tartan Checks Opaque Cotton Casual Shirt",
     "price": "₹799",
@@ -269,6 +278,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Manyavar",
     "desc": "Men White & Blue Floral Print Nehru Jacket",
     "price": "₹2,999",
@@ -276,6 +286,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Anouk",
     "desc": "Men White & Navy Blue Self Striped Straight Kurta",
     "price": "₹479",
@@ -283,6 +294,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Manyavar",
     "desc": "Men Blue Ethnic Motifs Woven Design Kurta with Churidar",
     "price": "₹3,999",
@@ -290,6 +302,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Anouk",
     "desc": "Men Grey & White Solid Pure Cotton Kurta with Salwar & Printed Jacked",
     "price": "₹1,319",
@@ -297,6 +310,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Roadster",
     "desc": "Men Maroon & Black Checked Pure Cotton Sustainable Casual Shirt",
     "price": "₹649",
@@ -304,6 +318,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "HIGHLANDER",
     "desc": "Men Green & White Slim Fit Printed Casual Shirt",
     "price": "₹367",
@@ -311,6 +326,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "Dennis Lingo",
     "desc": "Men Blue Slim Fit Windowpane Checked Casual Shirt",
     "price": "₹749",
@@ -318,6 +334,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "Roadster",
     "desc": "Men Blue Denim Washed Casual Sustainable Shirt",
     "price": "₹899",
@@ -325,6 +342,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "HERE&NOW",
     "desc": "Men Black Slim Fit Printed Casual Shirt",
     "price": "₹664",
@@ -332,6 +350,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "HRX by Hrithik Roshan",
     "desc": "Men Maroon Solid Hooded Sweatshirt",
     "price": "₹1199",
@@ -339,6 +358,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "English Navy",
     "desc": "Men Black Slim Fit Formal Shirt",
     "price": "₹499",
@@ -346,6 +366,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "Blackberrys",
     "desc": "Men Maroon Pure Cotton Slim Fit Formal Shirt",
     "price": "₹1,317",
@@ -353,6 +374,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Louis Philippe",
     "desc": "Men White Self Design Classic Pure Cotton Formal Shirt",
     "price": "₹1679",
@@ -360,6 +382,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "HRX by Hrithik Roshan",
     "desc": "Men Teal Blue Printed Pure Cotton T-shirt",
     "price": "₹419",
@@ -367,6 +390,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Roadster",
     "desc": "Men Charcoal Melange Graphic Printed T-shirt",
     "price": "₹349",
@@ -374,6 +398,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Roadster",
     "desc": "Men Grey All-Over-Printed Round Neck T-shirt",
     "price": "₹449",
@@ -381,6 +406,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Kook N Keech",
     "desc": "Men Black Solid Hooded Sweatshirt",
     "price": "₹699",
@@ -388,6 +414,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Roadster",
     "desc": "Men Grey & Navy Blue Striped Sweatshirt",
     "price": "₹559",
@@ -467,6 +494,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Maroon Brand Logo Print Round Neck Pure Cotton T-shirt",
     "price": "₹599",
@@ -474,6 +502,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Red Brand Logo Print Round Neck Pure Cotton T-shirt",
     "price": "₹649",
@@ -481,6 +510,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Sangria",
     "desc": "Girls Red & Green Ethnic Motifs Print Pure Cotton A-Line Top",
     "price": "₹749",
@@ -488,6 +518,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "H&M",
     "desc": "Girls Green & Purple Puff Sleeved Jersey Top",
     "price": "₹419",
@@ -495,6 +526,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "shirt",
     "title": "VASTRAMAY",
     "desc": "Boys Beige & Rose Gold-Coloured Woven Design Sherwani Set",
     "price": "₹3,299",
@@ -502,6 +534,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "skirt",
     "title": "Cutiekins",
     "desc": "Girls Red & Gold-Toned Sequinned Ready to Wear Lehenga & Blouse With Dupatta",
     "price": "₹1,769",
@@ -509,6 +542,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Nautica",
     "desc": "Boys Navy Blue & White Brand Logo Print Embroidered Pure Cotton T-shirt",
     "price": "₹599",
@@ -516,6 +550,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "skirt",
     "title": "pspeaches",
     "desc": "Girls Blue & Pink Ready to Wear Lehenga & Blouse With Dupatta",
     "price": "₹1,370",
@@ -523,6 +558,7 @@ export const data = [
   },
   {
     "category": "kids",
+    "subCategory": "tshirt",
     "title": "Cutiekins",
     "desc": "Girls Multicoloured Printed Top",
     "price": "₹484",

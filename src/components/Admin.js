@@ -19,6 +19,7 @@ const subcategories = [
   { value: "tshirt", label: "T-shirt" },
   { value: "shoes", label: "Shoes" },
   { value: "pants", label: "Pant" },
+  { value: "skirt", label: "Skirt" },
 ];
 
 export const Admin = () => {
