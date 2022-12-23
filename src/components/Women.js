@@ -6,9 +6,6 @@ import "./Navbar.css";
 import Sort from "./Sort";
 
 const Women = (props) => {
-
-
-
   const [selected, setselected] = useState("");
   const { data, sortValue, setSortValue } = props;
   const [datalist, setDatalist] = useState([]);

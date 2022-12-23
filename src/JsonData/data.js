@@ -269,6 +269,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Manyavar",
     "desc": "Men White & Blue Floral Print Nehru Jacket",
     "price": "₹2,999",
@@ -276,6 +277,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Anouk",
     "desc": "Men White & Navy Blue Self Striped Straight Kurta",
     "price": "₹479",
@@ -283,6 +285,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Manyavar",
     "desc": "Men Blue Ethnic Motifs Woven Design Kurta with Churidar",
     "price": "₹3,999",
@@ -290,6 +293,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Anouk",
     "desc": "Men Grey & White Solid Pure Cotton Kurta with Salwar & Printed Jacked",
     "price": "₹1,319",
@@ -297,6 +301,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Roadster",
     "desc": "Men Maroon & Black Checked Pure Cotton Sustainable Casual Shirt",
     "price": "₹649",
@@ -304,6 +309,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "HIGHLANDER",
     "desc": "Men Green & White Slim Fit Printed Casual Shirt",
     "price": "₹367",
@@ -311,6 +317,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "Dennis Lingo",
     "desc": "Men Blue Slim Fit Windowpane Checked Casual Shirt",
     "price": "₹749",
@@ -318,6 +325,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "Roadster",
     "desc": "Men Blue Denim Washed Casual Sustainable Shirt",
     "price": "₹899",
@@ -325,6 +333,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "HERE&NOW",
     "desc": "Men Black Slim Fit Printed Casual Shirt",
     "price": "₹664",
@@ -332,6 +341,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "HRX by Hrithik Roshan",
     "desc": "Men Maroon Solid Hooded Sweatshirt",
     "price": "₹1199",
@@ -339,6 +349,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "English Navy",
     "desc": "Men Black Slim Fit Formal Shirt",
     "price": "₹499",
@@ -346,6 +357,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "pant",
     "title": "Blackberrys",
     "desc": "Men Maroon Pure Cotton Slim Fit Formal Shirt",
     "price": "₹1,317",
@@ -353,6 +365,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Louis Philippe",
     "desc": "Men White Self Design Classic Pure Cotton Formal Shirt",
     "price": "₹1679",
@@ -360,6 +373,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "HRX by Hrithik Roshan",
     "desc": "Men Teal Blue Printed Pure Cotton T-shirt",
     "price": "₹419",
@@ -367,6 +381,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "shirt",
     "title": "Roadster",
     "desc": "Men Charcoal Melange Graphic Printed T-shirt",
     "price": "₹349",
@@ -374,6 +389,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Roadster",
     "desc": "Men Grey All-Over-Printed Round Neck T-shirt",
     "price": "₹449",
@@ -381,6 +397,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Kook N Keech",
     "desc": "Men Black Solid Hooded Sweatshirt",
     "price": "₹699",
@@ -388,6 +405,7 @@ export const data = [
   },
   {
     "category": "men",
+    "subCategory": "tshirt",
     "title": "Roadster",
     "desc": "Men Grey & Navy Blue Striped Sweatshirt",
     "price": "₹559",
