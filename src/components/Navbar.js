@@ -73,7 +73,7 @@ const Navbar = ({ searchChange }) => {
                 </ul>
             </div>
             <div className='extra-icons'>
-                <div className='flex justify-center items-center border border-gray-800 py-2 px-4 input-field'>
+                <div className='flex justify-center items-center border border-gray-800 py-2 px-4 input-field rounded-full'>
                     <input type="search"
                         placeholder='What are you looking for?'
                         className='w-64 placeholder-black font-medium outline-none'
