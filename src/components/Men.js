@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
-import { NavLink } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 
 import "./Navbar.css";
