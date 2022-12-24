@@ -140,7 +140,7 @@ function App() {
           }
         />
         <Route path="/contributors" element={<Contributor_data />} />
-        <Route path="/product/:id" element={<ProductDescription />} />
+        <Route path="/product/:id" element={<ProductDescription data={filtereditems} />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Admin />} path="/admin" />
         </Route>

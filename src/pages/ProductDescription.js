@@ -1,35 +1,43 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom';
 import Header from '../components/Header'
 
-const ProductDescription = () => {
+const ProductDescription = ({ data }) => {
 
     const [imgIndex, setImgIndex] = useState(0);
     const [currentImg, setCurrentImg] = useState(0);
     const [modal, setModal] = useState(false);
+    let { id } = useParams();
+    const getProduct = data.filter((item) => {
+        return Number(item.id) === Number(id);
+    })
+    const product = getProduct[0];
+    console.log(product);
+    // const images = [
+    //     "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ddd7c2fceb18476f9115ae2a008922db_9366/Supernova_2_Running_Shoes_Black_GW9087_01_standard.jpg",
 
+    //     "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1350,h_1350/global/392778/02/sv01/fnd/IND/fmt/png/one8-Virat-Kohli-PWRFRAME-Aerogram-Sneakers",
 
-    const images = [
-        "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ddd7c2fceb18476f9115ae2a008922db_9366/Supernova_2_Running_Shoes_Black_GW9087_01_standard.jpg",
+    //     "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1200,h_1200/global/392778/02/fnd/IND/fmt/png/one8-Virat-Kohli-PWRFRAME-Aerogram-Sneakers",
 
-        "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1350,h_1350/global/392778/02/sv01/fnd/IND/fmt/png/one8-Virat-Kohli-PWRFRAME-Aerogram-Sneakers",
+    //     "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1200,h_1200/global/392778/02/sv04/fnd/IND/fmt/png/one8-Virat-Kohli-PWRFRAME-Aerogram-Sneakers",
 
-        "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1200,h_1200/global/392778/02/fnd/IND/fmt/png/one8-Virat-Kohli-PWRFRAME-Aerogram-Sneakers",
+    //     "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1200,h_1200/global/392778/02/sv02/fnd/IND/fmt/png/one8-Virat-Kohli-PWRFRAME-Aerogram-Sneakers"
+    // ];
 
-        "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1200,h_1200/global/392778/02/sv04/fnd/IND/fmt/png/one8-Virat-Kohli-PWRFRAME-Aerogram-Sneakers",
-
-        "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1200,h_1200/global/392778/02/sv02/fnd/IND/fmt/png/one8-Virat-Kohli-PWRFRAME-Aerogram-Sneakers"
-    ];
+    const images = [product.imgurl];
+    // images.push(product.imgurl);
+    console.log(images)
 
     return (
         <>
-            <Header />
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center p-10'>
                 <div className='relative'>
                     <img className='w-[100%] ' src={images[imgIndex]} onClick={() => {
                         setCurrentImg(imgIndex);
                         setModal(true);
                     }} />
-                    <div className='my-2 flex justify-center w-[fit-content] rounded-md items-center gap-1'>
+                    {/* <div className='my-2 flex justify-center w-[fit-content] rounded-md items-center gap-1'>
                         {images.map((img, index) => {
                             return (
                                 <button key={index} onClick={() => setImgIndex(index)} className='h-[4rem] w-[4rem] border-2 rounded overflow-hidden flex items-center justify-center'>
@@ -37,11 +45,12 @@ const ProductDescription = () => {
                                 </button>
                             )
                         })}
-                    </div>
+                    </div> */}
                 </div>
                 <div className='self-center pl-0 md:pl-10 lg:pl-10 mt-10 lg:mt-0 md:mt-0'>
-                    <h1 className='font-bold text-3xl'>one8 Virat Kohli PWRFRAME Aerogram Sneakers</h1>
-                    <p className='flex gap-2 items-start py-4'><h2 className='text-slate-600 line-through'>₹9999.00</h2> <h2 className='text-red-500 font-semibold text-lg'>₹5999.50</h2> per pair (Inclusive of all taxes)</p>
+                    <h1 className='font-bold text-3xl'>{product.title}</h1>
+                    <h3 className='font-bold text-xl'>{product.desc}</h3>
+                    <p className='flex gap-2 items-start py-4'><h2 className='text-slate-600 line-through'>₹{Math.round(1.2 * product.price)}.00</h2> <h2 className='text-red-500 font-semibold text-lg'>₹{product.price}.00</h2> (Inclusive of all taxes)</p>
 
 
                     <h2 className='font-semibold text-xl pt-2'>
@@ -64,12 +73,11 @@ const ProductDescription = () => {
                         <button>SIZE GUIDE</button>
                     </div>
                     <div className='flex gap-2 py-4 flex-wrap'>
-                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid disabled:bg-zinc-300' disabled>6</button>
-                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid'>7</button>
-                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid'>8</button>
-                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid'>9</button>
-                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid'>10</button>
-                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid'>11</button>
+                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid focus:bg-zinc-300'>XS</button>
+                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid focus:bg-zinc-300'>S</button>
+                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid focus:bg-zinc-300'>M</button>
+                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid focus:bg-zinc-300'>L</button>
+                        <button className='h-[3rem] w-[3rem] bg-zinc-100 border-2 border-solid focus:bg-zinc-300'>XL</button>
                     </div>
 
 
