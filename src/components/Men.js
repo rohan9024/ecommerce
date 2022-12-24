@@ -61,7 +61,7 @@ const Men = (props) => {
         desc={men[i].desc}
         price={men[i].price}
         img={men[i].imgurl}
-
+        id={men[i].id}
       />
     );
   });
