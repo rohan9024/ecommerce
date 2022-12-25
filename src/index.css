@@ -30,3 +30,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.scrollbar-thumb{
+  background-color: #000 !important;
+  width: 12px !important; 
+  border-radius: 0 !important;
+}
+
+.scrollbar-track-y{
+  width: 12px !important; 
+  background-color: transparent !important;
+}

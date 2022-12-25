@@ -6,6 +6,8 @@ import user from "../assets/user.png"
 import cart from "../assets/cart.png"
 import favorite from "../assets/favorite.png"
 import "./Navbar.css"
+// import {NavLink} from 'react-scroll'
+// import { HashLink as Link } from 'react-router-hash-link'
 
 
 const Navbar = ({ searchChange }) => {
@@ -56,10 +58,10 @@ const Navbar = ({ searchChange }) => {
                         <NavLink to="/men" className={"navbar-link"} onClick={() => setClicked(false)}>Men</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/women" className={"navbar-link"} onClick={() => setClicked(false)}>Women</NavLink>
+                        <NavLink to="/women"  className={"navbar-link"} onClick={() => setClicked(false)}>Women</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/kids" className={"navbar-link"} onClick={() => setClicked(false)}>Kids</NavLink>
+                        <NavLink to="/kids"  className={"navbar-link"} onClick={() => setClicked(false)}>Kids</NavLink>
                     </li>
                     <li>
                         <NavLink to="/" className={"navbar-link"} onClick={() => setClicked(false)}>Sale</NavLink>
