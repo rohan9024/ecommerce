@@ -57,7 +57,7 @@ function Shoes(props) {
         desc={shoes[i].desc}
         price={shoes[i].price}
         img={shoes[i].imgurl}
-
+        id={shoes[i].id}
       />
     );
   });
@@ -73,9 +73,9 @@ function Shoes(props) {
           </div>
           <ul className='hidden group-hover:block pt-4 shadow-2xl'>
             <li className='pt-3 hover:font-semibold' onClick={() => setselected("")} id="all">All</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("shirt")} id="shirt">Shirts</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("tshirt")} id="tshirt">T-shirts</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("pant")} id="pant">Pants</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("casual")} id="casual">Casual</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("formal")} id="formal">Formal</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("sports")} id="sports">Sports</li>
           </ul>
         </div>
         <Sort setSortValue={setSortValue} sortValue={sortValue} />
