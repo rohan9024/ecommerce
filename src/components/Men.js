@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
-import { NavLink } from "react-router-dom";
+import { FaAngleDown } from "react-icons/fa";
+
 import "./Navbar.css";
 import Sort from "./Sort";
 
@@ -47,9 +48,9 @@ const Men = (props) => {
   const men = datalist.filter((data) => {
     return data.category.startsWith("men");
   })
-  .filter((data) => {
-    return data.subCategory.startsWith(selected);
-  });
+    .filter((data) => {
+      return data.subCategory.startsWith(selected);
+    });
 
   const itemlist = men.map((item, i) => {
     return (
@@ -59,34 +60,31 @@ const Men = (props) => {
         desc={men[i].desc}
         price={men[i].price}
         img={men[i].imgurl}
-
+        id={men[i].id}
       />
     );
   });
 
 
-  return itemlist.length ? (
+  return (
     <>
-      <div className="navbar-container">
-        <div className={"menu-container"}>
-          <ul>
-            <li>
-              <NavLink onClick={() => setselected("")}>All</NavLink>
-            </li>
-            <li>
-              <NavLink onClick={() => setselected("shirt")}>Shirt</NavLink>
-            </li>
-            <li>
-              <NavLink onClick={() => setselected("tshirt")}>Tshirt</NavLink>
-            </li>
-            <li>
-              <NavLink onClick={() => setselected("pant")}>Pants</NavLink>
-            </li>
+      <div className="flex justify-between p-4 w-full">
+        <div className='group  p-2 cursor-pointer text-center absolute bg-white'>
+          <div className="heading flex justify-center items-center">
+            <h3 className='font-semibold text-xl'>Filter:</h3>
+            <span className='font-normal'> &nbsp;{selected === "" ? " All" : " " + selected[0].toUpperCase() + selected.slice(1)}</span>
+            <div className='grid place-items-center ml-3'> <FaAngleDown /></div>
+          </div>
+          <ul className='hidden group-hover:block pt-4 shadow-2xl'>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("")} id="all">All</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("shirt")} id="shirt">Shirts</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("tshirt")} id="tshirt">T-shirts</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("pant")} id="pant">Pants</li>
           </ul>
         </div>
-      </div>
-      <div>
         <Sort setSortValue={setSortValue} sortValue={sortValue} />
+      </div>
+      {itemlist.length ?
         <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -94,25 +92,25 @@ const Men = (props) => {
             transition={{ duration: 0.5 }}
             className="flex flex-row space-x-2 justify-center items-center"
           >
-            <h1 className="text-black text-4xl font-bold">Find your style.</h1>
+            <h1 className="text-black text-4xl font-bold mb-12">Find your style.</h1>
           </motion.div>
-          <div className="flex flex-wrap justify-center items-center space-x-5 space-y-3">
+          <div className="flex flex-wrap justify-center items-center space-x-5 space-y-12">
             {itemlist}
           </div>
         </div>
-      </div>
+        :
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-row space-x-2 justify-center items-center my-10"
+        >
+          <h1 className="text-black text-4xl font-bold space-10">
+            Sorry, Couldn't Find your Item
+          </h1>
+        </motion.div>
+      }
     </>
-  ) : (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-row space-x-2 justify-center items-center my-10"
-    >
-      <h1 className="text-black text-4xl font-bold space-10">
-        Sorry, Couldn't Find your Item
-      </h1>
-    </motion.div>
   );
 };
 

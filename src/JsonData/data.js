@@ -73,6 +73,7 @@ import img73 from "../assets/women/img18.png"
 export const data = [
   {
     "category": "shoes",
+    "subCategory": "casual",
     "title": "Nike Air Zoom Pegasus 39",
     "desc": "Men's Road Running Shoes",
     "price": "₹10,439",
@@ -80,6 +81,7 @@ export const data = [
   },
   {
     "category": "shoes",
+    "subCategory": "casual",
     "title": "Nike Zoom Fly 5",
     "desc": "JavMen's Road Running Shoesa",
     "price": "₹14,995",
@@ -87,6 +89,7 @@ export const data = [
   },
   {
     "category": "shoes",
+    "subCategory": "casual",
     "title": "Nike Zoom Superfly Elite 2",
     "desc": "Athletics Sprinting Spikes",
     "price": "₹13,995",
@@ -94,6 +97,7 @@ export const data = [
   },
   {
     "category": "shoes",
+    "subCategory": "formal",
     "title": "Nike Pegasus 39",
     "desc": "Men's Road Running Shoes",
     "price": "₹10,495",
@@ -101,6 +105,7 @@ export const data = [
   },
   {
     "category": "shoes",
+    "subCategory": "formal",
     "title": "Air Jordan 7 Retro SE",
     "desc": "Men's Shoes",
     "price": "₹19,295",
@@ -108,6 +113,7 @@ export const data = [
   },
   {
     "category": "shoes",
+    "subCategory": "formal",
     "title": "Nike Air Force 1 Low Retro",
     "desc": "Men's Shoes",
     "price": "₹12,795",
@@ -115,6 +121,7 @@ export const data = [
   },
   {
     "category": "shoes",
+    "subCategory": "sports",
     "title": "BAD BUNNY - LAST FORUM SHOES",
     "desc": "Originals",
     "price": "₹15,999",
@@ -122,6 +129,7 @@ export const data = [
   },
   {
     "category": "shoes",
+    "subCategory": "sports",
     "title": "ULTRABOOST 5 DNA RUNNING SPORTSWEAR LIFESTYLE SHOES",
     "desc": "women's Sportwear",
     "price": "₹17,999",
@@ -129,6 +137,7 @@ export const data = [
   },
   {
     "category": "shoes",
+    "subCategory": "sports",
     "title": "ADIDAS ADIZERO SL RUNNING SHOES",
     "desc": "Men's Running Shoes",
     "price": "₹11,999",
