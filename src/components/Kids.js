@@ -64,11 +64,12 @@ const Kids = (props) => {
         desc={kids[i].desc}
         price={kids[i].price}
         img={kids[i].imgurl}
+        id={kids[i].id}
       />
     );
   });
 
-  return itemlist.length ? (
+  return (
     <>
       <div className="flex justify-between p-4 w-full">
         <div className='group  p-2 cursor-pointer text-center absolute bg-white'>
@@ -86,31 +87,33 @@ const Kids = (props) => {
         </div>
         <Sort setSortValue={setSortValue} sortValue={sortValue} />
       </div>
-      <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
+      {itemlist.length ?
+        <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-row space-x-2 justify-center items-center"
+          >
+            <h1 className="text-black text-4xl font-bold mb-12">Find your style.</h1>
+          </motion.div>
+          <div className="flex flex-wrap justify-center items-center space-x-5 space-y-12">
+            {itemlist}
+          </div>
+        </div>
+        :
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-row space-x-2 justify-center items-center"
+          className="flex flex-row space-x-2 justify-center items-center my-10"
         >
-          <h1 className="text-black text-4xl font-bold mb-12">Find your style.</h1>
+          <h1 className="text-black text-4xl font-bold space-10">
+            Sorry, Couldn't Find your Item
+          </h1>
         </motion.div>
-        <div className="flex flex-wrap justify-center items-center space-x-5 space-y-12">
-          {itemlist}
-        </div>
-      </div>
+      }
     </>
-  ) : (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-row space-x-2 justify-center items-center my-10"
-    >
-      <h1 className="text-black text-4xl font-bold space-10">
-        Sorry, Couldn't Find your Item
-      </h1>
-    </motion.div>
   );
 }
 
