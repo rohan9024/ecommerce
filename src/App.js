@@ -23,6 +23,7 @@ import Contributor_data from "./components/Contributor_data";
 import { collection, getDocs } from "firebase/firestore";
 import db from "./firebase";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Cart from "./components/Cart";
 
 function App() {
   const [searchfield, setsearchfield] = useState("");
@@ -141,6 +142,7 @@ function App() {
         />
         <Route path="/contributors" element={<Contributor_data />} />
         <Route path="/product/:id" element={<ProductDescription data={filtereditems} />} />
+        <Route path="/cart" element={<Cart data={filtereditems} />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Admin />} path="/admin" />
         </Route>
