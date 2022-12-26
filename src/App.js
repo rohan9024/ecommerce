@@ -34,6 +34,7 @@ function App() {
   const [searchfield, setsearchfield] = useState("");
   const [sortValue, setSortValue] = useState("");
   const [usermail, setUsermail] = useState("");
+  const [cartItems, setCartItems] = useState([]);
   const onSearchChange = (e) => {
     setsearchfield(e.target.value);
   };
@@ -94,7 +95,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <SmoothScroll/>
+      <SmoothScroll />
       <ScrollToTop />
       <Navbar searchChange={onSearchChange} />
       {/* <Sort setSortValue={setSortValue} /> */}
@@ -113,6 +114,8 @@ function App() {
               data={filtereditems}
               sortValue={sortValue}
               setSortValue={setSortValue}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           }
         />
@@ -123,6 +126,8 @@ function App() {
               data={filtereditems}
               sortValue={sortValue}
               setSortValue={setSortValue}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           }
         />
@@ -133,6 +138,8 @@ function App() {
               data={filtereditems}
               sortValue={sortValue}
               setSortValue={setSortValue}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           }
         />
@@ -143,12 +150,14 @@ function App() {
               data={filtereditems}
               sortValue={sortValue}
               setSortValue={setSortValue}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           }
         />
         <Route path="/contributors" element={<Contributor_data />} />
-        <Route path="/product/:id" element={<ProductDescription data={filtereditems} />} />
-        <Route path="/cart" element={<Cart data={filtereditems} />} />
+        <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} />} />
+        <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Admin />} path="/admin" />
         </Route>

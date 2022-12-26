@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header'
 
-const ProductDescription = ({ data }) => {
-
+const ProductDescription = (props) => {
+    const { data, cartItems, setCartItems } = props;
     const [imgIndex, setImgIndex] = useState(0);
     const [currentImg, setCurrentImg] = useState(0);
     const [modal, setModal] = useState(false);
@@ -12,7 +12,6 @@ const ProductDescription = ({ data }) => {
         return Number(item.id) === Number(id);
     })
     const product = getProduct[0];
-    console.log(product);
     // const images = [
     //     "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ddd7c2fceb18476f9115ae2a008922db_9366/Supernova_2_Running_Shoes_Black_GW9087_01_standard.jpg",
 
@@ -27,7 +26,16 @@ const ProductDescription = ({ data }) => {
 
     const images = [product.imgurl];
     // images.push(product.imgurl);
-    console.log(images)
+    const handleClick = () => {
+        console.log(cartItems);
+        if (cartItems.includes(id) === false) {
+            setCartItems(cartItems.concat(id));
+            console.log("Added to cart " + id);
+        }
+        else {
+            console.log("Already present " + id);
+        }
+    }
 
     return (
         <>
@@ -50,7 +58,7 @@ const ProductDescription = ({ data }) => {
                 <div className='self-center pl-0 md:pl-10 lg:pl-10 mt-10 lg:mt-0 md:mt-0'>
                     <h1 className='font-bold text-3xl'>{product.title}</h1>
                     <h3 className='font-bold text-xl'>{product.desc}</h3>
-                    <p className='flex gap-2 items-start py-4'><h2 className='text-slate-600 line-through'>₹{Math.round(1.2 * product.price)}.00</h2> <h2 className='text-red-500 font-semibold text-lg'>₹{product.price}.00</h2> (Inclusive of all taxes)</p>
+                    <p className='flex gap-2 items-start py-4'><p className='text-slate-600 line-through'>₹{Math.round(1.2 * product.price)}.00</p> <p className='text-red-500 font-semibold text-lg'>₹{product.price}.00</p> (Inclusive of all taxes)</p>
 
 
                     <h2 className='font-semibold text-xl pt-2'>
@@ -91,7 +99,7 @@ const ProductDescription = ({ data }) => {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
-                        <button className='bg-black text-white rounded-md w-[60%]'>
+                        <button className='bg-black text-white rounded-md w-[60%]' onClick={handleClick}>
                             Add to Cart
                         </button>
                         <button className='bg-zinc-100 w-[3.5rem] flex justify-center items-center rounded-md'>
