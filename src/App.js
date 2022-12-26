@@ -21,8 +21,13 @@ import { login, logout } from "./features/userSlice";
 import Profile from "./components/Profile";
 import Contributor_data from "./components/Contributor_data";
 import { collection, getDocs } from "firebase/firestore";
-import db from "./firebase";
+
+import db from './firebase'
+import SmoothScroll from './components/SmoothScroll'
 import ProtectedRoute from "./components/ProtectedRoute";
+
+
+
 
 function App() {
   const [searchfield, setsearchfield] = useState("");
@@ -88,6 +93,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <SmoothScroll/>
       <ScrollToTop />
       <Navbar searchChange={onSearchChange} />
       {/* <Sort setSortValue={setSortValue} /> */}

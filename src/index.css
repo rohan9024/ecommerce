@@ -11,8 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  
+  height: 100vh;
 }
 html {
   overflow: scroll;
@@ -30,4 +29,15 @@ html {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.scrollbar-thumb{
+  background-color: #000 !important;
+  width: 12px !important; 
+  border-radius: 0 !important;
+}
+
+.scrollbar-track-y{
+  width: 12px !important; 
+  background-color: transparent !important;
 }
