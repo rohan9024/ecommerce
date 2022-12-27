@@ -85,11 +85,13 @@ const Navbar = ({ searchChange }) => {
                         src={search} alt="search" />
                 </div>
                 <div className='flex justify-around items-center space-x-8 hide-mobile'>
-                    <div className='transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer'>
-                        <img
-                            className='object-contain w-5 h-5'
-                            src={cart} alt="cart" />
-                    </div>
+                    <NavLink to="/cart" onClick={() => setClicked(false)}>
+                        <div className='transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer'>
+                            <img
+                                className='object-contain w-5 h-5'
+                                src={cart} alt="cart" />
+                        </div>
+                    </NavLink>
                     <div className='transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer'>
                         <img
                             className='object-contain w-5 h-5'

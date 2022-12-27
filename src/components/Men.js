@@ -8,7 +8,7 @@ import Sort from "./Sort";
 
 const Men = (props) => {
   const [selected, setselected] = useState("");
-  const { data, sortValue, setSortValue } = props;
+  const { data, sortValue, setSortValue, cartItems, setCartItems } = props;
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
     setDatalist(data);
