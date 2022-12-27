@@ -9,11 +9,8 @@ const Cart = (props) => {
     const { data, items } = props;
 
     const products = data.filter(item => {
-        console.log(item.id.toString());
         return items.includes(item.id.toString());
     })
-    console.log(items);
-    console.log(products);
     let total = 0;
     let curr_price = 0;
 
