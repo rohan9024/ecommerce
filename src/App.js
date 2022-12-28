@@ -23,11 +23,9 @@ import Contributor_data from "./components/Contributor_data";
 import { collection, getDocs } from "firebase/firestore";
 
 import db from './firebase'
-// import SmoothScroll from './components/SmoothScroll'
+import SmoothScroll from './components/SmoothScroll'
 import ProtectedRoute from "./components/ProtectedRoute";
 import Cart from "./components/Cart";
-import { ParallaxProvider } from "react-scroll-parallax";
-import Parallax from "./components/Parallax";
 
 
 
@@ -97,77 +95,75 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ParallaxProvider>
-        {/* <SmoothScroll /> */}
-        <ScrollToTop />
-        <Navbar searchChange={onSearchChange} />
-        {/* <Sort setSortValue={setSortValue} /> */}
-        <Routes>
-          {!searchfield ? (
-            <Route path="/" element={<Home />} />
-          ) : (
-            <Route path="/" element={<Search data={filtereditems} />} />
-          )}
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route
-            path="/shoes"
-            element={
-              <Shoes
-                data={filtereditems}
-                sortValue={sortValue}
-                setSortValue={setSortValue}
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-              />
-            }
-          />
-          <Route
-            path="/men"
-            element={
-              <Men
-                data={filtereditems}
-                sortValue={sortValue}
-                setSortValue={setSortValue}
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-              />
-            }
-          />
-          <Route
-            path="/women"
-            element={
-              <Women
-                data={filtereditems}
-                sortValue={sortValue}
-                setSortValue={setSortValue}
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-              />
-            }
-          />
-          <Route
-            path="/kids"
-            element={
-              <Kids
-                data={filtereditems}
-                sortValue={sortValue}
-                setSortValue={setSortValue}
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-              />
-            }
-          />
-          <Route path="/contributors" element={<Contributor_data />} />
-          <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} />} />
-          <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} />} />
-          <Route element={<ProtectedRoute />}>
-            <Route element={<Admin />} path="/admin" />
-          </Route>
-        </Routes>
+      <SmoothScroll />
+      <ScrollToTop />
+      <Navbar searchChange={onSearchChange} />
+      {/* <Sort setSortValue={setSortValue} /> */}
+      <Routes>
+        {!searchfield ? (
+          <Route path="/" element={<Home />} />
+        ) : (
+          <Route path="/" element={<Search data={filtereditems} />} />
+        )}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/shoes"
+          element={
+            <Shoes
+              data={filtereditems}
+              sortValue={sortValue}
+              setSortValue={setSortValue}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
+          }
+        />
+        <Route
+          path="/men"
+          element={
+            <Men
+              data={filtereditems}
+              sortValue={sortValue}
+              setSortValue={setSortValue}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
+          }
+        />
+        <Route
+          path="/women"
+          element={
+            <Women
+              data={filtereditems}
+              sortValue={sortValue}
+              setSortValue={setSortValue}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
+          }
+        />
+        <Route
+          path="/kids"
+          element={
+            <Kids
+              data={filtereditems}
+              sortValue={sortValue}
+              setSortValue={setSortValue}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
+          }
+        />
+        <Route path="/contributors" element={<Contributor_data />} />
+        <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} />} />
+        <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} />} />
+        <Route element={<ProtectedRoute />}>
+          <Route element={<Admin />} path="/admin" />
+        </Route>
+      </Routes>
 
-        <Footer />
-      </ParallaxProvider>
+      <Footer />
     </BrowserRouter>
   );
 }
