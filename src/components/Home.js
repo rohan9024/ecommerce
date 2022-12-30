@@ -6,15 +6,12 @@ import Third from "../components/Third";
 import Fourth from './Fourth';
 import Fifth from './Fifth';
 import { ScrollUp } from './ScrollUp';
-import Contributor_data from './Contributor_data';
-import Parallax from './Parallax';
 
 
 
 function Home() {
     return (
         <>
-            <Parallax />
             <Mid />
             <First />
             <Second />

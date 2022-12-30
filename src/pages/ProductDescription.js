@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import Header from '../components/Header'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDescription = (props) => {
     const { data, cartItems, setCartItems } = props;
+    const [isPresent, setIsPresent] = useState(false);
     const [imgIndex, setImgIndex] = useState(0);
     const [currentImg, setCurrentImg] = useState(0);
     const [modal, setModal] = useState(false);
     let { id } = useParams();
+
+    useEffect(() => {
+        if (cartItems.includes(id) === true) {
+            setIsPresent(true);
+        }
+    }, []);
+
     const getProduct = data.filter((item) => {
         return Number(item.id) === Number(id);
     })
@@ -45,6 +52,7 @@ const ProductDescription = (props) => {
             setCartItems(cartItems.concat(id));
             notify();
             console.log("Added to cart " + id);
+            setIsPresent(true);
         }
         else {
             console.log("Already present " + id);
@@ -129,8 +137,8 @@ const ProductDescription = (props) => {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
-                        <button className='bg-black text-white rounded-md w-[60%]' onClick={handleClick}>
-                            Add to Cart
+                        <button className='bg-black text-white rounded-md w-[60%] disabled:bg-gray-600' onClick={handleClick} disabled={isPresent}>
+                            {(isPresent) ? "Added to cart" : "Add to Cart"}
                         </button>
                         <button className='bg-zinc-100 w-[3.5rem] flex justify-center items-center rounded-md'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
