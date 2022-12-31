@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import Header from '../components/Header'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDescription = (props) => {
     const { data, cartItems, setCartItems } = props;
+    const [isPresent, setIsPresent] = useState(false);
     const [imgIndex, setImgIndex] = useState(0);
     const [currentImg, setCurrentImg] = useState(0);
     const [modal, setModal] = useState(false);
     let { id } = useParams();
+
+    useEffect(() => {
+        if (cartItems.includes(id) === true) {
+            setIsPresent(true);
+        }
+    }, []);
+
     const getProduct = data.filter((item) => {
         return Number(item.id) === Number(id);
     })
@@ -26,11 +35,24 @@ const ProductDescription = (props) => {
 
     const images = [product.imgurl];
     // images.push(product.imgurl);
+    const notify = () => toast.success('Item added to cart!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
     const handleClick = () => {
         console.log(cartItems);
+
         if (cartItems.includes(id) === false) {
             setCartItems(cartItems.concat(id));
+            notify();
             console.log("Added to cart " + id);
+            setIsPresent(true);
         }
         else {
             console.log("Already present " + id);
@@ -39,6 +61,18 @@ const ProductDescription = (props) => {
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center p-10'>
                 <div className='relative'>
                     <img className='w-[100%] ' src={images[imgIndex]} onClick={() => {
@@ -58,7 +92,11 @@ const ProductDescription = (props) => {
                 <div className='self-center pl-0 md:pl-10 lg:pl-10 mt-10 lg:mt-0 md:mt-0'>
                     <h1 className='font-bold text-3xl'>{product.title}</h1>
                     <h3 className='font-bold text-xl'>{product.desc}</h3>
-                    <p className='flex gap-2 items-start py-4'><p className='text-slate-600 line-through'>₹{Math.round(1.2 * product.price)}.00</p> <p className='text-red-500 font-semibold text-lg'>₹{product.price}.00</p> (Inclusive of all taxes)</p>
+                    <p className='flex gap-2 items-start py-4'>
+                        <span className='text-slate-600 line-through'>₹{Math.round(1.2 * product.price)}.00</span>
+                        <span className='text-red-500 font-semibold text-lg'>₹{product.price}.00</span>
+                        (Inclusive of all taxes)
+                    </p>
 
 
                     <h2 className='font-semibold text-xl pt-2'>
@@ -99,8 +137,8 @@ const ProductDescription = (props) => {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
-                        <button className='bg-black text-white rounded-md w-[60%]' onClick={handleClick}>
-                            Add to Cart
+                        <button className='bg-black text-white rounded-md w-[60%] disabled:bg-gray-600' onClick={handleClick} disabled={isPresent}>
+                            {(isPresent) ? "Added to cart" : "Add to Cart"}
                         </button>
                         <button className='bg-zinc-100 w-[3.5rem] flex justify-center items-center rounded-md'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
