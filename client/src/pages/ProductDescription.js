@@ -15,7 +15,7 @@ const ProductDescription = (props) => {
         if (cartItems.includes(id) === true) {
             setIsPresent(true);
         }
-    }, []);
+    }, [cartItems]);
 
     const getProduct = data.filter((item) => {
         return Number(item.id) === Number(id);

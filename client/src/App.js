@@ -26,6 +26,8 @@ import db from './firebase'
 import SmoothScroll from './components/SmoothScroll'
 import ProtectedRoute from "./components/ProtectedRoute";
 import Cart from "./components/Cart";
+import Cancelled from "./pages/Cancelled";
+import Success from "./pages/Success";
 
 
 
@@ -35,6 +37,20 @@ function App() {
   const [sortValue, setSortValue] = useState("");
   const [usermail, setUsermail] = useState("");
   const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('cartItems'));
+    if (items) {
+      setCartItems(items);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
+
   const onSearchChange = (e) => {
     setsearchfield(e.target.value);
   };
@@ -95,7 +111,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <SmoothScroll />
+      {/* <SmoothScroll /> */}
       <ScrollToTop />
       <Navbar searchChange={onSearchChange} />
       {/* <Sort setSortValue={setSortValue} /> */}
@@ -156,8 +172,10 @@ function App() {
           }
         />
         <Route path="/contributors" element={<Contributor_data />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/canceled" element={<Cancelled />} />
         <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} />} />
-        <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} />} />
+        <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} setCartItems={setCartItems} />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Admin />} path="/admin" />
         </Route>

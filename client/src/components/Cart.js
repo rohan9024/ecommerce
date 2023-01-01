@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion";
 import img1 from "../assets/men/img6.png"
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 import Login from '../Login';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import spinner from "../assets/spinner.svg"
+import axios from 'axios';
+import { IoCloseSharp } from "react-icons/io5";
+
 const Cart = (props) => {
+    const [isLoading, setIsLoading] = useState(false);
     const user = useSelector(selectUser);
-    const { data, items } = props;
+    const { data, items, setCartItems } = props;
+    const formRef = useRef(null);
 
     const products = data.filter(item => {
         return items.includes(item.id.toString());
@@ -14,6 +22,43 @@ const Cart = (props) => {
     let total = 0;
     let curr_price = 0;
 
+    const notify = () => toast.info('You are being redirected to the payments page. Please DO NOT click back button or refresh', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+    });
+
+    const removeItem = (id) => {
+        const newItems = items.filter(item => {
+            return item.toString() !== id.toString();
+        })
+        setCartItems(newItems);
+        // console.log(items);
+        // console.log("Removing: " + id);
+        // console.log(newItems);
+    }
+
+    const handleClick = async (value) => {
+        setIsLoading(true);
+        notify();
+        axios({
+            method: 'post',
+            url: '/create-checkout-session',
+            data: {
+                price: value
+            }
+        }).then(function (response) {
+            // console.log(response);
+            window.location = response.data.url;
+        }).catch(function (e) {
+            console.log(e.error);
+        });
+    }
     return !user ?
         <Login />
         : (
@@ -28,13 +73,28 @@ const Cart = (props) => {
                 </motion.div>
 
                 {products.length ? <>
+                    <ToastContainer
+                        position="top-center"
+                        autoClose={5000}
+                        hideProgressBar
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="colored"
+                    />
                     <div className='flex flex-col gap-4'>
                         {products.map((item, index) => {
                             const original = Math.round(1.2 * item.price);
                             total += original;
                             curr_price += item.price;
                             return (
-                                <div className='flex mx-auto shadow-lg border rounded-md w-[40rem]' key={index}>
+                                <div className='flex mx-auto shadow-lg border rounded-md w-[40rem] relative' key={index}>
+                                    <div className='absolute top-0 right-0 p-3 text-xl cursor-pointer' onClick={() => removeItem(item.id)}>
+                                        <IoCloseSharp />
+                                    </div>
                                     <img src={item.imgurl} alt="img6" className='h-48' />
                                     <div className='flex p-5'>
                                         <div className='flex flex-col gap-2'>
@@ -100,7 +160,11 @@ const Cart = (props) => {
                             <h3 className='text-gray-700 text-lg font-bold'>Total Amount</h3>
                             <h3 className='text-gray-700 text-lg font-bold'>₹{curr_price + 352}</h3>
                         </div>
-                        <button className='outline-none bg-[#ff3f6c] p-2 my-2 cursor-pointer text-white'>PLACE ORDER</button>
+                        <form ref={formRef}>
+                            <button className='outline-none bg-[#ff3f6c] my-2 cursor-pointer text-white w-full flex justify-center items-center disabled:cursor-not-allowed disabled:bg-[#ff829f]' type="button" onClick={() => handleClick(curr_price + 352)} disabled={isLoading}>
+                                {isLoading ? <img src={spinner} alt="" className='w-10' /> : <span className=' py-2 '>PLACE ORDER</span>}
+                            </button>
+                        </form>
                     </div>
                 </> :
                     <motion.div
