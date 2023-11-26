@@ -1,8 +1,5 @@
-<h1 align='center'>Contribute to CodePeak 2022</h1>
+<h1 align='center'>Contribute to enhance your skills</h1>
 
-## About CodePeak
-
-CODE PEAK is a month-long program that helps students understand the paradigm of Open Source contribution and gives them real-world software development experience. The event targets first-timers who wish to participate in Free and Open Source(FOSS) Contributions and the experienced developers who want to show their skills by contributing to real-world projects.
 
 ## Rewards
 
