@@ -3,11 +3,7 @@
 
 ## Rewards
 
-Do you know we are sponsering CodePeak 2023 :
-
 1. Top 5 contributors of CodePeak will get an amazing swag kit from us. ( Which includes a t-shirt, stickers and custom printed cheatsheets and much more.)
-2. Top Contributors of ClueLess projects may get an opportunity to work with ClueLess.
-3. Top 5 winners will be both featured on ClueLess official website as well as social media handles.
 
 ## How to contribute?
 
