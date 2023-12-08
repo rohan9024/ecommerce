@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import logo from "./assets/logo.png"
-import { auth, signInWithEmailAndPassword } from "./firebase";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -29,22 +28,6 @@ function Login() {
     theme: "light",
   });
 
-  const signIn = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        // console.log(user);
-        notifySuccess();
-      })
-      .catch((error) => {
-        if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
-          // alert("Invalid email or password");
-          notifyError();
-        }
-      });
-  }
 
   return (
     <>
@@ -73,7 +56,7 @@ function Login() {
               <h1 className='font-normal text-sm text-right ml-24 text-gray-500'>Forgot your Password?</h1>
             </div>
             <div className='flex justify-center items-center w-72 bg-black text-white py-2'>
-              <button type='submit' onClick={signIn}>Sign In</button>
+              <button type='submit'>Sign In</button>
             </div>
             <div className='flex justify-center items-center space-x-1'>
               <h1 className='text-gray-500'>Not a member?</h1>

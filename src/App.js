@@ -13,16 +13,13 @@ import Footer from "./components/Footer";
 import { data } from "./JsonData/data";
 import Search from "./components/Search";
 import ScrollToTop from "./ScrollToTop";
-import { auth, onAuthStateChanged } from "./firebase";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 import { login, logout } from "./features/userSlice";
 import Profile from "./components/Profile";
 import Contributor_data from "./components/Contributor_data";
-import { collection, getDocs } from "firebase/firestore";
 
-import db from './firebase'
 import SmoothScroll from './components/SmoothScroll'
 import ProtectedRoute from "./components/ProtectedRoute";
 import Cart from "./components/Cart";
@@ -40,20 +37,6 @@ function App() {
   };
 
   const [products, setproducts] = useState([]);
-  const usersCollectionRef = collection(db, "Products");
-
-  useEffect(() => {
-    const getProducts = async () => {
-      const data = await getDocs(usersCollectionRef);
-      setproducts(
-        data.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }))
-      );
-    };
-    getProducts();
-  }, []);
 
   const finaldata = data.concat(products);
   const newData = finaldata.map((el, index) => {
@@ -69,29 +52,7 @@ function App() {
       : {};
   });
 
-  const dispatch = useDispatch();
-  const user = useSelector(selectUser);
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log("User logged in");
-        setUsermail(user.email);
-        dispatch(
-          login({
-            uid: user.uid,
-            email: user.email,
-            name: user.displayName,
-          })
-        );
-      } else {
-        // User is signed out
-        // ...
-        dispatch(logout());
-        console.log("User logged out");
-      }
-    });
-    return unsubscribe;
-  }, [dispatch]);
+
 
   return (
     <BrowserRouter>

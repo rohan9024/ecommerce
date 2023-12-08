@@ -1,10 +1,5 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { addDoc, collection } from "firebase/firestore";
-import db from "../firebase";
-import { storage } from "../firebase";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import "firebase/compat/storage";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const categories = [
@@ -34,29 +29,7 @@ export const Admin = () => {
   const [imgUpload, setimgUpload] = useState(null);
   const [loading, setloading] = useState(false);
 
-  const addProduct = async () => {
-    setloading(true);
-    const timestamp = new Date().getTime();
-    const imgfile = `${timestamp + imgUpload.name}`;
-    const imageRef = ref(storage, `${selectedCategory.value}/${imgfile}`);
 
-    uploadBytes(imageRef, imgUpload).then(() => {
-      getDownloadURL(imageRef).then((url) => {
-        addDoc(collection(db, "Products"), {
-          category: selectedCategory.value,
-          price: price,
-          title: title,
-          desc: desc,
-          subCategory: selectedSubCategory.value,
-          imgurl: url,
-        }).then(() => {
-          setloading(false);
-
-          alert("Product Added Successfully");
-        });
-      });
-    });
-  };
 
   return (
     <div
@@ -119,7 +92,7 @@ export const Admin = () => {
       />
 
       <div className="flex justify-center items-center w-72 bg-black text-white py-2">
-        <button onClick={addProduct}>Add Product</button>
+        <button >Add Product</button>
       </div>
     </div>
   );

@@ -18,15 +18,12 @@ import Footer from "./components/Footer";
 import { data } from "./JsonData/data";
 import Search from "./components/Search";
 import ScrollToTop from "./ScrollToTop";
-import { auth, onAuthStateChanged } from "./firebase";
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import { login, logout } from './features/userSlice';
 import Profile from "./components/Profile";
 import Contributor_data from "./components/Contributor_data";
-import { collection, getDocs } from "firebase/firestore";
-import db from './firebase'
 import Sort from "./components/Sort";
 
 function App() {

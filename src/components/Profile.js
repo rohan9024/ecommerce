@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import Login from "../Login";
-import { signOut, auth } from "../firebase";
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
@@ -68,7 +67,6 @@ const Profile = () => {
                 className="w-72 bg-black text-white py-2"
                 type="submit"
                 onClick={() => {
-                  signOut(auth);
                   notifySuccess();
                 }}
               >
@@ -108,7 +106,6 @@ const Profile = () => {
             <button
               className="w-72 bg-black text-white py-2"
               type="submit"
-              onClick={() => signOut(auth)}
             >
               Sign Out
             </button>
