@@ -93,7 +93,7 @@ const Women = (props) => {
           >
             <h1 className="text-black text-4xl font-bold mb-12">Find your style.</h1>
           </motion.div>
-          <div className="flex flex-wrap justify-center items-center space-x-5 space-y-12">
+          <div className="grid lg:grid-cols-3 grid-cols-2 md:gap-[40px] gap-[20px] md:w-[80%] w-[90%]">
             {itemlist}
           </div>
         </div> :
