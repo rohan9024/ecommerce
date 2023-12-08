@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 
@@ -14,12 +16,12 @@ body {
   height: 100vh;
 }
 html {
-  overflow: scroll;
+  overflow:auto ;
   overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   width: 0;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  /* background: transparent;  Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
@@ -41,3 +43,4 @@ code {
   width: 12px !important; 
   background-color: transparent !important;
 }
+ 
