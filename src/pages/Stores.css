@@ -1,0 +1,29 @@
+.stores-h1{
+    font-weight: 900;
+    align-self: center;
+    font-size: 50px;
+    text-align: center;
+}
+
+.stores-h2{
+    font-weight: 600;
+    font-size: 30px;
+    text-align: start;
+}
+
+.store-dropdown{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: x-large;
+}
+
+.store-address{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: x-large;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

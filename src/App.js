@@ -6,6 +6,14 @@ import Women from "./components/Women.js";
 import Kids from "./components/Kids.js";
 import { Admin } from "./components/Admin";
 import ProductDescription from "./pages/ProductDescription";
+import Newsletter from "./pages/Newsletter.js";
+import Contact from "./pages/Contact.js";
+import FollowUs from "./pages/FollowUs.js";
+import Cookies from "./pages/Cookies.js";
+import Stores from "./pages/Stores.js";
+import Jobs from "./pages/Jobs.js";
+import TermsConditions from "./pages/TermsConditions.js";
+import PrivacyPolicy from "./pages/PrivacyPolicy.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Signup from "./Signup";
@@ -122,6 +130,14 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route element={<Admin />} path="/admin" />
         </Route>
+        <Route path="/newsletter" element={<Newsletter />} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/followus" element={<FollowUs />} />
+        <Route path="/cookies" element={<Cookies />} />
+        <Route path="/stores" element={<Stores />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/termsconditions" element={<TermsConditions />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       </Routes>
 
       <Footer />

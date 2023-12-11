@@ -1,0 +1,27 @@
+.followus-info-container {
+    background-color: rgb(232, 244, 253);
+    border-radius: 30px;
+    padding: 20px;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.followus-info-heading{
+    font-size: xx-large;
+    text-align: center;
+    margin: 2px;
+}
+
+.followus-info-item {
+    font-size: x-large;
+    text-align: center;
+    margin: 2px;
+}
+

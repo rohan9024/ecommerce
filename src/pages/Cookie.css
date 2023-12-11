@@ -1,0 +1,39 @@
+.cookie-h1{
+    font-weight: 900;
+    align-self: center;
+    font-size: 50px;
+    text-align: center;
+}
+.cookie-container{
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    width: 70%;
+    overflow-y:auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #e5cbba;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+.cookie-h2{
+    font-weight: 600;
+    font-size: 30px;
+    text-align: start;
+}
+.cookie-text{
+    /* font-weight: 600; */
+    font-size: 20px;
+    text-align: start;
+}
+.cookie-text-outside{
+    font-size: x-large;
+    text-align: start;
+}
