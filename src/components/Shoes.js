@@ -65,17 +65,17 @@ function Shoes(props) {
   return (
     <>
       <div className="flex justify-between p-4 w-full">
-        <div className='group  p-2 cursor-pointer text-center absolute bg-white'>
-          <div className="heading flex justify-center items-center">
-            <h3 className='font-semibold text-xl'>Filter:</h3>
-            <span className='font-normal'> &nbsp;{selected === "" ? " All" : " " + selected[0].toUpperCase() + selected.slice(1)}</span>
-            <div className='grid place-items-center ml-3'> <FaAngleDown /></div>
+      <div className='group  p-2 cursor-pointer text-center absolute bg-white' style={{padding:"0px", marginTop:"3px", marginLeft:"2px"}}>
+          <div className="heading flex justify-center items-center" style={{padding:"0px", margin:"8px"}}>
+            <h3 className='font-semibold text-xl' style={{marginBottom:"5px"}}>Filter:</h3>
+            <span className='font-normal' style={{marginBottom:"5px"}}> &nbsp;{selected === "" ? " All" : " " + selected[0].toUpperCase() + selected.slice(1)}</span>
+            <div className='grid place-items-center ml-3' style={{marginBottom:"5px"}}> <FaAngleDown /></div>
           </div>
-          <ul className='hidden group-hover:block pt-4 shadow-2xl'>
+          <ul className='sort_css hidden group-hover:block pt-4'>
             <li className='pt-3 hover:font-semibold' onClick={() => setselected("")} id="all">All</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("casual")} id="casual">Casual</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("formal")} id="formal">Formal</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("sports")} id="sports">Sports</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("shirt")} id="shirt">Shirts</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("tshirt")} id="tshirt">T-shirts</li>
+            <li className='pt-3 hover:font-semibold' onClick={() => setselected("pant")} id="pant">Pants</li>
           </ul>
         </div>
         <Sort setSortValue={setSortValue} sortValue={sortValue} />
