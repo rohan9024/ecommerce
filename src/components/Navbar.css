@@ -192,3 +192,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
 
 }
+@media (max-width:800px){
+    .search_image_800px{
+        transform:scale(0.7);
+        z-index:-1;
+    }
+}
