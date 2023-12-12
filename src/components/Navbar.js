@@ -69,9 +69,6 @@ const Navbar = ({ searchChange }) => {
                     <li>
                         <NavLink to="/shoes" className={"navbar-link"} onClick={() => setClicked(false)}>Shoes</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/contributors" className={"navbar-link"} onClick={() => setClicked(false)}>Contributors</NavLink>
-                    </li>
                 </ul>
             </div>
             <div className='extra-icons'>
