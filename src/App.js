@@ -7,6 +7,8 @@ import Kids from "./components/Kids.js";
 import { Admin } from "./components/Admin";
 import ProductDescription from "./pages/ProductDescription";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Navbar from "./components/Navbar";
 import Signup from "./Signup";
 import Footer from "./components/Footer";
