@@ -53,7 +53,7 @@ function Login() {
             <input ref={emailRef} type="email" placeholder="Email address" className='placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-72' />
             <input ref={passwordRef} type="password" placeholder="Password" className='placeholder:text-gray-800 px-5 py-2  outline-none border border-gray-800 w-72' />
             <div className='flex justify-between items-center'>
-              <h1 className='font-normal text-sm text-right ml-24 text-gray-500'>Forgot your Password?</h1>
+              <h1 className='font-normal text-sm text-right text-gray-500'>Forgot your Password?</h1>
             </div>
             <div className='flex justify-center items-center w-72 bg-black text-white py-2'>
               <button type='submit'>Sign In</button>
