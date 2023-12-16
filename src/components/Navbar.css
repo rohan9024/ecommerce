@@ -91,14 +91,17 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         background-color: white;
         box-shadow: 0 40px 60px rgba(0, 0, 0, 1);
         padding: 2rem;
-        transition: all 0.3s ease;
     }
 
     .menu-container ul.active {
+        display: flex;
         right: 0px;
-        transition: all 0.3s ease;
     }
-
+    .menu-container ul.false{
+        display: none;
+        right: -400px;
+        overflow: hidden;
+    }
     #mobile {
         display: block;
     }
@@ -151,10 +154,12 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 @media screen and (max-width:580px) {
     .hide-mobile {
         display: none;
+        overflow: hidden;
     }
 
     .tab-hidden {
         display: block;
+        overflow: hidden;
     }
 }
 
@@ -186,4 +191,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         display: none;
     }
 
+}
+@media (max-width:800px){
+    .search_image_800px{
+        transform:scale(0.7);
+        z-index:-1;
+    }
 }

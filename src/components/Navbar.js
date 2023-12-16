@@ -69,9 +69,6 @@ const Navbar = ({ searchChange }) => {
                     <li>
                         <NavLink to="/shoes" className={"navbar-link"} onClick={() => setClicked(false)}>Shoes</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/contributors" className={"navbar-link"} onClick={() => setClicked(false)}>Contributors</NavLink>
-                    </li>
                 </ul>
             </div>
             <div className='extra-icons'>
@@ -81,7 +78,7 @@ const Navbar = ({ searchChange }) => {
                         className='w-64 placeholder-black font-medium outline-none'
                         onChange={searchChange} />
                     <img
-                        className='object-contain w-5 h-5'
+                        className='object-contain w-5 h-5 search_image_800px'
                         src={search} alt="search" />
                 </div>
                 <div className='flex justify-around items-center space-x-8 hide-mobile'>
