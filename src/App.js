@@ -21,7 +21,6 @@ import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 import { login, logout } from "./features/userSlice";
 import Profile from "./components/Profile";
-import Contributor_data from "./components/Contributor_data";
 
 import SmoothScroll from './components/SmoothScroll'
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -125,7 +124,6 @@ function App() {
             <Sales/>
           }
         />
-        <Route path="/contributors" element={<Contributor_data />} />
         <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} />} />
         <Route element={<ProtectedRoute />}>
