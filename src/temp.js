@@ -25,6 +25,7 @@ import { login, logout } from './features/userSlice';
 import Profile from "./components/Profile";
 import Contributor_data from "./components/Contributor_data";
 import Sort from "./components/Sort";
+import Sales from "./components/Sales";
 
 function App() {
 
@@ -116,6 +117,7 @@ function App() {
                 <Route path="/men" element={<Men data={filtereditems} />} />
                 <Route path="/women" element={<Women data={filtereditems} />} />
                 <Route path="/kids" element={<Kids data={filtereditems} />} />
+                <Route path="/sales" element={<Sales />} />
                 <Route path="/contributors" element={<Contributor_data />} />
                 <Route path="/product/:id" element={<ProductDescription />} />
                 <Route path="/admin" element={<Admin />} />

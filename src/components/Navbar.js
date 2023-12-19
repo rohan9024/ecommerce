@@ -64,13 +64,10 @@ const Navbar = ({ searchChange }) => {
                         <NavLink to="/kids"  className={"navbar-link"} onClick={() => setClicked(false)}>Kids</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" className={"navbar-link"} onClick={() => setClicked(false)}>Sale</NavLink>
+                        <NavLink to="/sales" className={"navbar-link"} onClick={() => setClicked(false)}>Sale</NavLink>
                     </li>
                     <li>
                         <NavLink to="/shoes" className={"navbar-link"} onClick={() => setClicked(false)}>Shoes</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/contributors" className={"navbar-link"} onClick={() => setClicked(false)}>Contributors</NavLink>
                     </li>
                 </ul>
             </div>

@@ -100,6 +100,14 @@ const Women = (props) => {
   });
   return (
     <>
+    <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            // className="flex flex-row justify-center items-center"
+          >
+        <CardBanner data={bannerData} />
+      </motion.div>
       <div className="flex justify-between p-4 w-full">
       <div className='group  p-2 cursor-pointer text-center absolute bg-white' style={{padding:"0px", marginTop:"3px", marginLeft:"2px"}}>
           <div className="heading flex justify-center items-center" style={{padding:"0px", margin:"6px"}}>
@@ -116,19 +124,7 @@ const Women = (props) => {
         </div>
         <Sort setSortValue={setSortValue} sortValue={sortValue} />
       </div>
-      <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            // className="flex flex-row justify-center items-center"
-          >
-
-      <div className="text-center">
-        <h1 className="text-black text-4xl font-bold mb-12 mt-10">Find your style.</h1>
-        <hr class="mt-4 my-4 py-4 pt-4"/>
-      </div>
-      <CardBanner data={bannerData} />
-      </motion.div>
+      
       {itemlist.length ?
         <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
           <motion.div
