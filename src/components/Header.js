@@ -31,7 +31,9 @@ function Header() {
                     <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Kids</h1>
                 </Link>
                 <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Customise</h1>
-                <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Sale</h1>
+                <Link to='/sales'>
+                    <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Sale</h1>
+                </Link>
                 <Link to='/shoes'>
                     <h1 className='cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 '>Shoes</h1>
                 </Link>
