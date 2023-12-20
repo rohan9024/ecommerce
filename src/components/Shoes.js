@@ -3,8 +3,42 @@ import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
 import { FaAngleDown } from "react-icons/fa";
 import Sort from "./Sort";
+import CardBanner from './CardBanner';
+
+import img1 from '../assets/shoeB1.jpg';
+import img2 from '../assets/shoeB2.jpg';
+import img3 from '../assets/shoeB3.jpg';
+import img4 from '../assets/shoeB4.jpg';
+import img5 from '../assets/shoeB5.jpg';
 
 function Shoes(props) {
+  const bannerData = [
+    {
+      title: "Step into Style",
+      description: 'Elevate your fashion with our latest shoe collection. Step into style and comfort, crafted for every occasion.',
+      image: img1,
+    },
+    {
+      title: 'Footwear Finesse',
+      description: '"Discover the finesse in every step. Our footwear collection blends fashion with functionality, ensuring a stylish journey.',
+      image: img2,
+    },
+    {
+      title: 'Soleful Elegance',
+      description: 'Walk with elegance! Our exquisite footwear range combines sophistication with comfort. Find your soleful match.',
+      image: img3,
+    },
+    {
+      title: 'Casual Chic Footwear',
+      description: 'Casual meets chic in our trendy footwear lineup. From laid-back weekends to stylish outings, step out in fashion.',
+      image: img4,
+    },
+    {
+      title: 'Adventure-Ready Shoes',
+      description: 'Gear up for adventures! Our durable and stylish shoes are designed to take you places, one step at a time.',
+      image: img5,
+    },
+  ];
   const [selected, setselected] = useState("");
   const { data, sortValue, setSortValue } = props;
   const [datalist, setDatalist] = useState([]);
@@ -64,12 +98,20 @@ function Shoes(props) {
 
   return (
     <>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            // className="flex flex-row justify-center items-center"
+          >
+      <CardBanner data={bannerData} />
+      </motion.div>
       <div className="flex justify-between p-4 w-full">
       <div className='group  p-2 cursor-pointer text-center absolute bg-white' style={{padding:"0px", marginTop:"3px", marginLeft:"2px"}}>
-          <div className="heading flex justify-center items-center" style={{padding:"0px", margin:"8px"}}>
-            <h3 className='font-semibold text-xl' style={{marginBottom:"5px"}}>Filter:</h3>
-            <span className='font-normal' style={{marginBottom:"5px"}}> &nbsp;{selected === "" ? " All" : " " + selected[0].toUpperCase() + selected.slice(1)}</span>
-            <div className='grid place-items-center ml-3' style={{marginBottom:"5px"}}> <FaAngleDown /></div>
+          <div className="heading flex justify-center items-center" style={{padding:"0px", margin:"6px"}}>
+            <h3 className='font-semibold text-xl' style={{marginBottom:"4px"}}>Filter:</h3>
+            <span className='font-normal' style={{marginBottom:"4px"}}> &nbsp;{selected === "" ? " All" : " " + selected[0].toUpperCase() + selected.slice(1)}</span>
+            <div className='grid place-items-center ml-3' style={{marginBottom:"4px"}}> <FaAngleDown /></div>
           </div>
           <ul className='sort_css hidden group-hover:block pt-4'>
             <li className='pt-3 hover:font-semibold' onClick={() => setselected("")} id="all">All</li>
@@ -80,6 +122,7 @@ function Shoes(props) {
         </div>
         <Sort setSortValue={setSortValue} sortValue={sortValue} />
       </div>
+
       {itemlist.length ? <div className="w-full font-dmsans flex flex-col justify-center items-center my-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
