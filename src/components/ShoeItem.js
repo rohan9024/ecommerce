@@ -2,6 +2,8 @@ import React from 'react'
 import cart from "../assets/cart.png"
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom';
+
+
 const ShoeItem = (props) => {
     const { title, desc, img, price, id } = props;
     return (

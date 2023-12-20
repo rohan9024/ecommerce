@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "./assets/logo.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
   const emailRef = useRef(null);
@@ -25,7 +27,12 @@ const Signup = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      navigate("/");
+      toast.success('You have successfully registered!', {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      setTimeout(() => {
+        navigate('/');
+      }, 1500);
     }
   };
 
@@ -101,7 +108,6 @@ const Signup = () => {
         <h1 className="font-bold">Create your account</h1>
         <form
           className="flex flex-col justify-center items-center space-y-5"
-          onSubmit={handleSubmit}
         >
           <input
             name="name"
@@ -143,9 +149,10 @@ const Signup = () => {
             onChange={handleInputChange}
           />
           {errors.phoneNo && <p className="text-red-500">{errors.phoneNo}</p>}
-          <div className="flex justify-center items-center w-72 bg-black text-white py-2">
-            <button type="submit">Register</button>
+          <div className="flex justify-center items-center w-72 bg-black text-white py-2" onClick={handleSubmit}>
+            <button>Register</button>
           </div>
+          <ToastContainer />
           <div className="flex justify-center items-center space-x-1">
             <h1 className="text-gray-500">Already registered?</h1>
             <h1 className="underline">
@@ -160,3 +167,4 @@ const Signup = () => {
 };
 
 export default Signup;
+

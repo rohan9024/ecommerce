@@ -4,9 +4,12 @@ import Shoes from "./components/Shoes.js";
 import Men from "./components/Men.js";
 import Women from "./components/Women.js";
 import Kids from "./components/Kids.js";
+import Sales from "./components/Sales.js";
 import { Admin } from "./components/Admin";
 import ProductDescription from "./pages/ProductDescription";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Navbar from "./components/Navbar";
 import Signup from "./Signup";
 import Footer from "./components/Footer";
@@ -113,6 +116,12 @@ function App() {
               cartItems={cartItems}
               setCartItems={setCartItems}
             />
+          }
+        />
+        <Route
+          path="/sales"
+          element={
+            <Sales/>
           }
         />
         <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} />} />

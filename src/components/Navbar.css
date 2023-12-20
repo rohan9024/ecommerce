@@ -28,7 +28,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2vw;
+    
 }
 
 .navbar-link {
@@ -39,12 +39,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .menu-container li {
     transition: all 0.3s ease-in-out;
+    padding: 1vw;
 }
 
-.menu-container li:hover {
-    transform: scale(1.1);
-    transition: all 0.2s linear;
-}
+
 
 #mobile {
     display: none;
