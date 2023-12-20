@@ -1,7 +1,9 @@
+import { Carousel } from "@material-tailwind/react";
 import React from 'react'
 import { useEffect } from "react"
 import banner from "../assets/banner.png"
 import banner2 from "../assets/banner2.png"
+import banner3 from "../assets/banner3.jpg"
 import { motion , useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import animateText from "./AnimateHomeText"
@@ -21,10 +23,28 @@ function Mid() {
       }, [control, inView]);
     
     return (
-        <div className='font-dmsans'>
-            <div className='object-contain w-full pb-10'>
-                <img src={banner} alt="banner" />
-            </div>
+         <div className='font-dmsans'>
+        {/* //     <div className='object-contain w-full pb-10'>
+        //         <img src={banner2} alt="banner" />
+        //     </div> */}
+ 
+    <Carousel transition={{ duration: 2 }} className="rounded-xl object-contain h-full w-full pb-10">
+      <img
+        src={banner}
+        alt="banner"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src={banner2}
+        alt="banner 2"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src={banner3}
+        alt="banner 3"
+        className="h-full w-full object-contain"
+      />
+    </Carousel>
             <motion.div
                 className='flex flex-row space-x-2 justify-center items-center'
                 ref={ref}
