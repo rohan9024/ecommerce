@@ -40,7 +40,7 @@ const Women = (props) => {
     },
   ];
   const [selected, setselected] = useState("");
-  const { data, sortValue, setSortValue } = props;
+  const { data, sortValue, setSortValue,wishItems, setWishItems} = props;
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
     setDatalist(data);
@@ -95,6 +95,8 @@ const Women = (props) => {
         price={women[i].price}
         img={women[i].imgurl}
         id={women[i].id}
+        wishItems={wishItems}
+        setWishItems={setWishItems}
       />
     );
   });

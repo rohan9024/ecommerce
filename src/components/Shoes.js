@@ -40,7 +40,7 @@ function Shoes(props) {
     },
   ];
   const [selected, setselected] = useState("");
-  const { data, sortValue, setSortValue } = props;
+  const { data, sortValue, setSortValue,wishItems, setWishItems } = props;
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
     setDatalist(data);
@@ -92,6 +92,8 @@ function Shoes(props) {
         price={shoes[i].price}
         img={shoes[i].imgurl}
         id={shoes[i].id}
+        wishItems={wishItems}
+        setWishItems={setWishItems}
       />
     );
   });

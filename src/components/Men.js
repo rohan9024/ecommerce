@@ -10,6 +10,9 @@ import img2 from '../assets/men/menB2.jpg';
 import img3 from '../assets/men/menB3.jpg';
 import img4 from '../assets/men/menB4.jpg';
 import img5 from '../assets/men/menB5.jpg';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Men = (props) => {
   const bannerData = [
     {
@@ -39,7 +42,8 @@ const Men = (props) => {
     },
   ];
   const [selected, setselected] = useState("");
-  const { data, sortValue, setSortValue, cartItems, setCartItems } = props;
+  const { data, sortValue, setSortValue, wishItems,setWishItems } = props;
+  console.log(wishItems)
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
     setDatalist(data);
@@ -92,6 +96,8 @@ const Men = (props) => {
         price={men[i].price}
         img={men[i].imgurl}
         id={men[i].id}
+        wishItems={wishItems}
+        setWishItems={setWishItems}
       />
     );
   });
