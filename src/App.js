@@ -58,39 +58,7 @@ function App() {
       ? data.title.toLowerCase().includes(searchfield.toLowerCase())
       : {};
   });
-  const notifywish = () => toast.success('Item added to Wishlist!', {
-    position: "top-right",
-    autoClose: 2000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-});
-  const handleWish=(id)=>{
-    console.log(wishItems);
-    if (wishItems.includes(id) === false) {
-        setWishItems(wishItems.concat(id));
-        setTimeout(()=>{
-            notifywish();
-            console.log("Added to list " + id);
-            console.log(wishItems);
-        },100)
-       
-        
-        setWish(true);
-    }
-    else {
-        const index = wishItems.indexOf(id);
-        if (index > -1) { // only splice array when item is found
-          wishItems.splice(index, 1); // 2nd parameter means remove one item only
-          console.log("Removed " + id);
-          console.log(wishItems);
-        }
-        setWish(false);
-    }
-}
+
 // console.log(wishItems);
   return (
     <BrowserRouter>
@@ -169,7 +137,7 @@ function App() {
             <Sales/>
           }
         />
-        <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} wishItems={wishItems} setWishItems={setWishItems} wish={wish} setWish={setWish} handleWish={handleWish}/>} />
+        <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} wishItems={wishItems} setWishItems={setWishItems} wish={wish} setWish={setWish} />} />
         <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Admin />} path="/admin" />
