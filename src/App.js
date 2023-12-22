@@ -25,6 +25,8 @@ import Profile from "./components/Profile";
 import SmoothScroll from './components/SmoothScroll'
 import ProtectedRoute from "./components/ProtectedRoute";
 import Cart from "./components/Cart";
+import Bag from "./Wishlist.js";
+import Wishlist from "./Wishlist.js";
 
 
 
@@ -34,6 +36,7 @@ function App() {
   const [sortValue, setSortValue] = useState("");
   const [usermail, setUsermail] = useState("");
   const [cartItems, setCartItems] = useState([]);
+  const [wishItems,setWishItems]=useState([]);
   const onSearchChange = (e) => {
     setsearchfield(e.target.value);
   };
@@ -124,11 +127,12 @@ function App() {
             <Sales/>
           }
         />
-        <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} />} />
+        <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} wishItems={wishItems} setWishItems={setWishItems}/>} />
         <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Admin />} path="/admin" />
         </Route>
+        <Route path='/list' element={<Wishlist data={filtereditems} items={wishItems} wishItems={wishItems} setWishItems={setWishItems} cartItems={cartItems} setCartItems={setCartItems}/>}/>
       </Routes>
 
       <Footer />
