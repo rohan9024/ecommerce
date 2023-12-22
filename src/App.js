@@ -25,7 +25,10 @@ import Profile from "./components/Profile";
 import SmoothScroll from './components/SmoothScroll'
 import ProtectedRoute from "./components/ProtectedRoute";
 import Cart from "./components/Cart";
-
+import Bag from "./Wishlist.js";
+import Wishlist from "./Wishlist.js";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -34,6 +37,8 @@ function App() {
   const [sortValue, setSortValue] = useState("");
   const [usermail, setUsermail] = useState("");
   const [cartItems, setCartItems] = useState([]);
+  const [wishItems,setWishItems]=useState([]);
+  const [wish,setWish]=useState(false);
   const onSearchChange = (e) => {
     setsearchfield(e.target.value);
   };
@@ -54,8 +59,7 @@ function App() {
       : {};
   });
 
-
-
+// console.log(wishItems);
   return (
     <BrowserRouter>
       <SmoothScroll />
@@ -79,6 +83,8 @@ function App() {
               setSortValue={setSortValue}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              wishItems={wishItems}
+             setWishItems={setWishItems}
             />
           }
         />
@@ -91,6 +97,9 @@ function App() {
               setSortValue={setSortValue}
               cartItems={cartItems}
               setCartItems={setCartItems}
+             wishItems={wishItems}
+             setWishItems={setWishItems}
+             
             />
           }
         />
@@ -103,6 +112,8 @@ function App() {
               setSortValue={setSortValue}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              wishItems={wishItems}
+             setWishItems={setWishItems}
             />
           }
         />
@@ -115,6 +126,8 @@ function App() {
               setSortValue={setSortValue}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              wishItems={wishItems}
+             setWishItems={setWishItems}
             />
           }
         />
@@ -124,11 +137,12 @@ function App() {
             <Sales/>
           }
         />
-        <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} />} />
+        <Route path="/product/:id" element={<ProductDescription data={filtereditems} cartItems={cartItems} setCartItems={setCartItems} wishItems={wishItems} setWishItems={setWishItems} wish={wish} setWish={setWish} />} />
         <Route path="/cart" element={<Cart data={filtereditems} items={cartItems} />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Admin />} path="/admin" />
         </Route>
+        <Route path='/list' element={<Wishlist data={filtereditems} items={wishItems} wishItems={wishItems} setWishItems={setWishItems} cartItems={cartItems} setCartItems={setCartItems}/>}/>
       </Routes>
 
       <Footer />

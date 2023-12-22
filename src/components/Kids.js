@@ -41,7 +41,7 @@ const Kids = (props) => {
   ];
   const [selected, setselected] = useState("");
 
-  const { data, sortValue, setSortValue } = props;
+  const { data, sortValue, setSortValue,wishItems,setWishItems } = props;
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
     setDatalist(data);
@@ -98,6 +98,8 @@ const Kids = (props) => {
         price={kids[i].price}
         img={kids[i].imgurl}
         id={kids[i].id}
+        wishItems={wishItems}
+        setWishItems={setWishItems}
       />
     );
   });

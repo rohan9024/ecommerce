@@ -2,20 +2,28 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import love from "../assets/love.png"
 
 const ProductDescription = (props) => {
-    const { data, cartItems, setCartItems } = props;
+    const { data, cartItems, setCartItems,wishItems,setWishItems } = props;
+   
     const [isPresent, setIsPresent] = useState(false);
     const [imgIndex, setImgIndex] = useState(0);
     const [currentImg, setCurrentImg] = useState(0);
     const [modal, setModal] = useState(false);
+    const [wish, setWish] = useState(false);
+    console.log(wish);
     let { id } = useParams();
 
     useEffect(() => {
         if (cartItems.includes(id) === true) {
             setIsPresent(true);
         }
-    }, []);
+        if(wishItems.includes(id) === true) {
+            setWish(true);
+           
+        }
+    },[]);
 
     const getProduct = data.filter((item) => {
         return Number(item.id) === Number(id);
@@ -35,6 +43,7 @@ const ProductDescription = (props) => {
 
     const images = [product.imgurl];
     // images.push(product.imgurl);
+    
     const notify = () => toast.success('Item added to cart!', {
         position: "top-right",
         autoClose: 2000,
@@ -45,6 +54,7 @@ const ProductDescription = (props) => {
         progress: undefined,
         theme: "light",
     });
+
     const handleClick = () => {
         console.log(cartItems);
 
@@ -56,6 +66,40 @@ const ProductDescription = (props) => {
         }
         else {
             console.log("Already present " + id);
+            
+        }
+    }
+    const notifywish = () => toast.success('Item added to Wishlist!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+    const handleWish=()=>{
+        // console.log(wishItems);
+        if (wishItems.includes(id) === false) {
+            setWishItems(wishItems.concat(id));
+            setTimeout(()=>{
+                notifywish();
+                console.log("Added to list " + id);
+                console.log(wishItems);
+            },100)
+           
+            
+            setWish(true);
+        }
+        else {
+            const index = wishItems.indexOf(id);
+            if (index > -1) { // only splice array when item is found
+              wishItems.splice(index, 1); // 2nd parameter means remove one item only
+              console.log("Removed " + id);
+              console.log(wishItems);
+            }
+            setWish(false);
         }
     }
 
@@ -141,9 +185,9 @@ const ProductDescription = (props) => {
                             {(isPresent) ? "Added to cart" : "Add to Cart"}
                         </button>
                         <button className='bg-zinc-100 w-[3.5rem] flex justify-center items-center rounded-md'>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                          {wish?<img src={love} className='w-8 h-8 hover:scale-110' onClick={handleWish}/>:  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"  onClick={handleWish} className="hover:scale-110 w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                            </svg>
+                            </svg>}
                         </button>
                     </div>
 
