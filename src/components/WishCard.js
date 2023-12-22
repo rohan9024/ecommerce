@@ -1,17 +1,22 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import img1 from "../assets/men/img1.png"
 import bin from "../assets/bin.png"
 import bag from "../assets/bag.png"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const WishCard = ({title,price,imgurl,desc,wishItems,setWishItems,id, cartItems, setCartItems}) => {
-  
+  const navigate=useNavigate();
   const handleDelete=()=>{
-    const index=wishItems.indexOf(id);
+    const index=wishItems.indexOf(String(id));
     if(index>-1) {
       wishItems.splice(index,1);
+      setWishItems(wishItems);
+      console.log("deleted");
       
+       
     }
+    navigate('/');
   }
   const notify = () => toast.success('Item added to Bag!', {
     position: "top-right",
@@ -26,13 +31,14 @@ const WishCard = ({title,price,imgurl,desc,wishItems,setWishItems,id, cartItems,
   const handleClick = () => {
     console.log(cartItems);
 
-    if (cartItems.includes(id) === false) {
-        setCartItems(cartItems.concat(id));
+    if (cartItems.includes(String(id)) === false) {
+        setCartItems(cartItems.concat(String(id)));
         setTimeout(()=>{
           notify();
-        console.log("Added to cart " + id);
-        console.log(cartItems);
+        // console.log("Added to cart " + id);
+        // console.log(cartItems);
         },100)
+
         
         
     }
@@ -40,12 +46,14 @@ const WishCard = ({title,price,imgurl,desc,wishItems,setWishItems,id, cartItems,
         console.log("Already present " + id);
         
     }
+    handleDelete();
+    navigate('/cart');
 }
   return (
     
    
      
-        <div className='w-[25%] m-4 rounded-md hover:scale-[100.2%] bg-blue-gray-50 mb-20 shadow-lg shadow-blue-gray-400'>
+        <div className='w-[25%] m-4 rounded-md hover:scale-[100.2%] bg-blue-gray-50 mb-20 shadow-lg shadow-blue-gray-400 h-fit'>
           <img src={imgurl} className=' rounded-t-md  cursor-pointer hover:opacity-95 '/>
           <div className='rounded-b-md'>
           <img onClick={handleDelete} src={bin} className='h-9 float-right m-3 hover:scale-110 cursor-pointer p-1'/>

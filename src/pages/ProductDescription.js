@@ -11,8 +11,8 @@ const ProductDescription = (props) => {
     const [imgIndex, setImgIndex] = useState(0);
     const [currentImg, setCurrentImg] = useState(0);
     const [modal, setModal] = useState(false);
-    const [wish,setWish]=useState(false);
-    
+    const [wish, setWish] = useState(false);
+    console.log(wish);
     let { id } = useParams();
 
     useEffect(() => {
@@ -21,8 +21,9 @@ const ProductDescription = (props) => {
         }
         if(wishItems.includes(id) === true) {
             setWish(true);
+           
         }
-    }, []);
+    },[]);
 
     const getProduct = data.filter((item) => {
         return Number(item.id) === Number(id);
@@ -42,6 +43,7 @@ const ProductDescription = (props) => {
 
     const images = [product.imgurl];
     // images.push(product.imgurl);
+    
     const notify = () => toast.success('Item added to cart!', {
         position: "top-right",
         autoClose: 2000,
@@ -52,16 +54,7 @@ const ProductDescription = (props) => {
         progress: undefined,
         theme: "light",
     });
-    const notifywish = () => toast.success('Item added to Wishlist!', {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-    });
+
     const handleClick = () => {
         console.log(cartItems);
 
@@ -76,8 +69,18 @@ const ProductDescription = (props) => {
             
         }
     }
+    const notifywish = () => toast.success('Item added to Wishlist!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
     const handleWish=()=>{
-        console.log(wishItems);
+        // console.log(wishItems);
         if (wishItems.includes(id) === false) {
             setWishItems(wishItems.concat(id));
             setTimeout(()=>{

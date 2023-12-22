@@ -3,11 +3,13 @@ import WishCard from './components/WishCard'
 
 const Wishlist = (props) => {
   const { data, items,wishItems, setWishItems,cartItems,setCartItems } = props;
-
+ console.log(data);
+ console.log(items);
     const products = data.filter(item => {
-        return items.includes(item.id.toString());
+        return items.includes(String(item.id));
     })
-    console.log(products);
+     console.log(products);
+
   return (
     <div>
     
