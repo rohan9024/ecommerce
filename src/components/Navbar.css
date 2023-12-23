@@ -107,6 +107,21 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     .menu-container ul {
         gap: 2rem;
     }
+    .close-bar {
+        width: 100%;
+        /* border: 2px solid blue; */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-items: center;
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid lightgray
+    }
+    .tab-hidden {
+       display: block;
+       overflow: hidden;
+    }
+    
 }
 
 @media screen and (max-width:800px) {
@@ -146,6 +161,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         font-size: 1.5rem;
         padding-bottom: 1rem;
         border-bottom: 2px solid lightgray
+    }
+    .tab-hidden {
+        display: block;
+        overflow: hidden;
     }
 }
 

@@ -180,6 +180,7 @@ const Navbar = ({ searchChange }) => {
                       alt="cart"
                     />
                   </div>
+                  <Link to="/list">
                   <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden">
                     <img
                       className="object-contain w-5 h-5 mobile-icons"
@@ -187,6 +188,8 @@ const Navbar = ({ searchChange }) => {
                       alt="favorite"
                     />
                   </div>
+                  </Link>
+                  
                   <Link to="/login">
                     <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden">
                       <img
@@ -301,6 +304,7 @@ const Navbar = ({ searchChange }) => {
                   />
                 </div>
               </NavLink>
+              <NavLink to="/list">
               <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer">
                 <img
                   className="object-contain w-5 h-5"
@@ -308,6 +312,7 @@ const Navbar = ({ searchChange }) => {
                   alt="favorite"
                 />
               </div>
+              </NavLink>
               <Link to="/profile">
                 <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer">
                   <img
