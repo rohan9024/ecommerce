@@ -11,7 +11,11 @@ import img2 from '../assets/kids/kidsB2.jpg';
 import img3 from '../assets/kids/kidsB3.jpg';
 import img4 from '../assets/kids/kidsB4.jpg';
 import img5 from '../assets/kids/kidsB5.jpg';
+import { useLocation } from "react-router-dom";
+import Scrollbar from 'smooth-scrollbar';
 const Kids = (props) => {
+  var location=useLocation()  
+  var hash = location.hash.slice(1);
   const bannerData = [
     {
       title: "Playful Prints Playground",
@@ -46,6 +50,14 @@ const Kids = (props) => {
   useEffect(() => {
     setDatalist(data);
   }, [data]);
+  useEffect(() => {
+    if (hash) {
+      var targetElement = document.getElementById(hash);
+      if (targetElement) {
+        Scrollbar.get(document.body).scrollTo(0, targetElement.getBoundingClientRect().top, 1000);
+      }
+    }
+  }, [hash]);
   const sorting = () => {
     if (sortValue === "Name: A-Z") {
 

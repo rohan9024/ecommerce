@@ -1,14 +1,15 @@
 import React, { useMemo, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+// import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import logo from "../assets/logo.png"
 import search from "../assets/search.png"
 import user from "../assets/user.png"
 import cart from "../assets/cart.png"
 import favorite from "../assets/favorite.png"
 import "./Navbar.css"
+import { HashLink as Link } from 'react-router-hash-link';
 import {motion} from 'framer-motion'
-// import {NavLink} from 'react-scroll'
-// import { HashLink as Link } from 'react-router-hash-link'
+
 
 
 const Navbar = ({ searchChange }) => {
@@ -22,22 +23,27 @@ const Navbar = ({ searchChange }) => {
             {
               category: "Clothes",
               subcategories: ["T-Shirts", "Shirts", "Jeans", "Jackets"],
+              url:"/men#40",
             },
             {
               category: "Shoes",
               subcategories: ["Athletic Shoes", "Casual Shoes", "Formal Shoes"],
+              url:"/shoes#3",
             },
             {
               category: "Accessories",
               subcategories: ["Hats", "Watches", "Belts"],
+              url:"/sales#100",
             },
             {
               category: "Outerwear",
               subcategories: ["Coats", "Jackets", "Vests"],
+              url:"/men#36",
             },
             {
               category: "Sports",
               subcategories: ["Sportswear", "Running Gear", "Training Gear"],
+              url:"/men#44",
             },
           ],
         },
@@ -48,22 +54,27 @@ const Navbar = ({ searchChange }) => {
             {
               category: "Clothes",
               subcategories: ["Dresses", "Blouses", "Skirts", "Coats"],
+              url:"/women#18",
             },
             {
               category: "Shoes",
               subcategories: ["Heels", "Flats", "Boots"],
+              url:"/shoes#1",
             },
             {
               category: "Accessories",
               subcategories: ["Handbags", "Jewelry", "Scarves"],
+              url:"/sales#71",
             },
             {
               category: "Activewear",
               subcategories: ["Yoga Wear", "Running Gear", "Sports Bras"],
+              url:"/women#25",
             },
             {
               category: "Swimwear",
               subcategories: ["Bikinis", "One-Piece Swimsuits", "Cover-Ups"],
+              url:"/women#63",
             },
           ],
         },
@@ -74,48 +85,58 @@ const Navbar = ({ searchChange }) => {
             {
               category: "Clothes",
               subcategories: ["T-Shirts", "Pants", "Dresses", "Jackets"],
+              url:"/kids#54",
             },
             {
               category: "Shoes",
               subcategories: ["Sneakers", "Sandals", "Boots"],
+              url:"/shoes",
             },
             {
               category: "Toys",
               subcategories: ["Educational Toys", "Outdoor Toys", "Stuffed Animals"],
+              url:"/sales",
             },
             {
               category: "School Gear",
-              subcategories: ["Backpacks", "Lunchboxes", "Stationery"],
+              subcategories: ["Backpacks", "Uniforms", "Stationery"],
+              url:"/kids#66",
             },
             {
               category: "Sleepwear",
               subcategories: ["Pajamas", "Robes", "Slippers"],
+              url:"/kids#11",
             },
           ],
         },
         {
           label: "Sale",
-          to: "/",
+          to: "/sales",
           categories: [
             {
               category: "Clothes",
               subcategories: ["Sale T-Shirts", "Sale Dresses", "Sale Jeans"],
+              url:"/sales#36",
             },
             {
               category: "Shoes",
               subcategories: ["Sale Shoes"],
+              url:"/sales#8",
             },
             {
               category: "Accessories",
               subcategories: ["Sale Hats", "Sale Jewelry", "Sale Scarves"],
+              url:"/sales",
             },
             {
               category: "Clearance",
               subcategories: ["Last Chance Deals", "Final Markdowns"],
+              url:"/sales#52",
             },
             {
               category: "Electronics",
               subcategories: ["Tech Deals", "Gadget Clearance"],
+              url:"/sales#65",
             },
           ],
         },
@@ -126,22 +147,27 @@ const Navbar = ({ searchChange }) => {
             {
               category: "Athletic Shoes",
               subcategories: ["Running Shoes", "Basketball Shoes", "Training Shoes"],
+              url:"/shoes#8",
             },
             {
               category: "Casual Shoes",
               subcategories: ["Sneakers", "Loafers", "Slip-Ons"],
+              url:"/shoes#1",
             },
             {
               category: "Boots",
               subcategories: ["Ankle Boots", "Knee-High Boots", "Snow Boots"],
+              url:"/shoes#0",
             },
             {
               category: "Sandals",
               subcategories: ["Flip-Flops", "Slides", "Strappy Sandals"],
+              url:"/shoes#68",
             },
             {
               category: "Formal Shoes",
               subcategories: ["Oxfords", "Derbies", "Dress Loafers"],
+              url:"/shoes#2",
             },
           ],
         },
@@ -211,16 +237,15 @@ const Navbar = ({ searchChange }) => {
               <div onMouseLeave={()=>setHovered("")} className="max-[1200px]:hidden">
                 <div className='flex'>
 
-                {links.map((link, index) => (
+                  {links.map((link, index) => (
                   <NavItem
-                  key={index}
-                  setHovered={setHovered}
-                  hovered={hovered}
-                  setClicked={setClicked}
-                  to={link.to}
-                  label={link.label}
-                  categories={hoveredCategories}
-                  
+                    key={index}
+                    setHovered={setHovered}
+                    hovered={hovered}
+                    setClicked={setClicked}
+                    to={link.to}
+                    label={link.label}
+                    categories={hoveredCategories}
                   />
                   ))}
                   </div>
@@ -239,7 +264,9 @@ const Navbar = ({ searchChange }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <div className="text-xl font-bold">{category.category}</div>
+                  <div className="text-xl font-bold">
+                    <Link to={category.url}> {category.category}</Link>
+                  </div>
                   <div>
                     {category.subcategories.map((subcategory, index) => (
                       <p>{subcategory}</p>

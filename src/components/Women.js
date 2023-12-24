@@ -4,6 +4,8 @@ import ShoeItem from "./ShoeItem";
 import CardBanner from './CardBanner';
 import { FaAngleDown } from "react-icons/fa";
 import "./Navbar.css";
+import { useLocation } from "react-router-dom";
+import Scrollbar from 'smooth-scrollbar';
 import Sort from "./Sort";
 import img1 from '../assets/women/womenB1.jpg';
 import img2 from '../assets/women/womenB2.jpg';
@@ -11,7 +13,10 @@ import img3 from '../assets/women/womenB3.jpg';
 import img4 from '../assets/women/womenB4.jpg';
 import img5 from '../assets/women/womenB5.jpg';
 
+
 const Women = (props) => {
+  var location=useLocation()  
+  var hash = location.hash.slice(1);
   const bannerData = [
     {
       title: "Elegance Redefined",
@@ -45,6 +50,17 @@ const Women = (props) => {
   useEffect(() => {
     setDatalist(data);
   }, [data])
+  useEffect(() => {
+    // window.location.reload();
+    // var hui = document.getElementById('random');
+    if (hash) {
+      var targetElement = document.getElementById(hash);
+      if (targetElement) {
+        
+        Scrollbar.get(document.body).scrollTo(0, targetElement.getBoundingClientRect().top, 1000);
+      }
+    }
+  }, [hash]);
   const sorting = () => {
     if (sortValue === 'Name: A-Z') {
       const newSortData = data.sort((a, b) => {
