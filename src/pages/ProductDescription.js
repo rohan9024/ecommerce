@@ -12,7 +12,7 @@ const ProductDescription = (props) => {
     const [currentImg, setCurrentImg] = useState(0);
     const [modal, setModal] = useState(false);
     const [wish, setWish] = useState(false);
-    console.log(wish);
+    // console.log(wish);
     let { id } = useParams();
 
     useEffect(() => {
@@ -56,16 +56,16 @@ const ProductDescription = (props) => {
     });
 
     const handleClick = () => {
-        console.log(cartItems);
+        // console.log(cartItems);
 
         if (cartItems.includes(id) === false) {
             setCartItems(cartItems.concat(id));
             notify();
-            console.log("Added to cart " + id);
+            // console.log("Added to cart " + id);
             setIsPresent(true);
         }
         else {
-            console.log("Already present " + id);
+            // console.log("Already present " + id);
             
         }
     }

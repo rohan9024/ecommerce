@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef} from "react";
 import { motion } from "framer-motion";
 import ShoeItem from "./ShoeItem";
 import { FaAngleDown } from "react-icons/fa";
@@ -10,10 +10,15 @@ import img2 from '../assets/men/menB2.jpg';
 import img3 from '../assets/men/menB3.jpg';
 import img4 from '../assets/men/menB4.jpg';
 import img5 from '../assets/men/menB5.jpg';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useLocation } from "react-router-dom";
+import Scrollbar from 'smooth-scrollbar';
+
 const Men = (props) => {
+  var location=useLocation()  
+  var hash = location.hash.slice(1);
+  const targetRef = useRef(null);
   const bannerData = [
     {
       title: "Urban Explorer Essentials",
@@ -43,7 +48,6 @@ const Men = (props) => {
   ];
   const [selected, setselected] = useState("");
   const { data, sortValue, setSortValue, wishItems,setWishItems } = props;
-  console.log(wishItems)
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
     setDatalist(data);
@@ -102,13 +106,28 @@ const Men = (props) => {
     );
   });
 
+  useEffect(() => {
+    // window.location.reload();
+    // var hui = document.getElementById('random');
+    if (hash) {
+      var targetElement = document.getElementById(hash);
+      if (targetElement) {
+        
+        Scrollbar.get(document.body).scrollTo(0, targetElement.getBoundingClientRect().top, 1000);
+      }
+    }
+  }, [hash]);
 
-  return (
+
+
+
+  return ( 
     <>
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
+            // id="random"
             // className="flex flex-row justify-center items-center"
           >
         <div className="text-center">
@@ -162,6 +181,8 @@ const Men = (props) => {
       }
     </>
   );
+
+
 };
 
 export default Men;

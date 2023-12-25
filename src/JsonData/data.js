@@ -28,6 +28,8 @@ import img15 from "../assets/img15.webp"
 import img16 from "../assets/img16.webp"
 import img17 from "../assets/img17.jfif"
 import img18 from "../assets/img18.webp"
+import img79 from "../assets/img24.png"
+
 
 // image data for kids
 import img19 from "../assets/kids/img1.png"
@@ -48,6 +50,8 @@ import img51 from "../assets/kids/img15.png"
 import img52 from "../assets/kids/img16.png"
 import img53 from "../assets/kids/img17.png"
 import img54 from "../assets/kids/img18.png"
+import img77 from "../assets/kids/img19.jpg"
+import img78 from "../assets/kids/img20.jpg"
 
 // image data for women
 import img28 from "../assets/women/img1.png"
@@ -68,6 +72,11 @@ import img70 from "../assets/women/img15.png"
 import img71 from "../assets/women/img16.png"
 import img72 from "../assets/women/img17.png"
 import img73 from "../assets/women/img18.png"
+import img75 from "../assets/women/img69.png"
+import img76 from "../assets/women/img68.png"
+
+//electronics
+import img74 from "../assets/electronics/sales10.jpg"
 
 
 export const data = [
@@ -272,9 +281,9 @@ export const data = [
   {
     "category": "women",
     "subCategory": "tshirt",
-    "title": "Antheaa",
-    "desc": "Black & Rust Orange Floral Print Tiered Midi Fit & Flare Dress with Ruffles",
-    "price": "₹983",
+    "title": "Rose Sleeveless",
+    "desc": "Coral red activewear tank top with slub effect.",
+    "price": "₹249",
     "imgurl":img35
   },
   {
@@ -572,6 +581,54 @@ export const data = [
     "desc": "Girls Multicoloured Printed Top",
     "price": "₹484",
     "imgurl": img54
+  },
+  {
+    "category": "women",
+    "subCategory": "shirt",
+    "title": "URBAN STUDIO Swim Suit ",
+    "desc": "Full sleeve, ladies, anti-pervert swim suit",
+    "price": "₹484",
+    "imgurl": img75
+  },
+  {
+    "category": "women",
+    "subCategory": "shirt",
+    "title": "Full wear Swim Suit ",
+    "desc": "Black, shiney, soft, long sleeve ladies non-pervert swim suit",
+    "price": "₹484",
+    "imgurl": img76
+  },
+  {
+    "category": "electronics",
+    "subCategory": "",
+    "title": "MacBook Pro 13”",
+    "desc": "The 13-inch MacBook Pro is supercharged by M2.",
+    "price": "122000",
+    "imgurl": img74
+  },
+  {
+    "category": "kids",
+    "subCategory": "shirt",
+    "title": "School Uniform Boys",
+    "desc": "KIRONIKNIT School Uniform Full Sleeves Sweater - Daffodil ",
+    "price": "₹459",
+    "imgurl": img77
+  },
+  {
+    "category": "kids",
+    "subCategory": "shirt",
+    "title": "School Uniform Girls",
+    "desc": "Children Welfare Girls Primary Uniform",
+    "price": "₹580",
+    "imgurl": img78
+  },
+  {
+    "category": "shoes",
+    "subCategory": "formal",
+    "title": "Wildcraft men swish",
+    "desc": "Mens Swift Outdoor Open Toe Sandals",
+    "price": "₹449",
+    "imgurl": img79
   },
 ]
 
