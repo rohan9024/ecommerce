@@ -29,6 +29,7 @@ import Bag from "./Wishlist.js";
 import Wishlist from "./Wishlist.js";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NotFound from "./404-page.js";
 
 
 
@@ -143,6 +144,7 @@ function App() {
           <Route element={<Admin />} path="/admin" />
         </Route>
         <Route path='/list' element={<Wishlist data={filtereditems} items={wishItems} wishItems={wishItems} setWishItems={setWishItems} cartItems={cartItems} setCartItems={setCartItems}/>}/>
+        <Route path='*' element={<NotFound/>} />
       </Routes>
 
       <Footer />
