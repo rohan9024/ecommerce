@@ -1,5 +1,8 @@
-import React from 'react'
-import logo from "../assets/logo.png"
+import React from 'react';
+import logo from "../assets/logo.png";
+import githubFavicon from "../assets/github-favicon.png";
+import twitterFavicon from "../assets/twitter-favicon.png";
+import instagramFavicon from "../assets/instagram-favicon.png";
 
 function Footer() {
     return (
@@ -9,22 +12,35 @@ function Footer() {
                     className='object-contain w-36 h-36 cursor-pointer'
                     src={logo} alt="logo" />
             </div>
-            <div className='w-4/5 mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-10 text-center'>
-                <h1 className='my-2'>ENGLISH(INTL)</h1>
-                <h1 className='my-2'>Privacy Policy</h1>
-                <h1 className='my-2'>Terms & Conditions</h1>
-                <h1 className='my-2'>Newsletter</h1>
-                <h1 className='my-2'>Contact</h1>
-                <h1 className='my-2'>Stores</h1>
-                <h1 className='my-2'>Legal & Privacy</h1>
-                <h1 className='my-2'>Jobs</h1>
-                <h1 className='my-2'>Follow Us</h1>
-                <h1 className='my-2'>Instagram</h1>
-                <h1 className='my-2'>Twitter</h1>
-                <h1 className='my-2'>Cookies</h1>
+            <div className='w-4/5 mx-auto my-10 text-center'>
+            <h1 className= 'text-5xl text-blue-gray-100 my-3'>Made by Blackberrys</h1>
+            
+                <div className='flex justify-between'>
+                    <div className='flex flex-col'>
+                        <h1 className= 'text-2xl text-pink-400'>POLICIES</h1>
+                        <h1 className='text-base my-1'>Privacy Policy</h1>
+                        <h1 className='text-base my-1'>Return Policy</h1>
+                        <h1 className='text-base my-1'>Terms & Conditions</h1>
+                    </div>
+                    <div className='flex flex-col'>
+                        <span  className='my-2'>Store </span><span  className='my-2'>       Newsletter  </span><span  className='my-2'>   Cookies</span>
+                    </div>
+                    <div className='flex flex-col'>
+                    <h1 className= 'text-2xl text-pink-400'>FOLLOW US</h1>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img className='my-1 w-8 h-8' src={githubFavicon} alt="GitHub" />
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img className='my-1 w-8 h-8 self-start' src={twitterFavicon} alt="Twitter" />
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img className='my-1 w-8 h-8' src={instagramFavicon} alt="Instagram" />
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Footer
+export default Footer;

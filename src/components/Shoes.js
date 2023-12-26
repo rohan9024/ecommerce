@@ -10,8 +10,11 @@ import img2 from '../assets/shoeB2.jpg';
 import img3 from '../assets/shoeB3.jpg';
 import img4 from '../assets/shoeB4.jpg';
 import img5 from '../assets/shoeB5.jpg';
-
+import { useLocation } from "react-router-dom";
+import Scrollbar from 'smooth-scrollbar';
 function Shoes(props) {
+  var location=useLocation()  
+  var hash = location.hash.slice(1);
   const bannerData = [
     {
       title: "Step into Style",
@@ -40,11 +43,19 @@ function Shoes(props) {
     },
   ];
   const [selected, setselected] = useState("");
-  const { data, sortValue, setSortValue } = props;
+  const { data, sortValue, setSortValue,wishItems, setWishItems } = props;
   const [datalist, setDatalist] = useState([]);
   useEffect(() => {
     setDatalist(data);
   }, [data])
+  useEffect(() => {
+    if (hash) {
+      var targetElement = document.getElementById(hash);
+      if (targetElement) {
+        Scrollbar.get(document.body).scrollTo(0, targetElement.getBoundingClientRect().top, 1000);
+      }
+    }
+  }, [hash]);
   const sorting = () => {
     if (sortValue === 'Name: A-Z') {
       const newSortData = data.sort((a, b) => {
@@ -92,6 +103,8 @@ function Shoes(props) {
         price={shoes[i].price}
         img={shoes[i].imgurl}
         id={shoes[i].id}
+        wishItems={wishItems}
+        setWishItems={setWishItems}
       />
     );
   });

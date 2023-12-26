@@ -14,9 +14,7 @@ const Cart = (props) => {
     let total = 0;
     let curr_price = 0;
 
-    return !user ?
-        <Login />
-        : (
+    return  (
             <div className='flex flex-col mb-12'>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}

@@ -11,7 +11,7 @@ const SalesItem = (props) => {
     <motion.div className='relative shadow-sm border border-gray-200 transition transform hover:scale-105 hover:ease-in-out hover:duration-500 hover:delay-125 hover:shadow-2xl cursor-pointer mx-12 my-4'>
       <Link to={"/product/" + id} className='flex flex-col relative'>
         {/* Blurred image with absolute positioning */}
-        <div className='w-full relative'>
+        <div className='w-full relative' id={id}>
           <img
             className='object-cover w-full h-64 md:h-48 lg:h-64 filter blur-sm'
             src={imgurl}

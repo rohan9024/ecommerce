@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import { motion } from 'framer-motion';
 import CardBanner from './CardBanner';
 import SalesItem from './SaleItem';
-
-// Import your sale-related images
+import { useLocation } from "react-router-dom";
+import Scrollbar from 'smooth-scrollbar';
 import img1 from '../assets/saleB1.jpg';
 import img2 from '../assets/saleB2.jpg';
 import img3 from '../assets/saleB3.jpg';
@@ -39,7 +39,11 @@ import saleImg9A from '../assets/sales/sales9a.jpg';
 import saleImg10 from '../assets/sales/sales10.jpg';
 import saleImg10B from '../assets/sales/sales10b.jpg';
 import saleImg10A from '../assets/sales/sales10a.jpg';
+
 function Sales() {
+  var location=useLocation()  
+  var hash = location.hash.slice(1);
+
     const bannerData = [
         {
           title: "Family Fiesta Extravaganza",
@@ -192,10 +196,19 @@ function Sales() {
       imgurl: saleImg10,
       ref1:saleImg10A,
       ref2:saleImg10B,
-      id:"",
+      id:"65",
     },
   ];
-
+  useEffect(() => {
+    // window.location.reload();
+    // var hui = document.getElementById('random');
+    if (hash) {
+      var targetElement = document.getElementById(hash);
+      if (targetElement) {
+        Scrollbar.get(document.body).scrollTo(0, targetElement.getBoundingClientRect().top, 1000);
+      }
+    }
+  }, [hash]);
   return (
     <>
     <motion.div
