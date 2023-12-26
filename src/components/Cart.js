@@ -32,7 +32,7 @@ const Cart = (props) => {
                             total += original;
                             curr_price += item.price;
                             return (
-                                <div className='flex mx-auto shadow-lg border rounded-md w-[40rem]' key={index}>
+                                <div className='flex mx-auto shadow-lg border rounded-md sm:w-[40rem] w-[25rem]' key={index}>
                                     <img src={item.imgurl} alt="img6" className='h-48' />
                                     <div className='flex p-5'>
                                         <div className='flex flex-col gap-2'>
