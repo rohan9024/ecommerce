@@ -12,6 +12,8 @@ class CardBanner extends Component {
       centerPadding: "60px",
       slidesToShow: 3,
       swipeToSlide: true,
+      autoplay:true,
+      autoplaySpeed:3000,
       afterChange: function(index) {
         console.log(
           `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
