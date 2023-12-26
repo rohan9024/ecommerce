@@ -126,11 +126,11 @@ function Shoes(props) {
             <span className='font-normal' style={{marginBottom:"4px"}}> &nbsp;{selected === "" ? " All" : " " + selected[0].toUpperCase() + selected.slice(1)}</span>
             <div className='grid place-items-center ml-3' style={{marginBottom:"4px"}}> <FaAngleDown /></div>
           </div>
-          <ul className='sort_css hidden group-hover:block pt-4'>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("")} id="all">All</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("shirt")} id="shirt">Shirts</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("tshirt")} id="tshirt">T-shirts</li>
-            <li className='pt-3 hover:font-semibold' onClick={() => setselected("pant")} id="pant">Pants</li>
+          <ul className='sort_css pb-[5px] hidden group-hover:block pt-4 shadow-sm shadow-black rounded-md border-black border-1 border-solid'>
+            <li className='pt-3 hover:font-semibold scale-100 font-light transition-all ease-linear duration-200 hover:scale-110' onClick={() => setselected("")} id="all">All</li>
+            <li className='pt-3 hover:font-semibold scale-100 font-light transition-all ease-linear duration-200 hover:scale-110' onClick={() => setselected("shirt")} id="shirt">Shirts</li>
+            <li className='pt-3 hover:font-semibold scale-100 font-light transition-all ease-linear duration-200 hover:scale-110' onClick={() => setselected("tshirt")} id="tshirt">T-shirts</li>
+            <li className='pt-3 hover:font-semibold scale-100 font-light transition-all ease-linear duration-200 hover:scale-110' onClick={() => setselected("pant")} id="pant">Pants</li>
           </ul>
         </div>
         <Sort setSortValue={setSortValue} sortValue={sortValue} />

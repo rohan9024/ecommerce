@@ -10,6 +10,12 @@ module.exports = withMT({
         dmsans: ["DM Sans"],
        },
     },
+    screens: {
+      'sm': '320px',
+      // => @media (min-width: 576px) { ... }
+
+      
+    },
   },
   plugins: [],
 })
