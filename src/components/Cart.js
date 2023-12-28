@@ -1,19 +1,28 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { motion } from "framer-motion";
 import img1 from "../assets/men/img6.png"
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 import Login from '../Login';
+import bin from "../assets/bin.png";
 const Cart = (props) => {
     const user = useSelector(selectUser);
     const { data, items } = props;
 
-    const products = data.filter(item => {
+    const [products,setProducts] = useState(data.filter(item => {
         return items.includes(item.id.toString());
-    })
+    }));
+    console.log(products);
     let total = 0;
     let curr_price = 0;
-
+   const removeItem=(index)=>{
+    console.log(index);
+    console.log(products);
+    console.log("clicked");
+    const updatedProducts = products.filter((_, i) => i !== index);
+    console.log(updatedProducts);
+      setProducts(updatedProducts);
+   }
     return  (
             <div className='flex flex-col mb-12'>
                 <motion.div
@@ -32,7 +41,9 @@ const Cart = (props) => {
                             total += original;
                             curr_price += item.price;
                             return (
-                                <div className='flex mx-auto shadow-lg border rounded-md sm:w-[40rem] w-[25rem]' key={index}>
+                                <div className='flex mx-auto shadow-lg border rounded-md sm:w-[40rem] w-[25rem] justify-between' key={index}>
+                                    
+                                    <div className='flex '>
                                     <img src={item.imgurl} alt="img6" className='h-48' />
                                     <div className='flex p-5'>
                                         <div className='flex flex-col gap-2'>
@@ -69,14 +80,16 @@ const Cart = (props) => {
                                                 <h1 className='text-red-400'>20% off</h1>
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
+                                     <img onClick={()=>removeItem(index)} src={bin} className='h-9  float-right m-3 hover:scale-110 cursor-pointer p-1'/>
                                 </div>
                             )
                         })
                         }
                     </div>
                     <div className='mx-auto w-96 border mt-20 p-5 flex flex-col gap-2'>
-                        <h2 className='font-bold uppercase text-sm text-gray-600 mb-4'>Price details (4 items)</h2>
+                        <h2 className='font-bold uppercase text-sm text-gray-600 mb-4'>Price details ({products.length} items)</h2>
                         <div className='flex justify-between items-center'>
                             <h3 className='text-gray-700 font-normal'>Total MRP</h3>
                             <h3 className='text-gray-700 font-normal'>₹{total}</h3>
