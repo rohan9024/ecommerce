@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import cart from '../assets/cart.png';
-import './SalesItem.css';
+
 
 const SalesItem = (props) => {
   const { category, subCategory, title, desc, price, imgurl, id ,ref1,ref2,ogprice} = props;
@@ -21,7 +21,7 @@ const SalesItem = (props) => {
               {/* Main image centered with different size */}
               <img
                 id='ref1'
-                className='object-cover w-30 h-full mx-4'
+                className='object-cover w-30 h-full mx-4 sm:hidden md:block '
                 src={ref1}
                 alt="main-sale-item"
               />
@@ -33,7 +33,7 @@ const SalesItem = (props) => {
               />
               <img
                 id='ref2'
-                className='object-cover w-30 h-full mx-4'
+                className='object-cover w-30 h-full mx-4 sm:hidden md:block '
                 src={ref2}
                 alt="main-sale-item"
               />

@@ -6,10 +6,10 @@ import search from "../assets/search.png"
 import user from "../assets/user.png"
 import cart from "../assets/cart.png"
 import favorite from "../assets/favorite.png"
-import "./Navbar.css"
+
 import { HashLink as Link } from 'react-router-hash-link';
 import {motion} from 'framer-motion'
-
+import './Navbar.css'
 
 
 const Navbar = ({ searchChange }) => {
@@ -187,19 +187,21 @@ const Navbar = ({ searchChange }) => {
 
     return (
       <div>
-        <div className="navbar-container">
+        <div className=" flex justify-between items-center p-8 shadow-md shadow-gray-500 sticky z-10  ">
           <div>
-            <div className="logo-container">
+            <div className="sm:w-[20vw] lg:w-[50%] sm:mr-1">
               <Link to="/">
                 <img src={logo} alt="" />
               </Link>
             </div>
           </div>
-          <div className={"menu-container"}>
-            <ul className={`${clicked && "active"}`}>
-              <div id="mobile" className="w-full">
-                <div className="close-bar">
-                  <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden">
+          <div className=" menu-container  lg:flex lg:justify-center flex justify-center items-center p-[1vw] transition-all ease-in-out duration-300
+          ">
+            <ul className={`${clicked&&'active'}`} >
+            {clicked &&<>
+              <div id="mobile" className="w-[100%] lg:hidden text-4xl cursor-pointer  block">
+                <div className="close-bar w-[100%] flex justify-end items-center">
+                  <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden hidden ">
                     <img
                       className="object-contain w-5 h-5 mobile-icons"
                       src={cart}
@@ -207,7 +209,7 @@ const Navbar = ({ searchChange }) => {
                     />
                   </div>
                   <Link to="/list">
-                  <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden">
+                  <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden hidden ">
                     <img
                       className="object-contain w-5 h-5 mobile-icons"
                       src={favorite}
@@ -217,7 +219,7 @@ const Navbar = ({ searchChange }) => {
                   </Link>
                   
                   <Link to="/login">
-                    <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden">
+                    <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer tab-hidden none">
                       <img
                         className="object-contain w-5 h-5 mobile-icons"
                         src={user}
@@ -228,14 +230,16 @@ const Navbar = ({ searchChange }) => {
                   <div>
                     <i
                       id="bar"
-                      className={"fas fa-times"}
+                      className={"fas fa-times cursor-pointer"}
                       onClick={handleClick}
                     ></i>
                   </div>
                 </div>
               </div>
+            </>}
+              
               <div onMouseLeave={()=>setHovered("")} className="max-[1200px]:hidden">
-                <div className='flex'>
+                <div className='flex text-md'>
 
                   {links.map((link, index) => (
                   <NavItem
@@ -256,7 +260,7 @@ const Navbar = ({ searchChange }) => {
             transition={{ duration: 0.2 }}
             className="w-screen z-10 left-0 absolute bg-white py-10"
           >
-            <div className="flex mx-auto justify-between w-full max-w-4xl">
+            <div className="flex mx-auto justify-between w-[100%] max-w-4xl">
               {hoveredCategories.map((category, index) => (
                 <motion.div
                   key={index}
@@ -264,7 +268,7 @@ const Navbar = ({ searchChange }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <div className="text-xl font-bold">
+                  <div className="text-md lg:text-xl font-bold">
                     <Link to={category.url}> {category.category}</Link>
                   </div>
                   <div>
@@ -278,12 +282,12 @@ const Navbar = ({ searchChange }) => {
           </motion.div>
         )}
               </div>
-              <div className="max-[1200px]:flex flex-col gap-5 navbar-link hidden">
+              <div className="max-[1200px]:flex flex-col lg:gap-5 md:gap-2 md:ml-3 no-underline text-md lg:text-xl font-semibold hidden">
                 {links.map((link, index) => {
                     return(
                   <NavLink
                   to={link.to}
-                  className={`navbar-link`}
+                  className='no-underline text-xl font-semibold'
                   onClick={() => setClicked(false)}
                 >
                   {link.label}
@@ -307,21 +311,22 @@ const Navbar = ({ searchChange }) => {
                     </li> */}
             </ul>
           </div>
-          <div className="extra-icons">
-            <div className="flex justify-center items-center border border-gray-800 py-2 px-4 input-field rounded-full">
+          <div className="extra-icons flex gap-12">
+            <div className="flex justify-center items-center border border-gray-800 py-2 px-4 input-field rounded-full ">
               <input
                 type="search"
                 placeholder="What are you looking for?"
-                className="w-64 placeholder-black font-medium outline-none"
+                className="lg:w-64 sm:w-40 sm:text-xs lg:text-lg lg:px
+                r-3 placeholder-black font-medium outline-none"
                 onChange={searchChange}
               />
               <img
-                className="object-contain w-5 h-5 search_image_800px"
+                className="object-contain lg:w-5 lg:h-5 sm:w-3 sm:h-3 search_image_800px"
                 src={search}
                 alt="search"
               />
             </div>
-            <div className="flex justify-around items-center space-x-8 hide-mobile">
+            <div className="flex justify-around items-center space-x-8 hide-mobile sm:hidden lg:flex lg:justify-center">
               <NavLink to="/cart" onClick={() => setClicked(false)}>
                 <div className="transition hover:duration-150 hover:ease-in-out hover:scale-125 cursor-pointer">
                   <img
@@ -351,8 +356,8 @@ const Navbar = ({ searchChange }) => {
               </Link>
             </div>
           </div>
-          <div id="mobile">
-            <i id="bar" className={"fas fa-bars"} onClick={handleClick}></i>
+          <div id="mobile" className='lg:hidden text-4xl cursor-pointer sm:block sm:ml-4 sm:scale-75'>
+            {!clicked &&<i id="bar" className={"fas fa-bars cursor-pointer"} onClick={handleClick}></i>}
           </div>
         </div>
         
@@ -366,11 +371,11 @@ function NavItem({to,label,setHovered,hovered}){
         onMouseEnter={() => setHovered(label)}
         className={` ${
           hovered === label ? "border-b-2 border-solid border-black":""
-        }`}
+        } p-[1vw] transition-all ease-in-out duration-300`}
       >
         <NavLink
           to={to}
-          className={`navbar-link`}
+          className='no-underline text-xl font-semibold'
         >
           {label}
         </NavLink>
