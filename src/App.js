@@ -15,14 +15,15 @@ import Signup from "./Signup";
 import Footer from "./components/Footer";
 import { data } from "./JsonData/data";
 import Search from "./components/Search";
-import ScrollToTop from "./ScrollToTop";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 import { login, logout } from "./features/userSlice";
 import Profile from "./components/Profile";
 
-import SmoothScroll from './components/SmoothScroll'
+// import ScrollToTop from "./ScrollToTop.js";
+
+// import SmoothScroll from './components/SmoothScroll'
 import ProtectedRoute from "./components/ProtectedRoute";
 import Cart from "./components/Cart";
 import Bag from "./Wishlist.js";
@@ -63,8 +64,8 @@ function App() {
 // console.log(wishItems);
   return (
     <BrowserRouter>
-      <SmoothScroll />
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
+      {/* <SmoothScroll /> */}
       <Navbar searchChange={onSearchChange} />
       {/* <Sort setSortValue={setSortValue} /> */}
       <Routes>
